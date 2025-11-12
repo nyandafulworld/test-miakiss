@@ -1,0 +1,46 @@
+# URLから.html拡張子を削除するための設定
+
+# RewriteEngineを有効化
+RewriteEngine On
+RewriteBase /
+
+# .html付きURLを拡張子なしURLへリダイレクト（SEO対策）
+# 例: /tokusho.html → /tokusho
+RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# 拡張子なしURLを.htmlファイルへ内部リライト
+# ただし、実際のディレクトリやファイルが存在しない場合のみ
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# index.htmlへのアクセスをルートへリダイレクト
+RewriteCond %{THE_REQUEST} ^GET\ /index\.html
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 旧URLのリダイレクト設定（301: 恒久的な移動）
+# /calches/ → 実績セクション
+RewriteRule ^calches/?$ https://miakiss.com/#works [R=301,L]
+
+# /home/ → トップページ
+RewriteRule ^home/?$ https://miakiss.com [R=301,L]
+
+# /mendel/ → 実績セクション
+RewriteRule ^mendel/?$ https://miakiss.com/#works [R=301,L]
+
+# /privacy-policy/ → プライバシーポリシー
+RewriteRule ^privacy-policy/?$ https://miakiss.com/privacy [R=301,L]
+
+# /about/ → 会社概要セクション
+RewriteRule ^about/?$ https://miakiss.com/#company [R=301,L]
+
+# 日本語URL: /お問い合わせ/ → お問い合わせセクション
+RewriteRule ^お問い合わせ/?$ https://miakiss.com/#contact [R=301,L]
+
+# 410 Gone: 完全に削除されたリソース
+# /feed/ → 410エラーページ
+RewriteRule ^feed/?$ /410.html [L]
+ErrorDocument 410 /410.html
+

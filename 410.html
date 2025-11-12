@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>410 Gone - ページが削除されました | 株式会社ミアキス</title>
+    <meta name="description" content="お探しのページは完全に削除されました。">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- Favicon -->
+    <link rel="icon" href="image/icon.avif" type="image/avif">
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="image/logo_v3.avif" alt="株式会社ミアキス"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="/#blog">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <a href="/#contact" class="header-contact-button">
+                <img src="image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="section-title-container">
+                    <span class="section-title-english">410 Gone</span>
+                    <h1>ページが削除されました</h1>
+                    <hr class="section-title-underline">
+                </div>
+
+                <div class="tokusho-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div class="tokusho-intro">
+                        <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 2em;">
+                            お探しのページは完全に削除されました。<br>
+                            このコンテンツは現在提供しておりません。
+                        </p>
+                        <p style="margin-bottom: 3em;">
+                            お手数ですが、以下のリンクからトップページへお戻りいただくか、<br>
+                            メニューから他のページをご覧ください。
+                        </p>
+                        <div style="margin-top: 2em;">
+                            <a href="/" style="display: inline-block; background-color: #4CAF50; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;">
+                                トップページへ戻る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="image/logo_v3.avif" alt="株式会社ミアキス">
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="/tokusho">特定商取引法に基づく表記</a></li>
+                        <li><a href="/privacy">プライバシーポリシー</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニューの動作
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const nav = document.querySelector('.global-nav');
+
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    nav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

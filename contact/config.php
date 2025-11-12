@@ -1,0 +1,51 @@
+<?php
+// お問い合わせフォーム設定ファイル
+
+// メール設定
+define('ADMIN_EMAIL', 'info@miakiss.com'); // 管理者メールアドレス
+define('FROM_EMAIL', 'info@miakiss.com'); // 送信元メールアドレス
+define('COMPANY_NAME', '株式会社ミアキス');
+define('SITE_URL', 'https://miakiss.com'); // サイトURL
+
+// SMTP設定（エックスサーバー用設定）
+define('SMTP_HOST', 'localhost');
+define('SMTP_PORT', 587);
+define('SMTP_USERNAME', ''); // エックスサーバーでは通常不要
+define('SMTP_PASSWORD', ''); // エックスサーバーでは通常不要
+define('SMTP_SECURE', 'tls'); // tls または ssl
+
+// セキュリティ設定
+define('CSRF_TOKEN_NAME', 'csrf_token');
+define('SESSION_TIMEOUT', 3600); // 1時間
+
+// reCAPTCHA v3 設定
+define('RECAPTCHA_SITE_KEY', '6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV');
+define('RECAPTCHA_SECRET_KEY', '6LcwtgksAAAAANJygCgq4KYXbDsbvwPWHV_I-Bma');
+define('RECAPTCHA_SCORE_THRESHOLD', 0.5); // スコア閾値（0.0-1.0、低いほどボットの可能性が高い）
+define('RECAPTCHA_VERIFY_URL', 'https://www.google.com/recaptcha/api/siteverify');
+
+// スパム対策設定
+define('MAX_SUBMISSIONS_PER_HOUR', 5); // 1時間あたりの最大送信数
+define('HONEYPOT_FIELD', 'website'); // ハニーポットフィールド名
+
+// ログ設定
+define('LOG_DIR', __DIR__ . '/../logs/');
+define('CONTACT_LOG', LOG_DIR . 'contact.log');
+define('ERROR_LOG', LOG_DIR . 'error.log');
+
+// 許可する文字数
+define('MAX_NAME_LENGTH', 100);
+define('MAX_EMAIL_LENGTH', 255);
+define('MAX_MESSAGE_LENGTH', 2000);
+
+// 禁止ワード（スパム対策）
+$forbidden_words = [
+    'viagra', 'casino', 'lottery', 'winner', 'congratulations',
+    'click here', 'free money', 'make money', 'work from home'
+];
+
+// ログディレクトリの作成
+if (!is_dir(LOG_DIR)) {
+    mkdir(LOG_DIR, 0755, true);
+}
+?> 

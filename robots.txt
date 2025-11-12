@@ -1,0 +1,29 @@
+# robots.txt for miakiss.com
+
+User-agent: *
+# 410 Gone（削除済み）のURL
+Disallow: /feed/
+
+# PHPのテストファイル・デバッグファイル
+Disallow: /contact/debug.php
+Disallow: /contact/test.php
+Disallow: /contact/simple_test.php
+
+# 旧サイトのURL（301リダイレクト設定済み）
+# これらは検索エンジンに直接クロールさせない
+Disallow: /calches/
+Disallow: /home/
+Disallow: /mendel/
+Disallow: /privacy-policy/
+Disallow: /about/
+Disallow: /お問い合わせ/
+
+# バックアップディレクトリ
+Disallow: /image_backup/
+
+# Allow all other pages
+Allow: /
+
+# Sitemap location
+Sitemap: https://miakiss.com/sitemap.xml
+

@@ -1,0 +1,2625 @@
+@charset "UTF-8";
+
+body,
+h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+#testimonials,
+#company {
+    background-color: #f9f9f9; /* ライトモードのセクション背景を薄いグレーに */
+}
+
+#message {
+    background-color: #fff; /* 白 */
+}
+
+html.dark #testimonials,
+html.dark #company {
+    background-color: #2d3748; /* ダークモードのセクション背景を濃いグレーに */
+}
+
+html.dark #message {
+    background-color: #1a202c; /* ダークモード時も暗い背景を維持 */
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section {
+    padding: 4em 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+.section-title-container {
+    text-align: center;
+    margin-bottom: 3rem; /* 下のマージンを増やす */
+}
+.section-title-english {
+    display: block;
+    font-size: 1rem;
+    color: #007bff; /* テーマカラー */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.section-title-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-underline {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: currentColor; /* Use the current text color */
+    margin: 0 auto; /* Center the underline */
+    border: none;
+}
+
+/* 左寄せタイトル用 */
+.section-title-left {
+    text-align: left;
+}
+
+.section-title-left h1,
+.section-title-left h2 {
+    display: block;
+    text-align: left;
+}
+
+.section-title-left .section-title-english {
+    text-align: left;
+}
+
+.section-title-left .section-title-underline {
+    margin: 0;
+}
+
+/* Reset and Base Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    background-color: #fff; /* Light mode background */
+    color: #333; /* Light mode text */
+    scroll-behavior: smooth; /* スムーズスクロールの有効化 */
+}
+
+body {
+    padding-top: 75px; /* ヘッダーの高さ分のパディングを75pxに変更 */
+}
+
+/* Service Section Specific Background */
+#service {
+    background-color: #f9f9f9; /* ライトモードのセクション背景を薄いグレーに */
+}
+html.dark #service {
+    background-color: #2d3748; /* ダークモードのセクション背景を濃いグレーに */
+}
+
+#testimonials,
+#company {
+    background-color: #f9f9f9; /* ライトモードのセクション背景を薄いグレーに */
+}
+
+html.dark #testimonials,
+html.dark #company {
+    background-color: #2d3748; /* ダークモードのセクション背景を濃いグレーに */
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+/* New Section Title Styling */
+.section-title-container {
+    text-align: center;
+    margin-bottom: 40px; /* Original spacing for the whole title block */
+}
+
+.section-title-english {
+    display: block;
+    font-size: 0.8em;
+    color: inherit; /* Inherit color from parent */
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.section-title-container h2 {
+    font-size: 2em; /* Original h2 font size */
+    margin-top: 0;
+    margin-bottom: 10px; /* Space between Japanese title and underline */
+    /* Text color is inherited from .section h2 or body */
+}
+
+.section-title-underline {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: currentColor; /* Use the current text color */
+    margin: 0 auto; /* Center the underline */
+    border: none;
+}
+
+/* Dark Mode Styles */
+html.dark body {
+    background-color: #1a202c; /* Dark mode background */
+    color: #cbd5e0; /* Dark mode text */
+}
+
+html.dark .section {
+    /* ダークモード時のセクション背景など、必要に応じて調整 */
+}
+
+html.dark a {
+    /* ダークモード時のリンク色など */
+}
+
+/* Header New Elements (Initially hidden for PC) */
+.hamburger-menu,
+.header-contact-button {
+    display: none; /* PCでは非表示 */
+}
+
+/* Header */
+#header {
+    background-color: #f8f8f8;
+    /* padding: 1em 0; */ /* 高さを固定するためコメントアウトまたは削除 */
+    height: 75px; /* ヘッダーの高さを75pxに変更 */
+    position: fixed; /* ヘッダーを固定 */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+html.dark #header {
+    background-color: #2d3748; /* Dark mode header background */
+    box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* 親要素(ヘッダー)の高さに合わせる */
+}
+
+#header .logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block; /* 画像の場合、ブロック要素化しておくと扱いやすいことがある */
+}
+
+#header .logo img {
+    max-height: 40px; /* ロゴの最大高さを指定 */
+    width: auto; /* 幅は高さに応じて自動調整 */
+    vertical-align: middle; /* 他の要素との垂直方向の配置を調整 */
+}
+
+#header nav ul {
+    display: flex;
+    gap: 20px; /* ナビゲーションアイテム間のスペース */
+}
+
+#header nav a {
+    padding: 0.5em;
+    transition: color 0.3s ease;
+}
+
+#header nav a:hover {
+    color: #007bff; /* Light mode link hover */
+}
+
+html.dark #header nav a:hover {
+    color: #63b3ed; /* Dark mode link hover */
+}
+
+/* Mobile Navigation (初期状態では非表示、JSでトグル) */
+#header nav {
+    /* モバイルではハンバーガーメニューを想定 */
+}
+
+@media (max-width: 1024px) { /* 768px から 1024px に変更 */
+    body {
+        padding-top: 50px; /* SP表示時のヘッダーの高さに合わせて調整 */
+    }
+
+    #header {
+        height: 50px; /* SP表示時のヘッダーの高さを50pxに */
+    }
+
+    #header .container {
+        position: relative; 
+        align-items: center; 
+        gap: 0; /* 個別のマージンで調整するためgapをリセット */
+    }
+
+    /* Show SP-specific elements */
+    .hamburger-menu,
+    .header-contact-button {
+        display: flex; 
+        align-items: center;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .hamburger-menu {
+        order: 3;    /* 右端に配置 */
+        width: auto; 
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0; 
+        padding: 10px 5px; /* ボタンの上下パディングを増やして高さを確保 */
+        border: none; 
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .hamburger-icon span { 
+        display: block;
+        width: 20px; 
+        height: 2px; /* 線を細く */
+        background-color: #333; 
+        margin: 4px 0; /* 線間を広げて高さを出す */
+        transition: all 0.3s ease-in-out;
+    }
+    html.dark .hamburger-icon span { 
+        background-color: #cbd5e0; 
+    }
+
+    #header .logo {
+        margin-right: auto; /* ロゴを左に寄せ、他の要素を右に押しやる */
+    }
+    #header .logo img {
+        max-height: 30px; /* SPではロゴをヘッダーに合わせて小さく調整 */
+    }
+
+    .header-contact-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;  
+        height: auto; 
+        padding: 10px 5px; /* ボタンの上下パディングを増やして高さを確保 */
+        border: none; 
+        border-radius: 0; 
+        text-decoration: none;
+        margin-right: 10px; 
+        color: #333; 
+        background-color: transparent;
+        box-sizing: border-box;
+        order: 2;    
+    }
+    html.dark .header-contact-button {
+        color: #cbd5e0; 
+    }
+    .header-contact-button .mail-icon-img {
+        width: 28px; /* アイコン画像の幅を大きくする */
+        height: auto; 
+    }
+
+    /* Hide PC nav menu items directly, an alternative to hiding .global-nav */
+    #header .global-nav > ul > li {
+         /* display: none;  This would hide them even when active. Control via .global-nav ul */
+    }
+
+    #header .global-nav ul {
+        flex-direction: column;
+        position: fixed; 
+        top: 0 !important; /* 強制的に最上部に */
+        left: 0;
+        width: 80%; 
+        max-width: 300px; 
+        height: 100vh !important; /* ビューポートの高さいっぱいに強制 */
+        background-color: #f8f8f8;
+        padding: 20px; /* 左右下のパディング */
+        padding-top: 0 !important; /* 上のパディングを強制的に0に */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1); 
+        z-index: 1001; 
+        
+        transform: translateX(-100%); 
+        visibility: hidden; 
+        transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s; 
+        
+        overflow-y: auto; 
+        box-sizing: border-box; 
+    }
+
+    html.dark #header .global-nav ul {
+        background-color: #2d3748;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.25);
+    }
+
+    #header .global-nav ul.active {
+        transform: translateX(0); /* アクティブ時に画面内にスライド */
+        visibility: visible; /* アクティブ時に表示 */
+        transition: transform 0.3s ease-in-out, visibility 0s linear 0s; /* 表示時はvisibility即時 */
+    }
+
+    #header .global-nav li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* PC nav is controlled by .global-nav > ul direct style for PC, so hide only the hamburger and contact button */
+    /* This ensures PC nav remains visible unless specifically hidden for SP */
+    /* We need to hide the PC nav links if hamburger is visible */
+    #header .global-nav {
+        display: block;
+    }
+
+    .hamburger-menu.active .hamburger-icon span:nth-child(1) { 
+        transform: translateY(6px) rotate(45deg); /* 線の中心が重なるように調整 */
+    }
+    .hamburger-menu.active .hamburger-icon span:nth-child(2) { 
+        opacity: 0;
+    }
+    .hamburger-menu.active .hamburger-icon span:nth-child(3) { 
+        transform: translateY(-6px) rotate(-45deg); /* 線の中心が重なるように調整 */
+    }
+
+    /* 最初のメニュー項目にマージントップを追加して、閉じるボタンとのスペースを確保 */
+    #header .global-nav ul li:first-of-type {
+        margin-top: 50px; /* 閉じるボタンの高さ + 少しの余白を想定して調整 */
+    }
+}
+
+/* Re-show .global-nav for PC (if it was hidden in SP block without specific class) */
+@media (min-width: 1025px) { /* 769px から 1025px に変更 */
+    .hamburger-menu,
+    .header-contact-button {
+        display: none !important; /* Ensure they are hidden on PC */
+    }
+    #header .global-nav {
+        display: flex !important; /* Ensure PC nav is visible */
+    }
+}
+
+/* Main Visual */
+#main-visual {
+    margin-top: 0; /* Ensure no top margin */
+    padding-top: 0; /* ヘッダー下の余白を削除 */
+    padding-bottom: 40px; /* 下部にも少しパディング (PC表示用に戻す) */
+    min-height: calc(100vh - 75px); /* ヘッダー分を引いたビューポート高さ */
+    background-image: url('image/mv-pc.avif');
+    background-size: cover;
+    background-position: center left; /* 'center' から 'center left' に変更 */
+    background-repeat: no-repeat;
+    display: flex; /* 中の.containerを垂直中央揃えするため */
+    align-items: center; /* 中の.containerを垂直中央揃えするため */
+}
+
+#main-visual .container {
+    width: 100%; /* 幅を100%にして、中のレイアウトで制御 */
+    max-width: 1200px; /* 最大幅を少し広げる */
+    padding-right: 0; /* 右パディングをリセット */
+    padding-left: 0; /* 左パディングをリセット */
+}
+
+.mv-layout {
+    display: flex;
+    align-items: center; /* 要素を垂直方向に中央揃え */
+    width: 100%;
+}
+
+.mv-left-illustration {
+    flex: 1.2; /* 左側のイラストエリアの幅の割合 (背景画像で調整) */
+    /* このエリアは背景画像によって視覚的に埋められる */
+    min-height: 400px; /* 内容がないため、高さを確保する例（なくてもOK） */
+}
+
+.mv-text-content {
+    flex: 0.8; /* 右側のテキストコンテンツエリアの幅の割合 */
+    padding: 20px 40px 20px 20px; /* 右側のテキストエリアのパディング */
+    text-align: left; /* テキストを左揃えに */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* テキストとロゴを左揃え */
+}
+
+#main-visual h1 {
+    color: #fff;
+    font-size: 2.0em; /* PCでのフォントサイズを小さく */
+    font-weight: bold;
+    line-height: 1.4; /* 行間を少し広げて読みやすく */
+    margin-bottom: 25px; /* キャッチコピーとボタンの間隔 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    white-space: normal; /* 複数行に対応 */
+}
+
+.mv-cta-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #FFA500; /* オレンジ色に変更 */
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* 角を丸くする */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mv-cta-button:hover,
+.mv-cta-button:focus {
+    background-color: #E69500; /* 少し濃いオレンジ色に変更 */
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* レスポンシブ対応: タブレット画面 */
+@media (max-width: 1024px) and (min-width: 601px) {
+    #main-visual {
+        background-image: url('image/mv-tb.avif'); 
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center center; /* 画像を中央に配置 */
+        height: 700px; /* 縦長にして干渉を防ぐ */
+        min-height: unset; 
+        padding-top: 0;
+        padding-bottom: 40px;
+        display: flex; 
+        flex-direction: column;
+        position: relative; 
+    }
+    .mv-layout {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
+        height: 100%; 
+        position: relative; 
+    }
+    .mv-left-illustration {
+        display: none; 
+    }
+    .mv-text-content {
+        position: absolute;
+        top: 480px; /* タブレット画面でコピーとボタンをパソコン画像の下に配置 */
+        left: 50%;
+        transform: translateX(-50%); /* X軸方向のみ中央揃え */
+        width: 90%; 
+        max-width: 500px; 
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.0); 
+        border-radius: 8px;
+        color: #fff; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        box-sizing: border-box;
+    }
+    #main-visual h1 {
+        font-size: 1.6em; /* タブレット用のフォントサイズ */
+        margin-bottom: 20px;
+        color: #fff; 
+        line-height: 1.5;
+        white-space: normal;
+    }
+    .mv-cta-button {
+        padding: 12px 28px;
+        font-size: 1.1em;
+    }
+}
+
+/* レスポンシブ対応: スマートフォン */
+@media (max-width: 600px) {
+    #main-visual {
+        background-image: url('image/mv-sp3.avif'); 
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center -80px; /* 画像の表示位置をさらに上に移動 */
+        height: 520px; 
+        min-height: unset; 
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex; 
+        flex-direction: column;
+        position: relative; 
+    }
+    .mv-layout {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
+        height: 100%; 
+        position: relative; 
+    }
+    .mv-left-illustration {
+        display: none; 
+    }
+    .mv-text-content {
+        position: absolute;
+        top: 320px; /* SP画面でコピーとボタンの位置を調整 */
+        left: 50%;
+        transform: translateX(-50%); /* X軸方向のみ中央揃え */
+        width: 90%; 
+        max-width: 400px; 
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.0); 
+        border-radius: 8px;
+        color: #fff; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        box-sizing: border-box; /* Add this to include padding in the width calculation */
+    }
+    #main-visual h1 {
+        font-size: 1.2em; 
+        margin-bottom: 15px;
+        color: #fff; 
+        line-height: 1.5; /* スマホ版でも読みやすく */
+        white-space: normal; /* キャッチコピーを折り返し表示 */
+    }
+    .mv-cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+/* Styles for very narrow screens (below 360px) */
+@media (max-width: 359px) {
+    /* #main-visual の background-size と background-position の指定を削除し、
+       max-width: 600px のスタイルを継承させることで「縮まる」現象を回避します。
+       ただし、画像の左右が見切れる可能性は残ります。 */
+    /* 
+    #main-visual {
+        background-size: contain;       // Ensure entire image is visible
+        background-position: center top; // Position contained image at the top, remove vertical offset
+    }
+    */
+    #main-visual h1 {
+        white-space: normal; /* Allow catchphrase to wrap */
+        font-size: 1.1em;    /* Slightly smaller font for better fit */
+        line-height: 1.5; /* 行間を適切に保つ */
+    }
+}
+
+/* #main-visual p は削除したので、関連スタイルも不要 (以前の残骸があれば削除) */
+
+html.dark #main-visual {
+    /* ダークモード特有のスタイルが必要であれば追加 */
+    /* 例: background-blend-mode: multiply; などで画像の雰囲気を変えるなど */
+}
+
+/* Footer */
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+html.dark #footer {
+    background-color: #1a202c;
+    border-top: 1px solid #4a5568; /* Optional: to distinguish footer in dark mode */
+}
+
+/* Service Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* デフォルトで3カラム */
+    gap: 30px; /* アイテム間の隙間 */
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: #fff; /* ライトモードのアイテム背景を白に */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Service Section - Dark Mode */
+html.dark .service-item {
+    background-color: #1a202c; /* ダークモード時のアイテム背景をより暗い色に */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+html.dark .service-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+html.dark .service-item h3 {
+    color: #e2e8f0; /* ダークモード時のタイトル文字色 */
+}
+
+html.dark .service-item p {
+    color: #a0aec0; /* ダークモード時の説明文文字色 */
+}
+
+/* Service Section Image Styles */
+.service-item img {
+    display: block; 
+    margin: 0 auto 20px auto; /* 下マージンを少し増やす */
+    max-width: 70%; /* カラム幅の70%を最大幅とする */
+    width: auto; 
+    height: auto; /* 明示的に追加 */
+}
+
+/* Service Section - Responsive */
+@media (max-width: 992px) { /* 中間サイズ (タブレットなど) */
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2カラム */
+    }
+}
+
+@media (max-width: 768px) { /* 小さいサイズ (スマートフォンなど) */
+    .service-grid {
+        grid-template-columns: 1fr; /* 1カラム */
+    }
+
+    .service-item h3 {
+        font-size: 1.3em;
+    }
+
+    .service-item p {
+        font-size: 0.9em;
+    }
+}
+
+/* Works Section */
+.works-category {
+    margin-bottom: 50px;
+}
+
+.works-category h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    text-align: left; /* カテゴリ見出しを左寄せに */
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.work-item {
+    background-color: #fff; /* ライトモードの背景 */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.work-item h4 {
+    font-size: 1.2em;
+    color: #007bff; /* タイトルカラー */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* .achievements-list と .achievements-list li のスタイルは削除 */
+
+.brand-note {
+    font-size: 0.8em; /* h4内にあるので、少し相対的に調整 */
+    color: #777;
+    margin-left: 5px; /* 少しマージン調整 */
+    font-weight: normal; /* h4の太字を継承しないように */
+    display: block; /* 必要ならブロック要素にして改行させることも可能 */
+    margin-top: 4px; /* 上のテキストとの間隔 */
+}
+
+/* Works Section - Dark Mode */
+html.dark .works-category h3 {
+    color: #e2e8f0;
+    border-bottom-color: #4a5568;
+}
+
+html.dark .work-item {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+html.dark .work-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+html.dark .work-item h4 {
+    color: #63b3ed; /* ダークモードのタイトルカラー */
+}
+
+html.dark .brand-note {
+    color: #a0aec0;
+}
+
+/* Works Section Image Styles */
+.work-item img {
+    display: block;
+    margin: 0 auto 15px auto; 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 4px; 
+}
+
+.work-item h4 {
+    margin-top: 0; 
+}
+/* 画像がないアイテムのh4の調整は、もし必要であれば別途クラスを付与するなどして行うことを推奨 */
+/* .work-item:not(:has(img)) h4 { margin-top: 15px; } */
+
+/* Works Section - Publication Info Style */
+.work-item .publication-info {
+    display: block; 
+    font-size: 0.8em; 
+    color: #555;    
+    margin-top: 5px; 
+    line-height: 1.4;
+}
+
+html.dark .work-item .publication-info {
+    color: #a0aec0; 
+}
+
+/* Works Section - Work Category Style */
+.work-item .work-category {
+    display: block; 
+    font-size: 0.8em; 
+    color: #555;    
+    margin-top: 5px; 
+    line-height: 1.4;
+}
+
+html.dark .work-item .work-category {
+    color: #a0aec0; 
+}
+
+/* Works Section - Confidentiality Notice */
+.works-notice {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.confidentiality-notice {
+    display: inline-block;
+    background: #f8f9fa;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #495057;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+}
+
+/* Works Section - Responsive */
+@media (max-width: 992px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+    .works-category h3 {
+        font-size: 1.6em;
+    }
+    .work-item h4 {
+        font-size: 1.1em;
+    }
+}
+
+/* Pricing Section */
+#pricing,
+#concept,
+#contact {
+    background-color: #e8f3ff; /* New light blue for these sections */
+}
+
+html.dark #pricing,
+html.dark #concept,
+html.dark #contact {
+    background-color: #1a2a3a; /* New dark blue for these sections in dark mode */
+}
+
+.pricing-subtitle {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+.pricing-subtitle h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    font-weight: 600;
+    margin: 0;
+}
+
+html.dark .pricing-subtitle h3 {
+    color: #63b3ed;
+}
+
+/* Additional Services (集客サポート) */
+.additional-services {
+    margin: 40px 0;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #e9ecef;
+}
+
+.additional-services h4 {
+    text-align: center;
+    font-size: 1.3em;
+    color: #fff;
+    margin: 0 0 25px 0;
+    font-weight: 600;
+    background: #0056b3; /* プレミアムプランと同じ青色 */
+    padding: 12px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pricing-service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.service-name {
+    font-weight: 500;
+    color: #495057;
+    flex: 1;
+}
+
+.service-price {
+    font-weight: 600;
+    color: #007bff;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+/* Included content styling */
+.included-content {
+    background: #28a745;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* スタンダードプランの「シンプルプラン」をシンプルプランのヘッダー色と同じ灰色に */
+.pricing-plan.standard-plan .included-content {
+    background: #6c757d; /* シンプルプランのヘッダー色と同じ */
+}
+
+/* プレミアムプランの「スタンダードプラン」をスタンダードプランのヘッダー色と同じ青色に */
+.pricing-plan.premium-plan .included-content {
+    background: #007bff; /* スタンダードプランのヘッダー色と同じ */
+}
+
+/* Plan color variations */
+/* シンプルプランの装飾を削除 - デフォルトスタイルを使用 */
+
+.standard-plan .plan-header h3 {
+    background: #007bff; /* ライトプランと同じ色 */
+}
+
+.premium-plan .plan-header h3 {
+    background: #0056b3; /* レギュラープランと同じ色 */
+}
+
+/* Maintenance notes styling */
+.maintenance-notes {
+    margin-top: 30px;
+}
+
+/* Dark mode styles */
+html.dark .additional-services {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+html.dark .additional-services h4 {
+    background: #00438a; /* ダークモード: プレミアムプランと同じ青色 */
+    color: #fff;
+}
+
+html.dark .pricing-service-item {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+html.dark .service-name {
+    color: #e2e8f0;
+}
+
+html.dark .service-price {
+    color: #63b3ed;
+}
+
+html.dark .included-content {
+    background: #38a169;
+}
+
+/* ダークモード: スタンダードプランの「シンプルプラン」をシンプルプランのヘッダー色と同じ灰色に */
+html.dark .pricing-plan.standard-plan .included-content {
+    background: #495057; /* ダークモード シンプルプランのヘッダー色と同じ */
+}
+
+/* ダークモード: プレミアムプランの「スタンダードプラン」をスタンダードプランのヘッダー色と同じ青色に */
+html.dark .pricing-plan.premium-plan .included-content {
+    background: #0062cc; /* ダークモード スタンダードプランのヘッダー色と同じ */
+}
+
+/* Dark mode plan color variations */
+/* ダークモード: シンプルプランの装飾を削除 - デフォルトスタイルを使用 */
+
+html.dark .standard-plan .plan-header h3 {
+    background: #0062cc; /* ダークモード ライトプランと同じ色 */
+}
+
+html.dark .premium-plan .plan-header h3 {
+    background: #00438a; /* ダークモード レギュラープランと同じ色 */
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.pricing-plan {
+    background-color: #fff; /* ライトモードの背景 */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.plan-header {
+    background-color: #6c757d; /* デフォルトのヘッダー背景 (グレー系) */
+    color: #fff;
+    padding: 18px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pricing-plan.starter-plan .plan-header { background-color: #6c757d; } /* スターター: 落ち着いたグレー */
+.pricing-plan.lite-plan .plan-header { background-color: #007bff; }    /* ライト: メインの青 */
+.pricing-plan.regular-plan .plan-header { background-color: #0056b3; } /* レギュラー: 少し濃い青 (おすすめ) */
+
+/* 保守運用・集客の料金表のplan-header色 */
+.pricing-plan.simple-plan .plan-header { background-color: #6c757d; }   /* シンプル: 落ち着いたグレー */
+.pricing-plan.standard-plan .plan-header { background-color: #007bff; } /* スタンダード: ライトプランと同じ青 */
+.pricing-plan.premium-plan .plan-header { background-color: #0056b3; }  /* プレミアム: レギュラープランと同じ青 */
+
+.plan-header h3 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.plan-price {
+    padding: 25px 20px;
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-price .price-amount {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #007bff; /* 金額の色をメインの青に */
+}
+
+.pricing-plan.starter-plan .plan-price .price-amount {
+    color: #6c757d; /* スタータープランのヘッダー背景色と同じ */
+}
+
+.pricing-plan.regular-plan .plan-price .price-amount {
+    color: #0056b3; /* レギュラープランのヘッダー背景色と同じ */
+}
+
+/* 保守運用・集客プランの価格色をplan-headerと同じ色に設定 */
+.pricing-plan.simple-plan .plan-price .price-amount {
+    color: #6c757d; /* シンプルプランのヘッダー背景色と同じ */
+}
+
+.pricing-plan.standard-plan .plan-price .price-amount {
+    color: #007bff; /* スタンダードプランのヘッダー背景色と同じ */
+}
+
+.pricing-plan.premium-plan .plan-price .price-amount {
+    color: #0056b3; /* プレミアムプランのヘッダー背景色と同じ */
+}
+
+.plan-description {
+    padding: 10px 20px 5px 20px; /* 下パディングを調整 */
+    font-size: 0.95em;
+    color: #555;
+    min-height: 40px; /* 高さを調整 */
+    font-weight: bold; /* テキストを太字に */
+}
+
+.plan-features {
+    list-style: none;
+    padding: 5px 25px 25px 25px; /* 上のパディングをさらに調整 */
+    margin: 0;
+    text-align: left;
+    flex-grow: 1; /* プラン全体の高さが揃うように */
+}
+
+.plan-features li {
+    padding: 12px 0 12px 30px; /* 左にスペースを確保 */
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9em;
+    color: #444;
+    text-align: left; /* テキストを左揃えにする */
+    position: relative; /* ::before疑似要素の基準点 */
+}
+
+.plan-features li::before {
+    content: '✔'; /* チェックマーク */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff; /* チェックマークの色 */
+    font-size: 1.2em; /* チェックマークのサイズ */
+}
+
+.plan-features li.not-included {
+    color: #aaa;
+    /* font-style: italic; */ /* 必要に応じてイタリック解除 */
+}
+
+.plan-features li.not-included::before {
+    content: '✖'; /* Xマーク */
+    color: #aaa; /* Xマークの色 */
+}
+
+.plan-features li.not-included .feature-name-muted {
+    font-style: italic;
+}
+
+.plan-features sup {
+    font-size: 0.7em;
+    color: #007bff;
+    margin-left: 2px;
+}
+
+.pricing-notes {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.85em;
+    color: #555; /* 通常時の文字色を少し濃く調整 */
+    margin-top: 40px; /* 上のグリッドとのマージン */
+}
+
+.pricing-notes li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Pricing Section - Dark Mode */
+html.dark .pricing-plan {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+html.dark .pricing-plan:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+html.dark .plan-header { /* ヘッダーの文字色は白なので背景色のみ調整 */
+    /* 個別のプランヘッダー色は維持 */
+}
+html.dark .pricing-plan.starter-plan .plan-header { background-color: #495057; }
+html.dark .pricing-plan.lite-plan .plan-header { background-color: #0062cc; }
+html.dark .pricing-plan.regular-plan .plan-header { background-color: #00438a; }
+
+/* ダークモード: 保守運用・集客の料金表のplan-header色 */
+html.dark .pricing-plan.simple-plan .plan-header { background-color: #495057; }  /* シンプル: ダークグレー */
+html.dark .pricing-plan.standard-plan .plan-header { background-color: #0062cc; } /* スタンダード: ダークモード ライトプランと同じ青 */
+html.dark .pricing-plan.premium-plan .plan-header { background-color: #00438a; }  /* プレミアム: ダークモード レギュラープランと同じ青 */
+
+html.dark .plan-price {
+    color: #e2e8f0;
+    border-bottom-color: #4a5568;
+}
+html.dark .plan-price .price-amount { color: #63b3ed; }
+html.dark .pricing-plan.regular-plan .plan-price .price-amount { color: #81c7f5; }
+
+/* ダークモード: 保守運用・集客プランの価格色をplan-headerと同じ色に設定 */
+html.dark .pricing-plan.simple-plan .plan-price .price-amount {
+    color: #9ca3af; /* ダークモード シンプルプランのヘッダー背景色に対応 */
+}
+
+html.dark .pricing-plan.standard-plan .plan-price .price-amount {
+    color: #63b3ed; /* ダークモード スタンダードプランのヘッダー背景色に対応 */
+}
+
+html.dark .pricing-plan.premium-plan .plan-price .price-amount {
+    color: #81c7f5; /* ダークモード プレミアムプランのヘッダー背景色に対応 */
+}
+
+html.dark .plan-description { color: #a0aec0; }
+html.dark .plan-features li {
+    border-bottom-color: #374151;
+    color: #cbd5e0;
+}
+html.dark .plan-features li:first-child {
+    border-top-color: #374151; /* ダークモード時の最初の項目の上線色 */
+}
+html.dark .plan-features li.not-included { color: #718096; }
+html.dark .plan-features sup { color: #63b3ed; }
+
+html.dark .pricing-notes {
+    color: #b0bec5; /* ダークモード時の文字色を調整 */
+}
+
+/* Pricing Section - Responsive */
+@media (max-width: 992px) { /* タブレット */
+    .pricing-grid {
+        grid-template-columns: 1fr; /* 1カラムにして縦に並べる */
+    }
+    .pricing-plan {
+        margin-bottom: 30px; /* 各プラン間のマージン */
+    }
+    .pricing-grid > .pricing-plan:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) { /* スマートフォン */
+    .plan-header h3 { font-size: 1.4em; }
+    .plan-price .price-amount { font-size: 2em; }
+    .plan-features li { font-size: 0.85em; padding: 10px 0 10px 30px; }
+    .pricing-notes { font-size: 0.8em; }
+    
+    /* Additional Services (集客サポート) - Responsive */
+    .additional-services {
+        padding: 20px 15px; /* パディングを小さく */
+        margin: 30px 0; /* マージンを小さく */
+    }
+    
+    .additional-services h4 {
+        font-size: 1.1em; /* フォントサイズを小さく */
+        padding: 10px 15px; /* パディングを小さく */
+    }
+    
+    .pricing-service-item {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: flex-start; /* 左揃えに変更 */
+        padding: 12px 15px; /* パディングを小さく */
+        gap: 8px; /* サービス名と価格の間にスペース */
+    }
+    
+    .service-name {
+        margin-bottom: 5px; /* 下にマージンを追加 */
+        font-size: 0.9em; /* フォントサイズを少し小さく */
+    }
+    
+    .service-price {
+        margin-left: 0; /* 左マージンをリセット */
+        font-size: 0.95em; /* フォントサイズを少し小さく */
+        font-weight: bold; /* 価格を強調 */
+    }
+}
+
+/* Contact Section */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+.contact-form-container {
+    max-width: 700px; /* フォームの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    background-color: #f7faff; /* Very light blue, distinct from section bg */
+    padding: 30px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.form-note {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.required-asterisk {
+    color: #e74c3c; /* 赤色で必須マーク */
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* フォーカス時のボーダー色 */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-group textarea {
+    resize: vertical; /* 縦方向のみリサイズ可能 */
+    min-height: 120px;
+}
+
+.form-submit-group {
+    text-align: center; /* 送信ボタンを中央に */
+    margin-top: 30px;
+}
+
+.contact-submit-button {
+    padding: 12px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #007bff; /* メインの青 */
+    color: white;
+    border: none;
+    border-radius: 50px; /* 角を丸くする */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-submit-button:hover,
+.contact-submit-button:focus {
+    background-color: #0056b3; /* ホバー時の色 */
+    transform: translateY(-2px);
+}
+
+/* Contact Section - Dark Mode */
+html.dark .contact-intro { color: #c5cae9; }
+html.dark .contact-form-container {
+    background-color: #20344a; /* Slightly lighter blue than dark section bg */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+html.dark .form-note { color: #a0aec0; }
+html.dark .form-group label { color: #e2e8f0; }
+html.dark .form-group input[type="text"],
+html.dark .form-group input[type="email"],
+html.dark .form-group textarea {
+    background-color: #1a202c;
+    border-color: #4a5568;
+    color: #e2e8f0;
+    font-size: 0.9em;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+html.dark .form-group input[type="text"]::placeholder,
+html.dark .form-group input[type="email"]::placeholder,
+html.dark .form-group textarea::placeholder {
+    color: #718096;
+}
+html.dark .form-group input[type="text"]:focus,
+html.dark .form-group input[type="email"]:focus,
+html.dark .form-group textarea:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 0.2rem rgba(99,179,237,.25);
+}
+html.dark .contact-submit-button {
+    background-color: #63b3ed;
+    color: #1a202c;
+}
+html.dark .contact-submit-button:hover,
+html.dark .contact-submit-button:focus {
+    background-color: #4299e1;
+    color: #1a202c; /* ホバー時の文字色を明示 */
+}
+
+/* フォームメッセージ */
+.form-messages {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.form-messages.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.form-messages.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* フィールドエラー */
+.field-error {
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
+}
+
+/* ローディング状態 */
+.contact-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button-loading {
+    display: inline-block;
+}
+
+/* フォームエラー一覧 */
+.form-errors {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #721c24;
+}
+
+.form-errors ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.form-errors li {
+    margin-bottom: 5px;
+}
+
+/* Thanks Page Styles */
+.thanks-content {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.thanks-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.thanks-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.thanks-content .btn {
+    display: inline-block;
+    padding: 12px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.thanks-content .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,123,255,0.4);
+}
+
+/* Contact Section - Responsive */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+    .contact-submit-button {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+    .form-messages {
+        margin: 0 20px 20px 20px;
+        padding: 12px;
+    }
+    
+    /* Thanks Page - Mobile */
+    .thanks-content {
+        padding: 30px 15px;
+    }
+    
+    .thanks-content h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    
+    .thanks-content p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    
+    .thanks-content .btn {
+        padding: 10px 30px;
+        font-size: 1em;
+    }
+}
+
+/* Testimonials Section */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* デフォルトで2カラム */
+    gap: 30px; /* アイテム間の隙間 */
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    flex: 1 1 250px; /* 最小幅250pxでフレックス */
+    margin: 10px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* 画像の角丸を適用するため */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+    
+.testimonial-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* border-bottom: 1px solid #eee; */ /* 画像下の区切り線を削除 */
+}
+
+html.dark .testimonial-item {
+    background: #2d3748;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    border-color: #4a5568;
+}
+
+@media (max-width: 768px) { /* スマートフォン */
+    .testimonial-grid {
+        grid-template-columns: 1fr; /* 1列に */
+    }
+    .testimonial-item {
+        max-width: none; /* 最大幅の制限を解除 */
+    }
+}
+
+/* Blog Section */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.blog-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.blog-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-item:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-date {
+    display: block;
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.blog-excerpt {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Blog Section - Dark Mode */
+html.dark .blog-item {
+    background-color: #2d3748;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+html.dark .blog-item:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+}
+
+html.dark .blog-date {
+    color: #a0aec0;
+}
+
+html.dark .blog-title {
+    color: #e2e8f0;
+}
+
+html.dark .blog-excerpt {
+    color: #cbd5e0;
+}
+
+/* Blog Section - Responsive */
+@media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-title {
+        font-size: 1em;
+    }
+}
+
+/* Flow Section */
+.flow-steps-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px; /* ステップ間の隙間 */
+    align-items: start; /* 上揃え */
+}
+
+.flow-step {
+    text-align: center; /* テキストを中央揃え */
+    position: relative; /* 番号の配置基準 */
+}
+
+.flow-step-image {
+    width: 100%;
+    max-width: 150px; /* 画像の最大幅を制限 */
+    height: auto;
+    margin: 0 auto 15px; /* 中央揃えと下にマージン */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flow-step-number-wrapper {
+    /* Absolute positioning is no longer needed in this layout */
+}
+
+.flow-step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flow-step-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #0056b3; /* 見出しの色を濃い青に */
+}
+
+.flow-step-content p {
+    font-size: 0.9em;
+    text-align: left; /* 説明文は左揃えの方が見やすい */
+}
+
+.flow-notes {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-top: 10px;
+    text-align: left;
+}
+
+html.dark .flow-step-image {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+html.dark .flow-step-number {
+    background-color: #63b3ed;
+}
+
+html.dark .flow-step-content h3 {
+    color: #90cdf4; /* ダークモードでの見出し色 */
+}
+
+html.dark .flow-step-content p {
+    color: #cbd5e0;
+}
+
+html.dark .flow-notes {
+    color: #a0aec0;
+}
+
+@media (max-width: 992px) { /* タブレット */
+    .flow-steps-container {
+        grid-template-columns: repeat(2, 1fr); /* 2カラム */
+    }
+}
+
+@media (max-width: 576px) { /* スマートフォン */
+    .flow-steps-container {
+        grid-template-columns: 1fr; /* 1カラム */
+    }
+}
+
+/* Company Information Section */
+.company-info-layout {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.company-info-table {
+    width: 100%;
+    max-width: 800px;
+}
+
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.company-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.company-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    background-color: #fff;
+    padding: 20px 25px;
+    font-weight: bold;
+    color: #333;
+    vertical-align: top;
+    width: 30%;
+    min-width: 120px;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.info-value {
+    background-color: #fff;
+    padding: 20px 25px;
+    color: #555;
+    vertical-align: top;
+    line-height: 1.7;
+    font-size: 0.95em;
+}
+
+.business-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.business-list li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.business-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.business-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Company Information Section - Dark Mode */
+html.dark .company-table {
+    background-color: #2d3748;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+html.dark .company-table tr {
+    border-bottom-color: #4a5568;
+}
+
+html.dark .info-label {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+html.dark .info-value {
+    background-color: #2d3748;
+    color: #cbd5e0;
+}
+
+html.dark .business-list li::before {
+    color: #63b3ed;
+}
+
+/* Company Information Section - Responsive */
+@media (max-width: 992px) {
+    /* タブレット表示での調整 */
+    .company-info-layout {
+        margin-top: 40px;
+        padding: 0; /* パディングを削除してcontainerに任せる */
+    }
+    
+    .company-info-table {
+        width: 100%;
+        max-width: 800px; /* PC表示と同じmax-widthを維持 */
+    }
+    
+    .info-label {
+        font-size: 0.9em;
+        padding: 18px 22px;
+        width: 35%; /* タブレットでもラベル幅を維持 */
+    }
+    
+    .info-value {
+        font-size: 0.9em;
+        padding: 18px 22px;
+    }
+    
+    .business-list li {
+        font-size: 0.9em;
+        line-height: 1.7;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+    /* スマホ表示での幅調整 - PC画面のように一つの表として表示 */
+    .company-info-layout {
+        margin-top: 30px;
+        padding: 0; /* パディングを削除してcontainerに任せる */
+    }
+    
+    .company-info-table {
+        width: 100%;
+        max-width: 800px; /* PC表示と同じmax-widthを維持 */
+    }
+    
+    .company-table {
+        /* tableレイアウトを維持 */
+        display: table;
+        width: 100%;
+    }
+    
+    .company-table tr {
+        /* trも通常のtable-rowとして表示 */
+        display: table-row;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .company-table tr:last-child {
+        border-bottom: none;
+    }
+    
+    .company-table td {
+        /* tdも通常のtable-cellとして表示 */
+        display: table-cell;
+    }
+    
+    .info-label {
+        width: 35%; /* スマホでも項目名の幅を維持 */
+        padding: 16px 12px; /* パディングを少し縮小 */
+        font-size: 0.85em;
+        background-color: #fff;
+        font-weight: 600;
+        vertical-align: top;
+    }
+    
+    .info-value {
+        padding: 16px 12px; /* パディングを統一 */
+        font-size: 0.85em;
+        background-color: #fff;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.6;
+        vertical-align: top;
+    }
+    
+    .business-list {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .business-list li {
+        font-size: 0.8em;
+        padding-left: 16px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.7;
+        margin-bottom: 8px;
+        white-space: normal;
+    }
+    
+    .business-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #007bff;
+        font-weight: bold;
+    }
+    
+    .business-list li:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* ダークモード対応 */
+    html.dark .company-table {
+        background-color: #2d3748;
+    }
+    
+    html.dark .company-table tr {
+        border-bottom-color: #4a5568;
+    }
+    
+    html.dark .info-label {
+        background-color: #2d3748;
+    }
+    
+    html.dark .info-value {
+        background-color: #2d3748;
+    }
+}
+
+/* 極小画面サイズ（360px以下）での追加調整 */
+@media (max-width: 360px) {
+    .company-info-layout {
+        padding: 0; /* containerに任せる */
+    }
+    
+    .info-label {
+        padding: 12px 8px;
+        font-size: 0.8em;
+        width: 35%; /* 幅を維持 */
+    }
+    
+    .info-value {
+        padding: 12px 8px;
+        font-size: 0.8em;
+    }
+    
+    .business-list li {
+        font-size: 0.75em;
+        padding-left: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* Partner Section (プロジェクトパートナー企業様一覧) */
+.partner-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.partner-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.partner-item {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.partner-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.partner-logo-container a {
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.partner-logo-container a:hover {
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+.partner-logo {
+    max-width: 250px;
+    height: auto;
+    display: block;
+}
+
+.partner-info {
+    text-align: center;
+}
+
+.partner-company-name {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.partner-description {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Partner Section - Dark Mode */
+html.dark .partner-title {
+    color: #e2e8f0;
+}
+
+html.dark .partner-company-name {
+    color: #e2e8f0;
+}
+
+html.dark .partner-description {
+    color: #cbd5e0;
+}
+
+/* Partner Section - Responsive */
+@media (max-width: 768px) {
+    .partner-section {
+        margin-top: 40px;
+        padding: 30px 0;
+    }
+    
+    .partner-title {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+    
+    .partner-logo {
+        max-width: 200px;
+    }
+    
+    .partner-company-name {
+        font-size: 1.2em;
+    }
+    
+    .partner-description {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 360px) {
+    .partner-logo {
+        max-width: 180px;
+    }
+    
+    .partner-company-name {
+        font-size: 1.1em;
+    }
+}
+
+/* Company Greeting Section */
+.company-greeting-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.greeting-text {
+    flex: 1; /* テキストエリアの幅の割合を1に変更 */
+    line-height: 1.8;
+    color: #333;
+}
+
+.greeting-text p {
+    margin-bottom: 1.5em;
+    font-size: 0.95em; /* 少し小さめにして読みやすく */
+}
+
+.greeting-text p:last-child {
+    margin-bottom: 0;
+}
+
+.greeting-image {
+    flex: 1; /* 画像エリアの幅の割合を1に維持 */
+    text-align: center; /* 画像を中央寄せ (コンテナ幅より小さい場合) */
+}
+
+.greeting-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* 画像に角丸 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Company Greeting Section - Dark Mode */
+html.dark .greeting-text {
+    color: #cbd5e0;
+}
+
+html.dark .greeting-image img {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Company Greeting Section - Responsive */
+@media (max-width: 992px) { /* タブレットなど */
+    .company-greeting-layout {
+        gap: 30px;
+    }
+    .greeting-text {
+        flex: 1; /* タブレットでもテキストエリアの幅の割合を1に */
+    }
+}
+
+@media (max-width: 768px) { /* スマートフォン */
+    .company-greeting-layout {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center; /* 中央揃え */
+    }
+    .greeting-text {
+        order: 2; /* テキストを画像の下に */
+        margin-top: 30px;
+        text-align: left; /* スマホでは左寄せ */
+    }
+    .greeting-text p {
+        font-size: 0.9em;
+    }
+    .greeting-image {
+        order: 1; /* 画像を先に */
+        max-width: 300px; /* スマホでの画像最大幅 */
+        margin: 0 auto;
+    }
+}
+
+/* Concept Section */
+/* #concept { */
+    /* padding-top: 0; */ /* グローバルな設定は削除済みの想定 */
+/* } */
+
+#concept .container {
+    /* 既存の .container スタイルに依存 */
+}
+
+.concept-layout {
+    display: flex;
+    align-items: center; /* 垂直方向中央揃え */
+    gap: 40px; /* テキストと画像の間の隙間 */
+    margin-top: 0; /* セクション直下に配置されるため、上マージンは0に */
+}
+
+.concept-text {
+    flex: 1; /* テキストエリアの幅の割合を1に変更 */
+}
+
+#concept .concept-text h2 {
+    text-align: left; /* コンセプト内の見出しは左揃え */
+    margin-bottom: 20px; 
+    font-size: 1.8em; 
+}
+
+#concept .concept-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 0; /* Remove default bottom margin if not needed */
+}
+
+.concept-image {
+    flex: 1; 
+    text-align: center; 
+}
+
+.concept-image img {
+    max-width: 100%;
+    height: auto;
+    /* border-radius: 8px; */ /* Removed */
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */ /* Removed */
+}
+
+/* Concept Section - Dark Mode */
+html.dark .concept-image img {
+    /* box-shadow: 0 4px 8px rgba(255,255,255,0.05); */ /* Removed */
+}
+
+/* Concept Section Styles */
+/* #concept individual background color rules removed to allow group selector to apply */
+/* #concept {
+    background-color: #e0f7fa; 
+}
+
+html.dark #concept {
+    background-color: #1c3a4e; 
+} */
+
+#concept .concept-text h2 {
+    color: #003366; /* 濃い青 */
+    /* 他のスタイルは既存の .section h2 や #concept .concept-text h2 から継承 */
+}
+
+#concept .concept-text h2 .highlight {
+    color: #ff6600; /* オレンジ */
+}
+
+/* Concept Section - Responsive */
+@media (max-width: 768px) {
+    #concept {
+        padding-top: 40px; /* SP表示時に他のセクションと同様の上部パディングを設定 */
+    }
+    .concept-layout {
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .concept-text {
+        order: 1; 
+        /* text-align: center;  SPではテキスト全体を中央揃えにしないので削除 */
+    }
+    
+    #concept .concept-text h2 {
+        text-align: center; /* SPでは見出しのみ中央揃え */
+        font-size: 1.6em;
+    }
+
+    #concept .concept-text p {
+        font-size: 0.9em;
+        text-align: left; /* SPでも説明文は左寄せ */
+    }
+
+    .concept-image {
+        order: 2; 
+        width: 100%; /* コンテナの幅いっぱいに設定 */
+    }
+    .concept-image img {
+        width: 100%; /* 画像自体も親要素の幅いっぱいに */
+    }
+
+    /* #concept {
+        padding-top: 0; */ /* SP表示時のみ上部パディングを削除 */
+    /* } */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 80%;
+    max-height: 80vh;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal-button:hover,
+.close-modal-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 特定商取引法ページ Styles */
+.tokusho-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tokusho-intro {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.tokusho-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3em;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tokusho-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tokusho-table tr:last-child {
+    border-bottom: none;
+}
+
+.tokusho-table .info-label {
+    width: 30%;
+    padding: 1.5em 1em;
+    background-color: #f8f9fa;
+    font-weight: bold;
+    vertical-align: top;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.tokusho-table .info-value {
+    padding: 1.5em 1em;
+    color: #555;
+    line-height: 1.8;
+}
+
+.tokusho-list {
+    list-style: disc;
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.tokusho-list li {
+    margin-bottom: 0.5em;
+    list-style: disc;
+}
+
+.tokusho-link {
+    color: #007bff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.tokusho-link:hover {
+    color: #0056b3;
+}
+
+.tokusho-footer {
+    text-align: center;
+    padding: 2em 1em;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.tokusho-updated {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.tokusho-note {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+
+.tokusho-back-link {
+    text-align: center;
+    margin-top: 3em;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
+
+.footer-links {
+    margin-bottom: 0.5em;
+}
+
+.footer-copyright {
+    margin-top: 0.5em;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .tokusho-table {
+        display: block;
+    }
+
+    .tokusho-table tr {
+        display: block;
+        margin-bottom: 1.5em;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tokusho-table .info-label {
+        display: block;
+        width: 100%;
+        padding: 1em;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tokusho-table .info-value {
+        display: block;
+        width: 100%;
+        padding: 1em;
+    }
+
+    .tokusho-intro {
+        font-size: 1em;
+    }
+}
+
+/* プライバシーポリシーページ用スタイル */
+.privacy-section {
+    margin-bottom: 3em;
+}
+
+h2.privacy-heading {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #007bff;
+    text-align: left;
+}
+
+.privacy-text {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1em;
+}
+
+.contact-box {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-top: 1em;
+}
+
+.contact-box p {
+    margin-bottom: 0.5em;
+    line-height: 1.8;
+}
+
+.contact-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    h2.privacy-heading {
+        font-size: 1.2em;
+    }
+
+    .privacy-text {
+        font-size: 0.95em;
+    }
+
+    .contact-box {
+        padding: 1em;
+    }
+} 
