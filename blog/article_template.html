@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | 株式会社ミアキス</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/{{SLUG}}.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/{{SLUG}}.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{TITLE}}",
+        "description": "{{DESCRIPTION}}",
+        "image": "https://www.miakiss.co.jp/image/ogp.png",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v3.avif"
+            }
+        },
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE}}"
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-date { display: block; font-size: 0.9em; color: #999; margin-bottom: 15px; }
+        .article-title { font-size: 2em; color: #333; line-height: 1.4; margin-bottom: 20px; }
+        .article-content { line-height: 1.9; color: #333; }
+        .article-content h2 { font-size: 1.5em; color: #007bff; margin-top: 50px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007bff; }
+        .article-content h3 { font-size: 1.2em; color: #333; margin-top: 30px; margin-bottom: 15px; }
+        .article-content p { margin-bottom: 1.5em; font-size: 1em; }
+        .article-content ul, .article-content ol { margin: 20px 0; padding-left: 30px; }
+        .article-content li { margin-bottom: 12px; line-height: 1.8; }
+        .article-content blockquote { background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 20px; margin: 30px 0; }
+        .article-content strong { color: #007bff; }
+        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 50px 0; }
+        .article-cta h3 { font-size: 1.5em; margin-bottom: 15px; color: #fff; }
+        .article-cta p { margin-bottom: 25px; font-size: 1.1em; color: #fff; }
+        .article-cta .btn { display: inline-block; background-color: #fff; color: #667eea; padding: 12px 35px; border-radius: 50px; font-weight: bold; text-decoration: none; }
+        .article-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; text-align: center; }
+        .back-to-blog { color: #007bff; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.5em; }
+            .article-content h2 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="../index.html"><img src="../image/logo_v3.avif" alt="株式会社ミアキス"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="../index.html#service">サービス</a></li>
+                    <li><a href="../index.html#works">実績</a></li>
+                    <li><a href="../index.html#pricing">料金プラン</a></li>
+                    <li><a href="../index.html#testimonials">お客様の声</a></li>
+                    <li><a href="../index.html#flow">制作の流れ</a></li>
+                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../index.html#company">会社概要</a></li>
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html#contact" class="header-contact-button">
+                <img src="../image/mail.avif" alt="お問い合わせ" class="mail-icon-img">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <div class="article-header">
+                <time class="article-date" datetime="{{DATE}}">{{DATE_DISPLAY}}</time>
+                <h1 class="article-title">{{TITLE}}</h1>
+            </div>
+
+            <div class="article-content">
+                {{CONTENT}}
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="../index.html#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <div class="article-footer">
+                <a href="../index.html#blog" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

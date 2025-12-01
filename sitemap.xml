@@ -255,7 +255,31 @@
         </image:image>
     </url>
     
+    <!-- お問い合わせ完了ページ -->
+    <url>
+        <loc>https://miakiss.com/thanks.html</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        
+        <image:image>
+            <image:loc>https://miakiss.com/image/logo_v3.avif</image:loc>
+            <image:title>株式会社ミアキス ロゴ</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://miakiss.com/image/mail.avif</image:loc>
+            <image:title>お問い合わせアイコン</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://miakiss.com/image/icon.avif</image:loc>
+            <image:title>ファビコン</image:title>
+        </image:image>
+    </url>
+    
 </urlset>
+
+
+
 
 
 

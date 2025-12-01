@@ -1,0 +1,59 @@
+name: Deploy Blog to Xserver
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'blog/**'
+      - 'index.html'
+      - 'sitemap.xml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 lxml
+
+      - name: Update index.html blog section
+        run: python scripts/update_index.py
+
+      - name: Update sitemap.xml
+        run: python scripts/update_sitemap.py
+
+      - name: Commit changes if any
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add index.html sitemap.xml
+          git diff --staged --quiet || git commit -m "Auto-update index.html and sitemap.xml"
+
+      - name: Deploy to Xserver via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            **/scripts/**
+            **/*.md
+            **/.cursorrules

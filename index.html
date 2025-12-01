@@ -38,6 +38,15 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17728958495"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17728958495');
+    </script>
+
     <!-- Google reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV"></script>
 
@@ -724,6 +733,13 @@
                     </div>
                 </div>
                 
+                <!-- 比較ビズ認定企業バナー -->
+                <div class="bizmatching-banner" style="text-align: center; margin: 40px 0;">
+                    <a href="https://www.biz.ne.jp/company/miakiss/" target="_blank" rel="noopener noreferrer">
+                        <img width="240" height="165" src="https://www.biz.ne.jp/common/img/biz_partner_type1.png" alt="ビジネスマッチングサイト「比較ビズ」認定企業">
+                    </a>
+                </div>
+                
                 <!-- プロジェクトパートナー企業様一覧 -->
                 <div class="partner-section">
                     <h3 class="partner-title">プロジェクトパートナー企業様一覧</h3>
@@ -931,12 +947,16 @@
                 const data = await response.json();
                 
                 if (data.success) {
-                    showMessage(data.message, 'success');
-                    contactForm.reset();
-                    await getCSRFToken(); // 新しいトークンを取得
-                    
-                    // 成功メッセージにフォーカス（ページ遷移なし）
-                    formMessages.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // サンクスページへリダイレクト
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        // リダイレクト先が指定されていない場合は従来の動作
+                        showMessage(data.message, 'success');
+                        contactForm.reset();
+                        await getCSRFToken();
+                        formMessages.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
                 } else {
                     if (data.errors && Object.keys(data.errors).length > 0) {
                         showErrors(data.errors);
