@@ -255,6 +255,58 @@
         </image:image>
     </url>
     
+    <!-- ブログ記事：ホームページの保守契約は本当に必要？ -->
+    <url>
+        <loc>https://miakiss.com/blog/2025-12-01-website-maintenance-contract-necessity.html</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <image:image>
+            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
+            <image:title>ホームページの保守契約は本当に必要？放置のリスクと判断基準</image:title>
+        </image:image>
+    </url>
+    
+    <!-- ブログ記事：Web担当者がいない中小企業はどうすべき？ -->
+    <url>
+        <loc>https://miakiss.com/blog/2025-12-02-sme-without-web-manager.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <image:image>
+            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
+            <image:title>Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準</image:title>
+        </image:image>
+    </url>
+    
+    <!-- ブログ記事：Web制作はフリーランスと制作会社どちらに頼むべき？ -->
+    <url>
+        <loc>https://miakiss.com/blog/2025-12-03-freelance-vs-web-agency.html</loc>
+        <lastmod>2025-12-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <image:image>
+            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
+            <image:title>Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方</image:title>
+        </image:image>
+    </url>
+    
+    <!-- ブログ記事：ホームページのバックアップ、取っていますか？ -->
+    <url>
+        <loc>https://miakiss.com/blog/2025-12-04-website-backup-importance.html</loc>
+        <lastmod>2025-12-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <image:image>
+            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
+            <image:title>ホームページのバックアップ、取っていますか？放置が招く悲劇と今すぐできる対策</image:title>
+        </image:image>
+    </url>
+    
     <!-- お問い合わせ完了ページ -->
     <url>
         <loc>https://miakiss.com/thanks.html</loc>
