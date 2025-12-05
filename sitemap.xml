@@ -1,337 +1,366 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:ns1="http://www.google.com/schemas/sitemap-image/1.1">
     
-    <!-- トップページ -->
+    
     <url>
         <loc>https://miakiss.com/</loc>
         <lastmod>2025-11-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         
-        <!-- ロゴ・ヘッダー画像 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/logo_v3.avif</image:loc>
-            <image:title>株式会社ミアキス ロゴ</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/mail.avif</image:loc>
-            <image:title>お問い合わせアイコン</image:title>
-        </image:image>
         
-        <!-- コンセプト -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/concept.avif</image:loc>
-            <image:title>継続成長をサポートするコンセプト</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/logo_v3.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス ロゴ</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/mail.avif</ns1:loc>
+            <ns1:title>お問い合わせアイコン</ns1:title>
+        </ns1:image>
         
-        <!-- サービス画像 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/service1.avif</image:loc>
-            <image:title>ホームページ制作サービス</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/service2.avif</image:loc>
-            <image:title>保守・運用サービス</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/service3.avif</image:loc>
-            <image:title>Web集客サポートサービス</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/service4.avif</image:loc>
-            <image:title>Webデザイン制作サービス</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/service5.avif</image:loc>
-            <image:title>ECサイト制作サービス</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/service6.avif</image:loc>
-            <image:title>Web広告運用サービス</image:title>
-        </image:image>
         
-        <!-- 実績画像 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site15.avif</image:loc>
-            <image:title>制作実績：東京ガスライフバル様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site14.avif</image:loc>
-            <image:title>制作実績：株式会社TITAN様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site13.avif</image:loc>
-            <image:title>制作実績：エンジニア案件紹介サイト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site12.avif</image:loc>
-            <image:title>制作実績：MuuCoffee様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site11.avif</image:loc>
-            <image:title>制作実績：合同会社MKメディカル様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site10.avif</image:loc>
-            <image:title>制作実績：有限会社エルドシック様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site09.avif</image:loc>
-            <image:title>制作実績：SOULMATE∞様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site06.avif</image:loc>
-            <image:title>制作実績：matchie(マッチェ)様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site07.avif</image:loc>
-            <image:title>制作実績：株式会社ほくたい様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site08.avif</image:loc>
-            <image:title>制作実績：株式会社中谷加工所様</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site01.avif</image:loc>
-            <image:title>制作実績：ホテルサイト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site02.avif</image:loc>
-            <image:title>制作実績：美容室サイト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site03.avif</image:loc>
-            <image:title>制作実績：ベーカリーサイト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-site04.avif</image:loc>
-            <image:title>制作実績：コーポレートサイト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-ec02.avif</image:loc>
-            <image:title>EC実績：ベストバイ受賞</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/bestbuy.avif</image:loc>
-            <image:title>ベストバイ受賞詳細：Poco'ce掲載</image:title>
-            <image:caption>Poco'ce 6月号(2024年5月25日発行)掲載のベストバイ受賞画像</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-ec03.avif</image:loc>
-            <image:title>EC実績：Calches（自社ブランド）</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-ec04.avif</image:loc>
-            <image:title>EC実績：Mendel（自社ブランド）</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-ec05.avif</image:loc>
-            <image:title>EC実績：Mirai Range（自社ブランド）</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/concept.avif</ns1:loc>
+            <ns1:title>継続成長をサポートするコンセプト</ns1:title>
+        </ns1:image>
         
-        <!-- お客様の声 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/review01.avif</image:loc>
-            <image:title>お客様の声 1</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review02.avif</image:loc>
-            <image:title>お客様の声 2</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review03.avif</image:loc>
-            <image:title>お客様の声 3</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review04.avif</image:loc>
-            <image:title>お客様の声 4</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review05.avif</image:loc>
-            <image:title>お客様の声 5</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review06.avif</image:loc>
-            <image:title>お客様の声 6</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review07.avif</image:loc>
-            <image:title>お客様の声 7</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/review08.avif</image:loc>
-            <image:title>お客様の声 8</image:title>
-        </image:image>
         
-        <!-- 制作の流れ -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/flow01.avif</image:loc>
-            <image:title>制作の流れ：ヒアリング</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/flow02.avif</image:loc>
-            <image:title>制作の流れ：ご提案・お見積り</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/flow03.avif</image:loc>
-            <image:title>制作の流れ：制作開始</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/flow04.avif</image:loc>
-            <image:title>制作の流れ：納品</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/flow05.avif</image:loc>
-            <image:title>制作の流れ：アフターフォロー</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service1.avif</ns1:loc>
+            <ns1:title>ホームページ制作サービス</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service2.avif</ns1:loc>
+            <ns1:title>保守・運用サービス</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service3.avif</ns1:loc>
+            <ns1:title>Web集客サポートサービス</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service4.avif</ns1:loc>
+            <ns1:title>Webデザイン制作サービス</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service5.avif</ns1:loc>
+            <ns1:title>ECサイト制作サービス</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/service6.avif</ns1:loc>
+            <ns1:title>Web広告運用サービス</ns1:title>
+        </ns1:image>
         
-        <!-- 代表挨拶 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/about.avif</image:loc>
-            <image:title>株式会社ミアキス 代表挨拶</image:title>
-        </image:image>
         
-        <!-- OGP画像 -->
-        <image:image>
-            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
-            <image:title>株式会社ミアキス OGP画像</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site15.avif</ns1:loc>
+            <ns1:title>制作実績：東京ガスライフバル様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site14.avif</ns1:loc>
+            <ns1:title>制作実績：株式会社TITAN様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site13.avif</ns1:loc>
+            <ns1:title>制作実績：エンジニア案件紹介サイト</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site12.avif</ns1:loc>
+            <ns1:title>制作実績：MuuCoffee様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site11.avif</ns1:loc>
+            <ns1:title>制作実績：合同会社MKメディカル様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site10.avif</ns1:loc>
+            <ns1:title>制作実績：有限会社エルドシック様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site09.avif</ns1:loc>
+            <ns1:title>制作実績：SOULMATE∞様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site06.avif</ns1:loc>
+            <ns1:title>制作実績：matchie(マッチェ)様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site07.avif</ns1:loc>
+            <ns1:title>制作実績：株式会社ほくたい様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site08.avif</ns1:loc>
+            <ns1:title>制作実績：株式会社中谷加工所様</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site01.avif</ns1:loc>
+            <ns1:title>制作実績：ホテルサイト</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site02.avif</ns1:loc>
+            <ns1:title>制作実績：美容室サイト</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site03.avif</ns1:loc>
+            <ns1:title>制作実績：ベーカリーサイト</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-site04.avif</ns1:loc>
+            <ns1:title>制作実績：コーポレートサイト</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-ec02.avif</ns1:loc>
+            <ns1:title>EC実績：ベストバイ受賞</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/bestbuy.avif</ns1:loc>
+            <ns1:title>ベストバイ受賞詳細：Poco'ce掲載</ns1:title>
+            <ns1:caption>Poco'ce 6月号(2024年5月25日発行)掲載のベストバイ受賞画像</ns1:caption>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-ec03.avif</ns1:loc>
+            <ns1:title>EC実績：Calches（自社ブランド）</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-ec04.avif</ns1:loc>
+            <ns1:title>EC実績：Mendel（自社ブランド）</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-ec05.avif</ns1:loc>
+            <ns1:title>EC実績：Mirai Range（自社ブランド）</ns1:title>
+        </ns1:image>
+        
+        
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review01.avif</ns1:loc>
+            <ns1:title>お客様の声 1</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review02.avif</ns1:loc>
+            <ns1:title>お客様の声 2</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review03.avif</ns1:loc>
+            <ns1:title>お客様の声 3</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review04.avif</ns1:loc>
+            <ns1:title>お客様の声 4</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review05.avif</ns1:loc>
+            <ns1:title>お客様の声 5</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review06.avif</ns1:loc>
+            <ns1:title>お客様の声 6</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review07.avif</ns1:loc>
+            <ns1:title>お客様の声 7</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/review08.avif</ns1:loc>
+            <ns1:title>お客様の声 8</ns1:title>
+        </ns1:image>
+        
+        
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/flow01.avif</ns1:loc>
+            <ns1:title>制作の流れ：ヒアリング</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/flow02.avif</ns1:loc>
+            <ns1:title>制作の流れ：ご提案・お見積り</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/flow03.avif</ns1:loc>
+            <ns1:title>制作の流れ：制作開始</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/flow04.avif</ns1:loc>
+            <ns1:title>制作の流れ：納品</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/flow05.avif</ns1:loc>
+            <ns1:title>制作の流れ：アフターフォロー</ns1:title>
+        </ns1:image>
+        
+        
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/about.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス 代表挨拶</ns1:title>
+        </ns1:image>
+        
+        
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>株式会社ミアキス OGP画像</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- プライバシーポリシー -->
+    
     <url>
         <loc>https://miakiss.com/privacy.html</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/logo_v3.avif</image:loc>
-            <image:title>株式会社ミアキス ロゴ</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/mail.avif</image:loc>
-            <image:title>お問い合わせアイコン</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/icon.avif</image:loc>
-            <image:title>ファビコン</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/logo_v3.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス ロゴ</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/mail.avif</ns1:loc>
+            <ns1:title>お問い合わせアイコン</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/icon.avif</ns1:loc>
+            <ns1:title>ファビコン</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- 特定商取引法に基づく表記 -->
+    
     <url>
         <loc>https://miakiss.com/tokusho.html</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/logo_v3.avif</image:loc>
-            <image:title>株式会社ミアキス ロゴ</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/mail.avif</image:loc>
-            <image:title>お問い合わせアイコン</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/icon.avif</image:loc>
-            <image:title>ファビコン</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/logo_v3.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス ロゴ</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/mail.avif</ns1:loc>
+            <ns1:title>お問い合わせアイコン</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/icon.avif</ns1:loc>
+            <ns1:title>ファビコン</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- ブログ記事：Calches 海外変換プラグ -->
+    
     <url>
         <loc>https://miakiss.com/blog/calches-travel-adapter-story.html</loc>
         <lastmod>2025-10-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/works-ec03.avif</image:loc>
-            <image:title>Calches 海外変換プラグ</image:title>
-            <image:caption>世界一周経験者が監修したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定使用可能。</image:caption>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/works-ec03.avif</ns1:loc>
+            <ns1:title>Calches 海外変換プラグ</ns1:title>
+            <ns1:caption>世界一周経験者が監修したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定使用可能。</ns1:caption>
+        </ns1:image>
     </url>
     
-    <!-- ブログ記事：ホームページの保守契約は本当に必要？ -->
+    
     <url>
         <loc>https://miakiss.com/blog/2025-12-01-website-maintenance-contract-necessity.html</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
-            <image:title>ホームページの保守契約は本当に必要？放置のリスクと判断基準</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>ホームページの保守契約は本当に必要？放置のリスクと判断基準</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- ブログ記事：Web担当者がいない中小企業はどうすべき？ -->
+    
     <url>
         <loc>https://miakiss.com/blog/2025-12-02-sme-without-web-manager.html</loc>
         <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
-            <image:title>Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- ブログ記事：Web制作はフリーランスと制作会社どちらに頼むべき？ -->
+    
     <url>
         <loc>https://miakiss.com/blog/2025-12-03-freelance-vs-web-agency.html</loc>
         <lastmod>2025-12-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
-            <image:title>Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- ブログ記事：ホームページのバックアップ、取っていますか？ -->
+    
     <url>
         <loc>https://miakiss.com/blog/2025-12-04-website-backup-importance.html</loc>
         <lastmod>2025-12-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/ogp.png</image:loc>
-            <image:title>ホームページのバックアップ、取っていますか？放置が招く悲劇と今すぐできる対策</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>ホームページのバックアップ、取っていますか？放置が招く悲劇と今すぐできる対策</ns1:title>
+        </ns1:image>
     </url>
     
-    <!-- お問い合わせ完了ページ -->
+    
     <url>
         <loc>https://miakiss.com/thanks.html</loc>
         <lastmod>2025-11-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
         
-        <image:image>
-            <image:loc>https://miakiss.com/image/logo_v3.avif</image:loc>
-            <image:title>株式会社ミアキス ロゴ</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/mail.avif</image:loc>
-            <image:title>お問い合わせアイコン</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://miakiss.com/image/icon.avif</image:loc>
-            <image:title>ファビコン</image:title>
-        </image:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/logo_v3.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス ロゴ</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/mail.avif</ns1:loc>
+            <ns1:title>お問い合わせアイコン</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/icon.avif</ns1:loc>
+            <ns1:title>ファビコン</ns1:title>
+        </ns1:image>
     </url>
     
+<url>
+<loc>https://www.miakiss.co.jp/blog/calches-travel-adapter-story.html</loc>
+<lastmod>2025-10-06</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.miakiss.co.jp/blog/2025-12-01-website-maintenance-contract-necessity.html</loc>
+<lastmod>2025-12-01</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.miakiss.co.jp/blog/2025-12-02-sme-without-web-manager.html</loc>
+<lastmod>2025-12-02</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.miakiss.co.jp/blog/2025-12-03-freelance-vs-web-agency.html</loc>
+<lastmod>2025-12-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.miakiss.co.jp/blog/2025-12-04-website-backup-importance.html</loc>
+<lastmod>2025-12-04</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.miakiss.co.jp/blog/2025-12-05-no-inquiry-website-fix.html</loc>
+<lastmod>2025-12-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
 </urlset>
-
-
-
-
-
-
