@@ -1,4 +1,8 @@
-{
+// ブログ記事データ（ローカルファイルシステムでも動作するように、JavaScriptファイルとして提供）
+// このファイルは published_articles.json と同じ内容を保持します
+// ⚠️ このファイルは自動生成されます。手動で編集しないでください。
+// 更新する場合は published_articles.json を編集し、scripts/sync_blog_data.py を実行してください。
+window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
       "slug": "calches-travel-adapter-story",
@@ -58,4 +62,4 @@
     }
   ],
   "lastUpdated": "2025-12-06"
-}
+};
