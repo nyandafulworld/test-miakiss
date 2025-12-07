@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブログ一覧｜株式会社ミアキス｜埼玉県戸田市のホームページ制作会社</title>
+    <meta name="description" content="埼玉県戸田市のホームページ制作会社・株式会社ミアキスのブログ一覧ページ。Web制作、EC運営、保守運用に関するノウハウや事例を発信しています。">
+    <meta name="keywords" content="ホームページ制作,ブログ,埼玉,戸田市,Web制作,SEO対策">
+    <!-- OGP Tags -->
+    <meta property="og:title" content="ブログ一覧｜株式会社ミアキス">
+    <meta property="og:description" content="埼玉県戸田市のホームページ制作会社・株式会社ミアキスのブログ一覧ページ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ブログ一覧｜株式会社ミアキス">
+    <meta name="twitter:description" content="埼玉県戸田市のホームページ制作会社・株式会社ミアキスのブログ一覧ページ。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/ogp.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog.html">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" href="image/icon.avif" type="image/avif">
+
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Blog Articles Data (ローカルファイル対応) -->
+    <script src="blog/published_articles.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17728958495"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17728958495');
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="logo">
+                <a href="index.html"><img src="image/logo_v3.avif" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="index.html#service">サービス</a></li>
+                    <li><a href="index.html#works">実績</a></li>
+                    <li><a href="index.html#pricing">料金プラン</a></li>
+                    <li><a href="index.html#testimonials">お客様の声</a></li>
+                    <li><a href="index.html#flow">制作の流れ</a></li>
+                    <li><a href="blog.html">ブログ</a></li>
+                    <li><a href="index.html#company">会社概要</a></li>
+                    <li><a href="index.html#message">代表挨拶</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="header-contact-button">
+                <img src="image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="blog-list" class="section">
+            <div class="container">
+                <div class="section-title-container">
+                    <span class="section-title-english">Blog</span>
+                    <h1>ブログ</h1>
+                    <hr class="section-title-underline">
+                </div>
+                <div id="blog-grid-container" class="blog-grid">
+                    <!-- ブログ記事はJavaScriptで動的に読み込まれます -->
+                </div>
+                <div id="pagination-container" class="pagination">
+                    <!-- ページネーションボタンはJavaScriptで動的に生成されます -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const ARTICLES_PER_PAGE = 6;
+        let currentPage = 1;
+        let allArticles = [];
+
+        // ブログ記事データを取得
+        async function loadArticles() {
+            try {
+                let data;
+                
+                // まずグローバル変数をチェック（ローカルファイル対応）
+                if (window.BLOG_ARTICLES_DATA) {
+                    console.log('ローカルデータから記事を読み込みます');
+                    data = window.BLOG_ARTICLES_DATA;
+                } else {
+                    // グローバル変数がない場合はfetchを試みる
+                    console.log('JSONファイルから記事を読み込みます');
+                    const response = await fetch('blog/published_articles.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    data = await response.json();
+                }
+                
+                if (!data || !data.articles || !Array.isArray(data.articles)) {
+                    console.error('記事データの形式が正しくありません:', data);
+                    return;
+                }
+                
+                allArticles = data.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                console.log(`${allArticles.length}件の記事を読み込みました`);
+                renderArticles();
+                renderPagination();
+            } catch (error) {
+                console.error('記事の読み込みに失敗しました:', error);
+                console.error('エラー詳細:', error.message);
+                
+                // エラーメッセージを画面に表示
+                const container = document.getElementById('blog-grid-container');
+                if (container) {
+                    container.innerHTML = '<p style="text-align: center; padding: 40px; color: #666;">記事の読み込みに失敗しました。ブラウザのコンソールを確認してください。</p>';
+                }
+            }
+        }
+
+        // 記事を表示
+        function renderArticles() {
+            const container = document.getElementById('blog-grid-container');
+            const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+            const endIndex = startIndex + ARTICLES_PER_PAGE;
+            const articlesToShow = allArticles.slice(startIndex, endIndex);
+
+            container.innerHTML = '';
+
+            articlesToShow.forEach(article => {
+                const articleElement = document.createElement('article');
+                articleElement.className = 'blog-item';
+                
+                const formattedDate = formatDate(article.date);
+                
+                // カテゴリバッジのHTML（カテゴリがある場合）
+                const categoryBadge = article.category ? 
+                    `<span class="blog-category-badge">${getCategoryName(article.category)}</span>` : '';
+                
+                articleElement.innerHTML = `
+                    <a href="blog/${article.slug}.html">
+                        <div class="blog-image">
+                            <img src="blog/images/${article.slug}_thumbnail.jpg" 
+                                 alt="${article.title}"
+                                 onerror="this.src='image/ogp.png'">
+                        </div>
+                        <div class="blog-content">
+                            ${categoryBadge}
+                            <time class="blog-date" datetime="${article.date}">${formattedDate}</time>
+                            <h3 class="blog-title">${article.title}</h3>
+                            <p class="blog-excerpt">${article.description}</p>
+                        </div>
+                    </a>
+                `;
+                
+                container.appendChild(articleElement);
+            });
+
+            // ページトップにスクロール（ページ変更時のみ）
+            if (currentPage > 1) {
+                document.getElementById('blog-list').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ページネーションを表示
+        function renderPagination() {
+            const container = document.getElementById('pagination-container');
+            const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
+
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+
+            // 前へボタン
+            if (currentPage > 1) {
+                paginationHTML += `<button class="pagination-btn" data-page="${currentPage - 1}">前へ</button>`;
+            }
+
+            // ページ番号ボタン
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    paginationHTML += `<button class="pagination-btn active" data-page="${i}">${i}</button>`;
+                } else {
+                    paginationHTML += `<button class="pagination-btn" data-page="${i}">${i}</button>`;
+                }
+            }
+
+            // 次へボタン
+            if (currentPage < totalPages) {
+                paginationHTML += `<button class="pagination-btn" data-page="${currentPage + 1}">次へ</button>`;
+            }
+
+            container.innerHTML = paginationHTML;
+
+            // ページネーションボタンのイベントリスナー
+            container.querySelectorAll('.pagination-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentPage = parseInt(this.dataset.page);
+                    renderArticles();
+                    renderPagination();
+                });
+            });
+        }
+
+        // カテゴリ名を日本語に変換
+        function getCategoryName(category) {
+            const categories = {
+                'A': '新規制作',
+                'B': '保守・運用',
+                'C': '課題解決',
+                'other': 'その他'
+            };
+            return categories[category] || category;
+        }
+
+        // 日付フォーマット関数
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+
+        // 初期読み込み
+        loadArticles();
+
+        // --- Smooth Scroll ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const header = document.getElementById('header');
+                const headerOffset = header ? header.offsetHeight : 0;
+
+                if (targetId === "#") {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+        });
+
+        // --- Hamburger Menu ---
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+
+        function openMenu() {
+            if (globalNavUl) globalNavUl.classList.add('active');
+            if (hamburgerMenu) {
+                hamburgerMenu.setAttribute('aria-expanded', 'true');
+                hamburgerMenu.classList.add('active');
+            }
+        }
+
+        function closeMenu() {
+            if (globalNavUl) globalNavUl.classList.remove('active');
+            if (hamburgerMenu) {
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+                hamburgerMenu.classList.remove('active');
+            }
+        }
+
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                if (globalNavUl && globalNavUl.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
+
+        if (globalNavUl) { 
+            const navLinks = globalNavUl.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu); 
+            });
+        }
+
+        const logoLink = document.querySelector('#header .logo a');
+        if (logoLink) {
+            logoLink.addEventListener('click', function(e) {
+                closeMenu();
+            });
+        }
+    });
+    </script>
+</body>
+</html>
+
