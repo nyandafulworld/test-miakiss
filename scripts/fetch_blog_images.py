@@ -43,7 +43,7 @@ TRANSLATION_DICT = {
     "埼玉": "business office",
     "更新": "update",
     "セキュリティ": "security",
-    "バックアップ": "backup",
+    "バックアップ": "backup data cloud server",
     "問い合わせ": "contact inquiry",
     "集客": "marketing customer",
     "SEO": "seo search",
