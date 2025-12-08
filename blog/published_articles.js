@@ -67,9 +67,15 @@ window.BLOG_ARTICLES_DATA = {
       "category": "B",
       "keyword": "ホームページ 保守 費用",
       "description": "ホームページの保守費用、高いと感じていませんか？埼玉県戸田市のWeb制作会社が、保守費用の適正相場・内訳・コストを抑えるポイントを実例付きで本音で解説します。"
+    },
+    {
+      "slug": "2025-12-08-web-estimate-5-checkpoints",
+      "title": "Web制作の見積もりで確認すべき5つのポイント",
+      "date": "2025-12-08",
+      "category": "A",
+      "keyword": "Web制作 見積もり",
+      "description": "Web制作の見積もり、何を確認すれば良いかわからない…。埼玉県戸田市のWeb制作会社が、見積もりの「落とし穴」を避けるための5つのチェックポイントを実例とともに本音で解説します。"
     }
   ],
-  "lastUpdated": "2025-12-07"
+  "lastUpdated": "2025-12-08"
 };
-
-

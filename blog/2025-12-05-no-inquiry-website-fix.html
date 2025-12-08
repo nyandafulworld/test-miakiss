@@ -9,12 +9,12 @@
     <meta property="og:description" content="ホームページを作ったのに問い合わせが来ない…その原因、意外なところにあるかもしれません。埼玉県戸田市のWeb制作会社が、問い合わせゼロだったサイトを改善した実例と、今すぐできる具体策を本音で解説します。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.miakiss.co.jp/blog/2025-12-05-no-inquiry-website-fix.html">
-    <meta property="og:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2025-12-05-no-inquiry-website-fix_thumbnail.jpg">
     <meta property="og:site_name" content="株式会社ミアキス">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="問い合わせが来ないホームページの特徴と改善点">
     <meta name="twitter:description" content="ホームページを作ったのに問い合わせが来ない…その原因、意外なところにあるかもしれません。埼玉県戸田市のWeb制作会社が、問い合わせゼロだったサイトを改善した実例と、今すぐできる具体策を本音で解説します。">
-    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2025-12-05-no-inquiry-website-fix_thumbnail.jpg">
     <link rel="canonical" href="https://www.miakiss.co.jp/blog/2025-12-05-no-inquiry-website-fix.html">
     <link rel="icon" href="../image/icon.avif" type="image/avif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
         "@type": "Article",
         "headline": "問い合わせが来ないホームページの特徴と改善点",
         "description": "ホームページを作ったのに問い合わせが来ない…その原因、意外なところにあるかもしれません。埼玉県戸田市のWeb制作会社が、問い合わせゼロだったサイトを改善した実例と、今すぐできる具体策を本音で解説します。",
-        "image": "https://www.miakiss.co.jp/image/ogp.png",
+        "image": "https://www.miakiss.co.jp/blog/images/2025-12-05-no-inquiry-website-fix_thumbnail.jpg",
         "author": {
             "@type": "Organization",
             "name": "株式会社ミアキス"
@@ -45,27 +45,303 @@
     }
     </script>
     <style>
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .article-header { margin-bottom: 40px; text-align: center; }
-        .article-date { display: block; font-size: 0.9em; color: #999; margin-bottom: 15px; }
-        .article-title { font-size: 2em; color: #333; line-height: 1.4; margin-bottom: 20px; }
-        .article-content { line-height: 1.9; color: #333; }
-        .article-content h2 { font-size: 1.5em; color: #007bff; margin-top: 50px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007bff; }
-        .article-content h3 { font-size: 1.2em; color: #333; margin-top: 30px; margin-bottom: 15px; }
-        .article-content p { margin-bottom: 1.5em; font-size: 1em; }
-        .article-content ul, .article-content ol { margin: 20px 0; padding-left: 30px; }
-        .article-content li { margin-bottom: 12px; line-height: 1.8; }
-        .article-content blockquote { background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 20px; margin: 30px 0; }
-        .article-content strong { color: #007bff; }
-        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 50px 0; }
-        .article-cta h3 { font-size: 1.5em; margin-bottom: 15px; color: #fff; }
-        .article-cta p { margin-bottom: 25px; font-size: 1.1em; color: #fff; }
-        .article-cta .btn { display: inline-block; background-color: #fff; color: #667eea; padding: 12px 35px; border-radius: 50px; font-weight: bold; text-decoration: none; }
-        .article-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; text-align: center; }
-        .back-to-blog { color: #007bff; text-decoration: none; font-weight: bold; }
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #007bff;
+        }
+        
+        .article-toc li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #007bff; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0056b3;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #667eea; 
+            padding: 12px 35px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #007bff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0056b3;
+        }
+        
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
-            .article-title { font-size: 1.5em; }
-            .article-content h2 { font-size: 1.3em; }
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -85,7 +361,7 @@
                     <li><a href="../index.html#pricing">料金プラン</a></li>
                     <li><a href="../index.html#testimonials">お客様の声</a></li>
                     <li><a href="../index.html#flow">制作の流れ</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
                     <li><a href="../index.html#company">会社概要</a></li>
                     <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
@@ -98,143 +374,108 @@
 
     <main>
         <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2025-12-05-no-inquiry-website-fix_header.jpg" 
+                 alt="問い合わせが来ないホームページの特徴と改善点" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
             <div class="article-header">
                 <time class="article-date" datetime="2025-12-05">2025年12月5日</time>
                 <h1 class="article-title">問い合わせが来ないホームページの特徴と改善点</h1>
             </div>
 
-            <div class="article-content">
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
                 <p>「せっかくお金をかけてホームページを作ったのに、全然問い合わせが来ない…」</p>
-
-                <p>埼玉県戸田市でWeb制作会社を運営している私のもとには、こんな相談が月に5〜6件は届きます。正直な話、この悩みを抱えている経営者さんは非常に多いです。そして残念ながら、その多くに共通する「ある特徴」があるんです。</p>
-
-                <p>今回は、問い合わせゼロだったサイトを改善してきた実体験から、<strong>なぜ問い合わせが来ないのか</strong>、そして<strong>どうすれば改善できるのか</strong>を包み隠さずお話しします。「うちのサイト、ヤバいかも…」と思った方は、ぜひ最後まで読んでみてください。</p>
-
-                <h2>問い合わせが来ないサイトに共通する5つの特徴</h2>
-
-                <p>これまで50社以上のホームページ改善に携わってきた経験から、問い合わせが来ないサイトには明確なパターンがあることがわかりました。あなたのサイト、いくつ当てはまりますか？</p>
-
-                <h3>1. 問い合わせフォームが「見つからない」</h3>
-
-                <p>笑い話のようですが、これが本当に多いんです。先日、戸田市内のある製造業の会社さんから相談を受けて、サイトをチェックしたところ、問い合わせフォームがフッターの小さなリンクにしかありませんでした。しかも「Contact」と英語表記。</p>
-
-                <p>「お客さんは、御社のことを調べたくてサイトに来てるんです。でも、問い合わせしたいと思った瞬間に、どこに連絡すればいいかわからなくなってる」とお伝えしたら、社長さん、絶句されていました。</p>
-
-                <h3>2. 何をしている会社なのかわからない</h3>
-
-                <p>トップページを開いた瞬間、「結局この会社、何やってるの？」となるサイト、意外と多いです。かっこいいイメージ写真と抽象的なキャッチコピーだけで、具体的なサービス内容が見えない。</p>
-
-                <p>埼玉のBtoB企業に多いのですが、<strong>「見る人はあなたの業界のプロじゃない」</strong>という前提が抜けているんですね。専門用語だらけで、一般の人が読んでもピンとこない状態になっています。</p>
-
-                <h3>3. 料金や実績がブラックボックス</h3>
-
-                <blockquote>
-                <p><strong>【実際にあった相談】</strong><br>
+<p>埼玉県戸田市でWeb制作会社を運営している私のもとには、こんな相談が月に5〜6件は届きます。正直な話、この悩みを抱えている経営者さんは非常に多いです。そして残念ながら、その多くに共通する「ある特徴」があるんです。</p>
+<p>今回は、問い合わせゼロだったサイトを改善してきた実体験から、<strong>なぜ問い合わせが来ないのか</strong>、そして<strong>どうすれば改善できるのか</strong>を包み隠さずお話しします。「うちのサイト、ヤバいかも…」と思った方は、ぜひ最後まで読んでみてください。</p>
+<h2>問い合わせが来ないサイトに共通する5つの特徴</h2>
+<p>これまで50社以上のホームページ改善に携わってきた経験から、問い合わせが来ないサイトには明確なパターンがあることがわかりました。あなたのサイト、いくつ当てはまりますか？</p>
+<h3>1. 問い合わせフォームが「見つからない」</h3>
+<p>笑い話のようですが、これが本当に多いんです。先日、戸田市内のある製造業の会社さんから相談を受けて、サイトをチェックしたところ、問い合わせフォームがフッターの小さなリンクにしかありませんでした。しかも「Contact」と英語表記。</p>
+<p>「お客さんは、御社のことを調べたくてサイトに来てるんです。でも、問い合わせしたいと思った瞬間に、どこに連絡すればいいかわからなくなってる」とお伝えしたら、社長さん、絶句されていました。</p>
+<h3>2. 何をしている会社なのかわからない</h3>
+<p>トップページを開いた瞬間、「結局この会社、何やってるの？」となるサイト、意外と多いです。かっこいいイメージ写真と抽象的なキャッチコピーだけで、具体的なサービス内容が見えない。</p>
+<p>埼玉のBtoB企業に多いのですが、<strong>「見る人はあなたの業界のプロじゃない」</strong>という前提が抜けているんですね。専門用語だらけで、一般の人が読んでもピンとこない状態になっています。</p>
+<h3>3. 料金や実績がブラックボックス</h3>
+<blockquote>
+<p><strong>【実際にあった相談】</strong><br/>
                 「他社のサイト見ても料金が全然載ってなくて、問い合わせするのが怖いんです。御社は料金表があったので連絡しやすかったです」</p>
-                </blockquote>
-
-                <p>これ、うちに問い合わせいただいたお客様からよく聞く言葉です。</p>
-
-                <p>「料金は要相談」「まずはお問い合わせください」ばかりのサイト、お客様からすると<strong>「問い合わせしたら営業されるんじゃないか」</strong>という心理的ハードルが生まれます。<a href="../index.html#pricing">当社の料金プラン</a>のように、ある程度の目安を出すだけで問い合わせ率は変わります。</p>
-
-                <h3>4. スマホで見ると使いにくい</h3>
-
-                <p>今や7割以上のユーザーがスマホからサイトを見ています。にもかかわらず、PC表示のまま縮小されただけのサイトや、ボタンが小さすぎてタップできないサイトが埼玉県内の中小企業でまだまだ多いです。</p>
-
-                <p>「パソコンで見たら綺麗なんですけどね…」という言葉を何度聞いたことか。お客様の7割はスマホで見ている、この事実を忘れないでください。</p>
-
-                <h3>5. 最終更新が3年前</h3>
-
-                <p>ブログの最終更新が2022年、お知らせ欄に「新年あけましておめでとうございます（2021年）」と書いてあるサイト、正直かなり見かけます。</p>
-
-                <p>これを見たお客様は「この会社、まだやってるのかな…」と不安になります。更新されていないサイトは<strong>信頼を損なう最大の要因</strong>です。</p>
-
-                <h2>問い合わせを増やすための具体的な改善策</h2>
-
-                <p>では、どうすれば問い合わせが来るサイトに変えられるのか。私たちが実際にクライアント様のサイトで実施して効果があった施策をご紹介します。</p>
-
-                <h3>改善策1：問い合わせへの導線を「これでもか」と増やす</h3>
-
-                <p>まず、サイト内のあらゆる場所に問い合わせへの導線を設置します。具体的には：</p>
-
-                <ul>
-                    <li>ヘッダーに常時表示される「お問い合わせ」ボタン</li>
-                    <li>各ページの終わりにCTA（問い合わせ誘導）エリア</li>
-                    <li>サービス説明の直後に「このサービスについて相談する」ボタン</li>
-                    <li>スマホ画面下部に固定表示される電話・メールボタン</li>
-                </ul>
-
-                <p>「しつこいかな…」と思うくらいでちょうどいいです。実際、戸田市の工務店さんのサイトでこの改善を行ったところ、<strong>月の問い合わせ数が2件から8件に増えました</strong>。</p>
-
-                <h3>改善策2：「誰のための」「何のサービスか」を明確に</h3>
-
-                <p>トップページの最初に見える場所に、以下の3つを明記してください：</p>
-
-                <ol>
-                    <li><strong>誰向けのサービスか</strong>（例：埼玉県の中小企業経営者様へ）</li>
-                    <li><strong>何ができるか</strong>（例：ホームページ制作から運用保守まで一貫対応）</li>
-                    <li><strong>強みは何か</strong>（例：月額1万円台からの保守プランあり）</li>
-                </ol>
-
-                <p>この3点が瞬時に伝わるだけで、直帰率（すぐに離脱する人の割合）は大幅に下がります。うちの<a href="../index.html#service">サービス紹介</a>も、この考え方で構成しています。</p>
-
-                <h3>改善策3：料金と実績で「安心」を提供する</h3>
-
-                <p>「詳細はお問い合わせください」を減らし、できる限り情報をオープンにしましょう。</p>
-
-                <ul>
-                    <li>料金の目安（○○円〜、でもOK）</li>
-                    <li>過去の制作実績（できれば写真付き）</li>
-                    <li>お客様の声（実名でなくても可）</li>
-                    <li>制作の流れ（何日くらいかかるか）</li>
-                </ul>
-
-                <p>これらがあるだけで、お客様の「問い合わせるかどうか迷う時間」が短縮されます。迷っている時間が長いほど、他社に流れる可能性は高くなりますからね。</p>
-
-                <h3>改善策4：問い合わせフォームの項目を減らす</h3>
-
-                <p>意外と見落とされがちなのが、フォームの入力項目数です。</p>
-
-                <p>私の経験則ですが、<strong>入力項目が1つ増えるごとに離脱率は約10%上がります</strong>。最初の問い合わせ段階では、「お名前」「メールアドレス」「ご相談内容」の3つで十分。詳細は後からヒアリングすればいいんです。</p>
-
-                <p>会社名、電話番号、住所、予算、希望納期…全部必須にしているサイトを見ると、「これは問い合わせ来ないだろうな」と思ってしまいます。</p>
-
-                <h2>問い合わせゼロからの復活事例</h2>
-
-                <p>最後に、実際に私たちがお手伝いした改善事例をご紹介します。</p>
-
-                <blockquote>
-                <p><strong>【さいたま市の設備工事会社A社様の場合】</strong><br>
+</blockquote>
+<p>これ、うちに問い合わせいただいたお客様からよく聞く言葉です。</p>
+<p>「料金は要相談」「まずはお問い合わせください」ばかりのサイト、お客様からすると<strong>「問い合わせしたら営業されるんじゃないか」</strong>という心理的ハードルが生まれます。<a href="../index.html#pricing">当社の料金プラン</a>のように、ある程度の目安を出すだけで問い合わせ率は変わります。</p>
+<h3>4. スマホで見ると使いにくい</h3>
+<p>今や7割以上のユーザーがスマホからサイトを見ています。にもかかわらず、PC表示のまま縮小されただけのサイトや、ボタンが小さすぎてタップできないサイトが埼玉県内の中小企業でまだまだ多いです。</p>
+<p>「パソコンで見たら綺麗なんですけどね…」という言葉を何度聞いたことか。お客様の7割はスマホで見ている、この事実を忘れないでください。</p>
+<h3>5. 最終更新が3年前</h3>
+<p>ブログの最終更新が2022年、お知らせ欄に「新年あけましておめでとうございます（2021年）」と書いてあるサイト、正直かなり見かけます。</p>
+<p>これを見たお客様は「この会社、まだやってるのかな…」と不安になります。更新されていないサイトは<strong>信頼を損なう最大の要因</strong>です。</p>
+<h2>問い合わせを増やすための具体的な改善策</h2>
+<p>では、どうすれば問い合わせが来るサイトに変えられるのか。私たちが実際にクライアント様のサイトで実施して効果があった施策をご紹介します。</p>
+<h3>改善策1：問い合わせへの導線を「これでもか」と増やす</h3>
+<p>まず、サイト内のあらゆる場所に問い合わせへの導線を設置します。具体的には：</p>
+<ul>
+<li>ヘッダーに常時表示される「お問い合わせ」ボタン</li>
+<li>各ページの終わりにCTA（問い合わせ誘導）エリア</li>
+<li>サービス説明の直後に「このサービスについて相談する」ボタン</li>
+<li>スマホ画面下部に固定表示される電話・メールボタン</li>
+</ul>
+<p>「しつこいかな…」と思うくらいでちょうどいいです。実際、戸田市の工務店さんのサイトでこの改善を行ったところ、<strong>月の問い合わせ数が2件から8件に増えました</strong>。</p>
+<h3>改善策2：「誰のための」「何のサービスか」を明確に</h3>
+<p>トップページの最初に見える場所に、以下の3つを明記してください：</p>
+<ol>
+<li><strong>誰向けのサービスか</strong>（例：埼玉県の中小企業経営者様へ）</li>
+<li><strong>何ができるか</strong>（例：ホームページ制作から運用保守まで一貫対応）</li>
+<li><strong>強みは何か</strong>（例：月額1万円台からの保守プランあり）</li>
+</ol>
+<p>この3点が瞬時に伝わるだけで、直帰率（すぐに離脱する人の割合）は大幅に下がります。うちの<a href="../index.html#service">サービス紹介</a>も、この考え方で構成しています。</p>
+<h3>改善策3：料金と実績で「安心」を提供する</h3>
+<p>「詳細はお問い合わせください」を減らし、できる限り情報をオープンにしましょう。</p>
+<ul>
+<li>料金の目安（○○円〜、でもOK）</li>
+<li>過去の制作実績（できれば写真付き）</li>
+<li>お客様の声（実名でなくても可）</li>
+<li>制作の流れ（何日くらいかかるか）</li>
+</ul>
+<p>これらがあるだけで、お客様の「問い合わせるかどうか迷う時間」が短縮されます。迷っている時間が長いほど、他社に流れる可能性は高くなりますからね。</p>
+<h3>改善策4：問い合わせフォームの項目を減らす</h3>
+<p>意外と見落とされがちなのが、フォームの入力項目数です。</p>
+<p>私の経験則ですが、<strong>入力項目が1つ増えるごとに離脱率は約10%上がります</strong>。最初の問い合わせ段階では、「お名前」「メールアドレス」「ご相談内容」の3つで十分。詳細は後からヒアリングすればいいんです。</p>
+<p>会社名、電話番号、住所、予算、希望納期…全部必須にしているサイトを見ると、「これは問い合わせ来ないだろうな」と思ってしまいます。</p>
+<h2>問い合わせゼロからの復活事例</h2>
+<p>最後に、実際に私たちがお手伝いした改善事例をご紹介します。</p>
+<blockquote>
+<p><strong>【さいたま市の設備工事会社A社様の場合】</strong><br/>
                 ホームページを3年前に作ったものの、問い合わせはゼロ。サイトを分析したところ、問い合わせフォームへのリンクがフッターのみで、サービス内容も専門用語だらけでした。</p>
-
-                <p><strong>実施した改善：</strong></p>
-                <ul>
-                    <li>全ページにお問い合わせボタンを設置</li>
-                    <li>サービス説明を「お客様目線」の言葉に書き換え</li>
-                    <li>過去の施工実績を写真付きで15件追加</li>
-                    <li>「よくある質問」ページを新設</li>
-                </ul>
-
-                <p><strong>結果：</strong>改善後2ヶ月で月間問い合わせ数0件→5件に増加。現在は月平均7件の問い合わせを獲得されています。</p>
-                </blockquote>
-
-                <p>A社の社長さんからは「まさか、こんな単純なことで変わるとは思わなかった」と言っていただきました。でも本当にそうなんです。問い合わせが来ない原因は、複雑な技術的問題ではなく、<strong>「お客様目線が欠けている」というシンプルな問題</strong>であることが多いんです。</p>
-
-                <h2>まとめ：問い合わせが来るサイトは「親切なサイト」</h2>
-
-                <p>問い合わせが来るホームページと来ないホームページの違いを一言でいうと、<strong>「親切かどうか」</strong>です。</p>
-
-                <ul>
-                    <li>問い合わせボタンがすぐ見つかる → 親切</li>
-                    <li>何をしている会社かすぐわかる → 親切</li>
-                    <li>料金の目安がわかる → 親切</li>
-                    <li>スマホでも見やすい → 親切</li>
-                    <li>最新情報が更新されている → 親切</li>
-                </ul>
-
-                <p>難しいSEO対策や高度なマーケティング施策の前に、まずは「お客様にとって親切なサイトになっているか？」を見直してみてください。</p>
-
-                <p>もし「自分のサイト、客観的に見てもらいたい」「どこを直せばいいかわからない」という方は、<a href="../index.html#contact">お気軽にご相談ください</a>。埼玉県内の企業様でしたら、無料でサイト診断もお受けしています。</p>
+<p><strong>実施した改善：</strong></p>
+<ul>
+<li>全ページにお問い合わせボタンを設置</li>
+<li>サービス説明を「お客様目線」の言葉に書き換え</li>
+<li>過去の施工実績を写真付きで15件追加</li>
+<li>「よくある質問」ページを新設</li>
+</ul>
+<p><strong>結果：</strong>改善後2ヶ月で月間問い合わせ数0件→5件に増加。現在は月平均7件の問い合わせを獲得されています。</p>
+</blockquote>
+<p>A社の社長さんからは「まさか、こんな単純なことで変わるとは思わなかった」と言っていただきました。でも本当にそうなんです。問い合わせが来ない原因は、複雑な技術的問題ではなく、<strong>「お客様目線が欠けている」というシンプルな問題</strong>であることが多いんです。</p>
+<h2>まとめ：問い合わせが来るサイトは「親切なサイト」</h2>
+<p>問い合わせが来るホームページと来ないホームページの違いを一言でいうと、<strong>「親切かどうか」</strong>です。</p>
+<ul>
+<li>問い合わせボタンがすぐ見つかる → 親切</li>
+<li>何をしている会社かすぐわかる → 親切</li>
+<li>料金の目安がわかる → 親切</li>
+<li>スマホでも見やすい → 親切</li>
+<li>最新情報が更新されている → 親切</li>
+</ul>
+<p>難しいSEO対策や高度なマーケティング施策の前に、まずは「お客様にとって親切なサイトになっているか？」を見直してみてください。</p>
+<p>もし「自分のサイト、客観的に見てもらいたい」「どこを直せばいいかわからない」という方は、<a href="../index.html#contact">お気軽にご相談ください</a>。埼玉県内の企業様でしたら、無料でサイト診断もお受けしています。</p>
             </div>
 
             <div class="article-cta">
@@ -243,8 +484,16 @@
                 <a href="../index.html#contact" class="btn">無料相談はこちら</a>
             </div>
 
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
             <div class="article-footer">
-                <a href="../index.html#blog" class="back-to-blog">← ブログ一覧に戻る</a>
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
             </div>
         </article>
     </main>
@@ -260,6 +509,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const globalNavUl = document.querySelector('#header .global-nav ul');
         if (hamburgerMenu) {
@@ -268,6 +518,145 @@
                 hamburgerMenu.classList.toggle('active');
             });
         }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // 固定ヘッダー分のオフセットを調整
+                    window.scrollBy(0, -100);
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2025-12-05-no-inquiry-website-fix';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     });
     </script>
 </body>

@@ -3,221 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calches 海外変換プラグの開発秘話｜SEプラグで韓国でもグラつかない。世界一周で見つけた"最小装備" | 株式会社ミアキス</title>
+    <title>Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで | 株式会社ミアキス</title>
     <meta name="description" content="旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。これ一つで世界対応、旅の電源不安を解消。">
-    <!-- OGP Tags -->
-    <meta property="og:title" content="Calches 海外変換プラグの開発秘話｜SEプラグで韓国でもグラつかない。世界一周で見つけた"最小装備"">
+    <meta property="og:title" content="Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで">
     <meta property="og:description" content="旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。これ一つで世界対応、旅の電源不安を解消。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.miakiss.co.jp/blog/calches-travel-adapter-story">
-    <meta property="og:image" content="https://www.miakiss.co.jp/image/works-ec03.jpg">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/calches-travel-adapter-story.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/calches-travel-adapter-story_thumbnail.jpg">
     <meta property="og:site_name" content="株式会社ミアキス">
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Calches 海外変換プラグの開発秘話｜SEプラグで韓国でもグラつかない。世界一周で見つけた"最小装備"">
+    <meta name="twitter:title" content="Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで">
     <meta name="twitter:description" content="旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。これ一つで世界対応、旅の電源不安を解消。">
-    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/works-ec03.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" href="../image/icon.png" type="image/png">
-
-    <!-- Google Fonts: Noto Sans JP -->
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/calches-travel-adapter-story_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/calches-travel-adapter-story.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで",
+        "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。これ一つで世界対応、旅の電源不安を解消。",
+        "image": "https://www.miakiss.co.jp/blog/images/calches-travel-adapter-story_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v3.avif"
+            }
+        },
+        "datePublished": "2025-10-06",
+        "dateModified": "2025-10-06"
+    }
+    </script>
     <style>
-        /* Blog Article Specific Styles */
-        .blog-article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
         }
-
-        .article-header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .article-date {
-            display: block;
-            font-size: 0.9em;
-            color: #999;
-            margin-bottom: 15px;
-        }
-
-        .article-title {
-            font-size: 2em;
-            color: #333;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
-
-        .article-featured-image {
+        
+        /* ヘッダー画像 */
+        .article-header-image {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-
-        .article-featured-image img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
+            margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
-        .article-content {
-            line-height: 1.9;
-            color: #333;
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
         }
-
-        .article-content h2 {
-            font-size: 1.6em;
-            color: #007bff;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #007bff;
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
         }
-
-        .article-content p {
-            margin-bottom: 1.5em;
-            font-size: 1em;
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
         }
-
-        .article-content ul {
-            margin: 20px 0;
-            padding-left: 30px;
-            list-style: disc;
-        }
-
-        .article-content ul li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .article-content blockquote {
-            background-color: #f8f9fa;
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
             border-left: 4px solid #007bff;
-            padding: 20px;
+            padding: 20px 25px;
             margin: 30px 0;
-            font-size: 0.95em;
-            color: #555;
+            border-radius: 8px;
         }
-
-        .article-content strong {
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        .article-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .article-cta h3 {
-            font-size: 1.5em;
+        
+        .article-toc h3 {
+            margin-top: 0;
             margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
         }
-
-        .article-cta p {
-            margin-bottom: 25px;
-            font-size: 1.1em;
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
         }
-
-        .article-cta .btn {
-            display: inline-block;
-            background-color: #fff;
-            color: #667eea;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
         }
-
-        .article-cta .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-
-        .article-footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            text-align: center;
-        }
-
-        .back-to-blog {
-            display: inline-block;
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
             color: #007bff;
-            text-decoration: none;
             font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
-
+        
+        .article-toc a:hover {
+            color: #007bff;
+        }
+        
+        .article-toc li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #007bff; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0056b3;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #667eea; 
+            padding: 12px 35px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #007bff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
         .back-to-blog:hover {
             color: #0056b3;
         }
-
-        /* Dark Mode */
-        html.dark .blog-article {
-            color: #cbd5e0;
-        }
-
-        html.dark .article-title {
-            color: #e2e8f0;
-        }
-
-        html.dark .article-content {
-            color: #cbd5e0;
-        }
-
-        html.dark .article-content h2 {
-            color: #63b3ed;
-            border-bottom-color: #63b3ed;
-        }
-
-        html.dark .article-content blockquote {
-            background-color: #2d3748;
-            color: #a0aec0;
-        }
-
-        html.dark .article-content strong {
-            color: #63b3ed;
-        }
-
-        html.dark .article-footer {
-            border-top-color: #4a5568;
-        }
-
-        /* Responsive */
+        
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
-            .article-title {
-                font-size: 1.5em;
+            .article-title { 
+                font-size: 1.5em; 
             }
-
-            .article-content h2 {
-                font-size: 1.3em;
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
             }
-
-            .article-cta {
-                padding: 25px 20px;
+            
+            .article-toc {
+                padding: 15px 20px;
             }
-
-            .article-cta h3 {
-                font-size: 1.2em;
-            }
-
-            .article-cta p {
-                font-size: 1em;
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -226,14 +349,10 @@
     <header id="header">
         <div class="container">
             <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
-                <div class="hamburger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
             </button>
             <div class="logo">
-                <a href="../index.html"><img src="../image/logo_v3.png" alt="株式会社ミアキス"></a>
+                <a href="../index.html"><img src="../image/logo_v3.avif" alt="株式会社ミアキス"></a>
             </div>
             <nav class="global-nav">
                 <ul>
@@ -242,93 +361,99 @@
                     <li><a href="../index.html#pricing">料金プラン</a></li>
                     <li><a href="../index.html#testimonials">お客様の声</a></li>
                     <li><a href="../index.html#flow">制作の流れ</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
                     <li><a href="../index.html#company">会社概要</a></li>
-                    <li><a href="../index.html#message">代表挨拶</a></li>
                     <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
             <a href="../index.html#contact" class="header-contact-button">
-                <img src="../image/mail.png" alt="無料相談メールアイコン" class="mail-icon-img">
+                <img src="../image/mail.avif" alt="お問い合わせ" class="mail-icon-img">
             </a>
         </div>
     </header>
 
     <main>
         <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/calches-travel-adapter-story_header.jpg" 
+                 alt="Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
             <div class="article-header">
                 <time class="article-date" datetime="2025-10-06">2025年10月6日</time>
                 <h1 class="article-title">Calches 海外変換プラグ「SE付き」誕生の裏側——世界一周で見つけた"旅の小さなストレス"をなくすまで</h1>
             </div>
 
-            <div class="article-featured-image">
-                <img src="../image/works-ec03.jpg" alt="Calches 海外変換プラグ">
-            </div>
-
-            <div class="article-content">
-                <h2>旅好きの代表が、旅先の"不便"から作りました</h2>
-                <p>株式会社ミアキス 代表取締役・髙橋は、学生時代から旅が大好き。英語留学や世界一周など、20カ国以上を巡るなかで、毎回のようにぶつかった壁が「コンセント問題」でした。国が変わるたびに形状が違い、「また新しい変換プラグを買うのか…」という小さなストレス。</p>
-                <p>「これさえあれば困らない」を本気で形にするために、Calches（カルチェス）海外変換プラグの企画が動き出しました。なお、当社はWeb制作やEC運営に加えて自社ブランド企画・販売も行っており、代表は当社のトップメッセージでも"誠実なものづくり"を掲げています。</p>
-
-                <h2>ブランドに込めた想い——"旅ライフを豊かに"</h2>
-                <p>Calchesは「世界一周経験者が監修。旅ライフを豊かにするトラベルギアブランド」を掲げています。旅の荷物を最小限に、体験を最大化する——そんな視点から、毎日使う電源周りをまず整えました。</p>
-
-                <h2>なぜ"SEプラグ"にこだわったのか</h2>
-                <p>髙橋が特に困ったのは韓国・EU圏。現地のコンセント（ピン径4.8mmのSE型：いわゆるFタイプ相当）に、日本発の細いプラグを挿すと「グラつく・奥まで入らない・接触が不安」という場面が多々ありました。</p>
-                <p>そこでCalchesは、<strong>SEプラグを同梱</strong>。韓国やEUのSE型コンセントでもしっかり差し込めるよう設計し、グラつきの不安を解消しました。旅先のカフェでPC作業、夜のホテルでのスマホ充電——"当たり前"を、当たり前に。</p>
-
-                <h2>1つで世界中へ——対応エリアを広く</h2>
-                <p>国ごとに違うコンセント形状に、これ1つで対応。マルチ変換構造により<strong>世界200カ国規模</strong>の渡航をカバーします。もう国ごとに別のプラグを持ち替える必要はありません。</p>
-
-                <h2>旅目線の"ちょうど良い"仕様</h2>
-                <ul>
-                    <li><strong>USBポート搭載</strong>：スマホやタブレットが同時に充電しやすいよう、USBポート（最大2口想定）を搭載。荷物を減らしつつも、必要十分な給電を。※モデルにより構成は異なります。</li>
-                    <li><strong>ミニマル設計</strong>：ケースに入れてもカバンの隙間にスッと収まるサイズ感。</li>
-                    <li><strong>直感操作</strong>：国・地域に合わせてプラグをスライド/切り替えるだけ。</li>
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
                 </ul>
+            </nav>
 
-                <blockquote>
+            <div class="article-content" id="article-content">
+                <h2>旅好きの代表が、旅先の"不便"から作りました</h2>
+<p>株式会社ミアキス 代表取締役・髙橋は、学生時代から旅が大好き。英語留学や世界一周など、20カ国以上を巡るなかで、毎回のようにぶつかった壁が「コンセント問題」でした。国が変わるたびに形状が違い、「また新しい変換プラグを買うのか…」という小さなストレス。</p>
+<p>「これさえあれば困らない」を本気で形にするために、Calches（カルチェス）海外変換プラグの企画が動き出しました。なお、当社はWeb制作やEC運営に加えて自社ブランド企画・販売も行っており、代表は当社のトップメッセージでも"誠実なものづくり"を掲げています。</p>
+<h2>ブランドに込めた想い——"旅ライフを豊かに"</h2>
+<p>Calchesは「世界一周経験者が監修。旅ライフを豊かにするトラベルギアブランド」を掲げています。旅の荷物を最小限に、体験を最大化する——そんな視点から、毎日使う電源周りをまず整えました。</p>
+<h2>なぜ"SEプラグ"にこだわったのか</h2>
+<p>髙橋が特に困ったのは韓国・EU圏。現地のコンセント（ピン径4.8mmのSE型：いわゆるFタイプ相当）に、日本発の細いプラグを挿すと「グラつく・奥まで入らない・接触が不安」という場面が多々ありました。</p>
+<p>そこでCalchesは、<strong>SEプラグを同梱</strong>。韓国やEUのSE型コンセントでもしっかり差し込めるよう設計し、グラつきの不安を解消しました。旅先のカフェでPC作業、夜のホテルでのスマホ充電——"当たり前"を、当たり前に。</p>
+<h2>1つで世界中へ——対応エリアを広く</h2>
+<p>国ごとに違うコンセント形状に、これ1つで対応。マルチ変換構造により<strong>世界200カ国規模</strong>の渡航をカバーします。もう国ごとに別のプラグを持ち替える必要はありません。</p>
+<h2>旅目線の"ちょうど良い"仕様</h2>
+<ul>
+<li><strong>USBポート搭載</strong>：スマホやタブレットが同時に充電しやすいよう、USBポート（最大2口想定）を搭載。荷物を減らしつつも、必要十分な給電を。※モデルにより構成は異なります。</li>
+<li><strong>ミニマル設計</strong>：ケースに入れてもカバンの隙間にスッと収まるサイズ感。</li>
+<li><strong>直感操作</strong>：国・地域に合わせてプラグをスライド/切り替えるだけ。</li>
+</ul>
+<blockquote>
                     ※Calches海外変換プラグは<strong>変圧機能は非搭載</strong>です。ドライヤー等の高出力家電は対応電圧をご確認ください。必要な場合は別途「変圧器」を併用してください。
                 </blockquote>
-
-                <h2>開発ストーリー：プロトタイプから量産へ</h2>
-                <ol style="list-style: decimal; padding-left: 30px;">
-                    <li style="margin-bottom: 12px;"><strong>検証旅</strong>：世界一周・アジア周遊での"挿し心地"と"抜けやすさ"を徹底観察。</li>
-                    <li style="margin-bottom: 12px;"><strong>SEの同梱決定</strong>：韓国・EUでの使用感向上を最優先に、SEプラグを標準化。</li>
-                    <li style="margin-bottom: 12px;"><strong>日常テスト</strong>：自宅・カフェ・コワーキングなど、旅以外のシーンでも毎日検証。</li>
-                    <li style="margin-bottom: 12px;"><strong>ユーザー検証</strong>：旅系クリエイター・インフルエンサーからのフィードバックを反映。</li>
-                </ol>
-
-                <h2>よくある質問（FAQ）</h2>
-                <p><strong>Q. 韓国旅行で使えますか？</strong><br>
+<h2>開発ストーリー：プロトタイプから量産へ</h2>
+<ol style="list-style: decimal; padding-left: 30px;">
+<li style="margin-bottom: 12px;"><strong>検証旅</strong>：世界一周・アジア周遊での"挿し心地"と"抜けやすさ"を徹底観察。</li>
+<li style="margin-bottom: 12px;"><strong>SEの同梱決定</strong>：韓国・EUでの使用感向上を最優先に、SEプラグを標準化。</li>
+<li style="margin-bottom: 12px;"><strong>日常テスト</strong>：自宅・カフェ・コワーキングなど、旅以外のシーンでも毎日検証。</li>
+<li style="margin-bottom: 12px;"><strong>ユーザー検証</strong>：旅系クリエイター・インフルエンサーからのフィードバックを反映。</li>
+</ol>
+<h2>よくある質問（FAQ）</h2>
+<p><strong>Q. 韓国旅行で使えますか？</strong><br/>
                 A. はい。SEプラグ同梱により、韓国のSE型コンセントでも<strong>グラつきにくく</strong>、安定してお使いいただけます。</p>
-
-                <p><strong>Q. これだけで電圧も変えられますか？</strong><br>
+<p><strong>Q. これだけで電圧も変えられますか？</strong><br/>
                 A. いいえ。<strong>変換プラグは電圧を変えません</strong>。ACアダプタや家電の対応電圧（100–240Vなど）を必ずご確認ください。必要に応じて変圧器をご用意ください。</p>
-
-                <p><strong>Q. どこで購入できますか？</strong><br>
+<p><strong>Q. どこで購入できますか？</strong><br/>
                 A. 公式取扱いEC（Amazon等）で販売中です。商品ページでは最新モデル・在庫・詳細仕様をご確認ください。</p>
-
-                <h2>代表メッセージ</h2>
-                <p>「旅の"当たり前"を整えることが、体験の質を上げる最短距離だと思っています。Calchesは、荷物は軽く・気分は重くならないギア作りを、これからも続けていきます。」——株式会社ミアキス 代表取締役 髙橋拓也。</p>
-
-                <div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 40px;">
-                    <h3 style="font-size: 1.5em; margin-bottom: 15px; color: #fff;">Calches 海外変換プラグをAmazonで購入</h3>
-                    <p style="margin-bottom: 25px; font-size: 1.1em; color: #fff;">全世界対応・経済産業省承認済み。SEプラグ付きで韓国・EUでも安心。</p>
-                    <a href="https://amzn.to/3KnpmYB" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #fff; color: #FF6B35; padding: 15px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<h2>代表メッセージ</h2>
+<p>「旅の"当たり前"を整えることが、体験の質を上げる最短距離だと思っています。Calchesは、荷物は軽く・気分は重くならないギア作りを、これからも続けていきます。」——株式会社ミアキス 代表取締役 髙橋拓也。</p>
+<div style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 40px;">
+<h3 style="font-size: 1.5em; margin-bottom: 15px; color: #fff;">Calches 海外変換プラグをAmazonで購入</h3>
+<p style="margin-bottom: 25px; font-size: 1.1em; color: #fff;">全世界対応・経済産業省承認済み。SEプラグ付きで韓国・EUでも安心。</p>
+<a href="https://amzn.to/3KnpmYB" rel="noopener noreferrer" style="display: inline-block; background-color: #fff; color: #FF6B35; padding: 15px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" target="_blank">
                         Amazonで詳細を見る →
                     </a>
-                </div>
+</div>
             </div>
 
             <div class="article-cta">
-                <h3>Web制作やEC運営のご相談はこちら</h3>
-                <p>当社は、Web制作から自社ブランドの企画・販売まで幅広く対応しています。<br>お気軽にお問い合わせください。</p>
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
                 <a href="../index.html#contact" class="btn">無料相談はこちら</a>
             </div>
 
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
             <div class="article-footer">
-                <a href="../index.html#blog" class="back-to-blog">← ブログ一覧に戻る</a>
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
             </div>
         </article>
     </main>
@@ -344,79 +469,155 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // --- Smooth Scroll ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const header = document.getElementById('header');
-                const headerOffset = header ? header.offsetHeight : 0;
-
-                if (targetId === "#") {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-                } else {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                        const offsetPosition = elementPosition - headerOffset;
-        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                }
-            });
-        });
-
-        // --- Hamburger Menu ---
+        // ===== ハンバーガーメニュー =====
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const globalNavUl = document.querySelector('#header .global-nav ul');
-
-        function openMenu() {
-            if (globalNavUl) globalNavUl.classList.add('active');
-            if (hamburgerMenu) {
-                hamburgerMenu.setAttribute('aria-expanded', 'true');
-                hamburgerMenu.classList.add('active');
-            }
-        }
-
-        function closeMenu() {
-            if (globalNavUl) globalNavUl.classList.remove('active');
-            if (hamburgerMenu) {
-                hamburgerMenu.setAttribute('aria-expanded', 'false');
-                hamburgerMenu.classList.remove('active');
-            }
-        }
-
         if (hamburgerMenu) {
             hamburgerMenu.addEventListener('click', function () {
-                if (globalNavUl && globalNavUl.classList.contains('active')) {
-                    closeMenu();
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // 固定ヘッダー分のオフセットを調整
+                    window.scrollBy(0, -100);
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
                 } else {
-                    openMenu();
+                    li.classList.remove('active');
                 }
             });
         }
-
-        if (globalNavUl) { 
-            const navLinks = globalNavUl.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', closeMenu); 
-            });
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
         }
-
-        const logoLink = document.querySelector('#header .logo a');
-        if (logoLink) {
-            logoLink.addEventListener('click', function(e) {
-                closeMenu();
-            });
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
         }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     });
     </script>
 </body>
 </html>
-

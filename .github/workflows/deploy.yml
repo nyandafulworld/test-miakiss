@@ -1,14 +1,10 @@
-name: Deploy Blog to Xserver
+name: Deploy to Xserver
 
 on:
   push:
     branches:
       - master
       - main
-    paths:
-      - 'blog/**'
-      - 'index.html'
-      - 'sitemap.xml'
 
 jobs:
   deploy:
@@ -26,20 +22,73 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install beautifulsoup4 lxml
+        run: pip install beautifulsoup4 lxml requests Pillow python-dotenv
 
-      - name: Update index.html blog section
-        run: python scripts/update_index.py
+      - name: Check if blog files changed
+        id: blog-check
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -q '^blog/'; then
+            echo "blog_changed=true" >> $GITHUB_OUTPUT
+            echo "ブログファイルの変更を検出しました"
+          else
+            echo "blog_changed=false" >> $GITHUB_OUTPUT
+            echo "ブログファイルの変更はありません"
+          fi
+
+      - name: Fetch blog images
+        if: steps.blog-check.outputs.blog_changed == 'true'
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          # 最新のブログ記事情報を取得
+          if [ -f blog/published_articles.json ]; then
+            # published_articles.jsonから最新記事を取得してpythonスクリプトで画像取得
+            python - <<EOF
+          import json
+          import subprocess
+          import os
+          
+          with open('blog/published_articles.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+          
+          if data.get('articles'):
+              # 最新の記事（日付順で最新）
+              articles = sorted(data['articles'], key=lambda x: x['date'], reverse=True)
+              latest = articles[0]
+              
+              # 画像取得スクリプトを実行
+              try:
+                  result = subprocess.run(
+                      ['python', 'scripts/fetch_blog_images.py', 
+                       latest['slug'], latest['title'], latest['description']],
+                      capture_output=True,
+                      text=True,
+                      timeout=60
+                  )
+                  print(result.stdout)
+                  if result.stderr:
+                      print(result.stderr)
+              except Exception as e:
+                  print(f"画像取得でエラーが発生しましたが、処理を続行します: {e}")
+          EOF
+          fi
+
+      - name: Sync blog data
+        if: steps.blog-check.outputs.blog_changed == 'true'
+        run: python scripts/sync_blog_data.py
 
       - name: Update sitemap.xml
+        if: steps.blog-check.outputs.blog_changed == 'true'
         run: python scripts/update_sitemap.py
 
       - name: Commit changes if any
+        if: steps.blog-check.outputs.blog_changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add index.html sitemap.xml
-          git diff --staged --quiet || git commit -m "Auto-update index.html and sitemap.xml"
+          git add blog/images/ blog/published_articles.js sitemap.xml
+          git diff --staged --quiet || git commit -m "Auto-update sitemap.xml, blog data and images"
 
       - name: Deploy to Xserver via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -57,3 +106,6 @@ jobs:
             **/scripts/**
             **/*.md
             **/.cursorrules
+            **/.env
+            **/.env.example
+            **/requirements.txt

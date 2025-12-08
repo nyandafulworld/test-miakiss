@@ -9,12 +9,12 @@
     <meta property="og:description" content="ホームページ制作をフリーランスに依頼するか、制作会社に依頼するか迷っていませんか？埼玉県戸田市のWeb制作会社が、それぞれのメリット・デメリットと、自社に合った発注先の選び方を本音で解説します。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.miakiss.co.jp/blog/2025-12-03-freelance-vs-web-agency.html">
-    <meta property="og:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2025-12-03-freelance-vs-web-agency_thumbnail.jpg">
     <meta property="og:site_name" content="株式会社ミアキス">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方">
     <meta name="twitter:description" content="ホームページ制作をフリーランスに依頼するか、制作会社に依頼するか迷っていませんか？埼玉県戸田市のWeb制作会社が、それぞれのメリット・デメリットと、自社に合った発注先の選び方を本音で解説します。">
-    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2025-12-03-freelance-vs-web-agency_thumbnail.jpg">
     <link rel="canonical" href="https://www.miakiss.co.jp/blog/2025-12-03-freelance-vs-web-agency.html">
     <link rel="icon" href="../image/icon.avif" type="image/avif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
         "@type": "Article",
         "headline": "Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方",
         "description": "ホームページ制作をフリーランスに依頼するか、制作会社に依頼するか迷っていませんか？埼玉県戸田市のWeb制作会社が、それぞれのメリット・デメリットと、自社に合った発注先の選び方を本音で解説します。",
-        "image": "https://www.miakiss.co.jp/image/ogp.png",
+        "image": "https://www.miakiss.co.jp/blog/images/2025-12-03-freelance-vs-web-agency_thumbnail.jpg",
         "author": {
             "@type": "Organization",
             "name": "株式会社ミアキス"
@@ -45,27 +45,303 @@
     }
     </script>
     <style>
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .article-header { margin-bottom: 40px; text-align: center; }
-        .article-date { display: block; font-size: 0.9em; color: #999; margin-bottom: 15px; }
-        .article-title { font-size: 2em; color: #333; line-height: 1.4; margin-bottom: 20px; }
-        .article-content { line-height: 1.9; color: #333; }
-        .article-content h2 { font-size: 1.5em; color: #007bff; margin-top: 50px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007bff; }
-        .article-content h3 { font-size: 1.2em; color: #333; margin-top: 30px; margin-bottom: 15px; }
-        .article-content p { margin-bottom: 1.5em; font-size: 1em; }
-        .article-content ul, .article-content ol { margin: 20px 0; padding-left: 30px; }
-        .article-content li { margin-bottom: 12px; line-height: 1.8; }
-        .article-content blockquote { background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 20px; margin: 30px 0; }
-        .article-content strong { color: #007bff; }
-        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 50px 0; }
-        .article-cta h3 { font-size: 1.5em; margin-bottom: 15px; color: #fff; }
-        .article-cta p { margin-bottom: 25px; font-size: 1.1em; color: #fff; }
-        .article-cta .btn { display: inline-block; background-color: #fff; color: #667eea; padding: 12px 35px; border-radius: 50px; font-weight: bold; text-decoration: none; }
-        .article-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; text-align: center; }
-        .back-to-blog { color: #007bff; text-decoration: none; font-weight: bold; }
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #007bff;
+        }
+        
+        .article-toc li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #007bff; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0056b3;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #667eea; 
+            padding: 12px 35px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #007bff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0056b3;
+        }
+        
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
-            .article-title { font-size: 1.5em; }
-            .article-content h2 { font-size: 1.3em; }
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -85,7 +361,7 @@
                     <li><a href="../index.html#pricing">料金プラン</a></li>
                     <li><a href="../index.html#testimonials">お客様の声</a></li>
                     <li><a href="../index.html#flow">制作の流れ</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
                     <li><a href="../index.html#company">会社概要</a></li>
                     <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
@@ -98,115 +374,95 @@
 
     <main>
         <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2025-12-03-freelance-vs-web-agency_header.jpg" 
+                 alt="Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
             <div class="article-header">
                 <time class="article-date" datetime="2025-12-03">2025年12月3日</time>
                 <h1 class="article-title">Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方</h1>
             </div>
 
-            <div class="article-content">
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
                 <p>「ホームページを作りたいけど、フリーランスと制作会社、どっちに頼むのが正解なんだろう？」</p>
-
-                <p>埼玉県戸田市でWeb制作会社を経営している私のもとには、こんな相談がよく届きます。正直に言うと、この質問に対する「絶対の正解」はありません。なぜなら、<strong>どちらが最適かは、あなたの会社の状況や求めるものによって変わる</strong>からです。</p>
-
-                <p>ただ、「選び方の基準」を知っておくと、後悔しない判断ができます。今回は、制作会社を運営する立場から見た「フリーランスと制作会社の違い」を、包み隠さずお話しします。</p>
-
-                <h2>フリーランスに依頼するメリットとデメリット</h2>
-
-                <p>まずは、フリーランスに依頼する場合のメリットから見ていきましょう。</p>
-
-                <h3>フリーランスのメリット</h3>
-
-                <ul>
-                    <li><strong>費用が抑えられることが多い</strong>：会社としての経費がかからない分、制作会社より安い見積もりが出るケースがあります。5ページ程度のサイトなら、制作会社の半額近くで済むことも。</li>
-                    <li><strong>コミュニケーションがスムーズ</strong>：担当者が一人なので、「伝言ゲーム」にならない。直接やり取りできるので、細かいニュアンスも伝わりやすいです。</li>
-                    <li><strong>柔軟な対応</strong>：会社のルールに縛られず、急な修正や追加にも対応してもらいやすい傾向があります。</li>
-                </ul>
-
-                <h3>フリーランスのデメリット</h3>
-
-                <ul>
-                    <li><strong>スキルの幅にばらつきがある</strong>：デザインは得意でもプログラミングは苦手、という人も。逆も然りです。一人で全部を高いレベルでこなせる人は限られます。</li>
-                    <li><strong>連絡が取れなくなるリスク</strong>：これは本当によく聞く話です。「納品後に連絡が取れなくなった」「廃業してしまった」というケース。埼玉県内でも、実際に困っている方からの相談を何度も受けています。</li>
-                    <li><strong>対応範囲の限界</strong>：SEO、セキュリティ対策、サーバー管理など、一人では対応しきれない領域が出てきます。</li>
-                </ul>
-
-                <h2>制作会社に依頼するメリットとデメリット</h2>
-
-                <p>では、制作会社に依頼する場合はどうでしょうか。</p>
-
-                <h3>制作会社のメリット</h3>
-
-                <ul>
-                    <li><strong>チーム体制での対応</strong>：デザイナー、エンジニア、ディレクターなど、それぞれの専門家がチームで対応。各分野で高いクオリティが期待できます。</li>
-                    <li><strong>長期的なサポート</strong>：会社として存続している限り、保守・運用・改善までトータルで任せられます。担当者が辞めても、引き継ぎがされます。</li>
-                    <li><strong>信頼性</strong>：法人としての責任があるため、契約内容が明確で、トラブル時の対応も安心感があります。</li>
-                </ul>
-
-                <h3>制作会社のデメリット</h3>
-
-                <ul>
-                    <li><strong>費用が高くなりがち</strong>：人件費やオフィス経費がかかる分、フリーランスより見積もりが高くなることが多いです。</li>
-                    <li><strong>担当者が変わる可能性</strong>：長期的なお付き合いの中で、担当者が異動・退職することも。引き継ぎがうまくいかないと、話が通じにくくなることもあります。</li>
-                    <li><strong>小回りが利きにくい場合も</strong>：社内の承認フローがあるため、急な対応に時間がかかることがあります。</li>
-                </ul>
-
-                <h2>実際にあった「こんなはずじゃなかった」エピソード</h2>
-
-                <p>私が戸田市でWeb制作を始めてから、こんな相談を何度も受けてきました。</p>
-
-                <blockquote>
-                    <p>「3年前にフリーランスの方にホームページを作ってもらったんですが、最近SSL証明書の更新通知が来て…でも、その方に連絡しても返信がないんです」</p>
-                </blockquote>
-
-                <p>実際にサイトを見てみると、WordPressのバージョンは古いまま、プラグインも放置状態。幸い大きなトラブルは起きていませんでしたが、セキュリティ的にはかなり危険な状態でした。</p>
-
-                <p>一方で、こんな声も。</p>
-
-                <blockquote>
-                    <p>「制作会社に頼んだら、ちょっとした文字修正にも1週間かかって、しかも毎回見積もりが発生するんです」</p>
-                </blockquote>
-
-                <p>これは制作会社の体制の問題ですが、確かに大手になればなるほど、小さな修正にも時間とコストがかかる傾向があります。</p>
-
-                <h2>じゃあ、どうやって選べばいいの？</h2>
-
-                <p>私なりの「選び方の基準」をお伝えします。</p>
-
-                <h3>フリーランスが向いているケース</h3>
-
-                <ul>
-                    <li>予算が限られていて、まずはシンプルなサイトが欲しい</li>
-                    <li>自分でもある程度Web知識があり、指示出しができる</li>
-                    <li>短期的なプロジェクト（LP制作など）</li>
-                    <li>デザイン or コーディングなど、特定スキルだけ外注したい</li>
-                </ul>
-
-                <h3>制作会社が向いているケース</h3>
-
-                <ul>
-                    <li>会社の顔となるコーポレートサイトを作りたい</li>
-                    <li>制作後の保守・運用も任せたい</li>
-                    <li>SEO対策やマーケティングまで相談したい</li>
-                    <li>長期的にサイトを育てていきたい</li>
-                </ul>
-
-                <p>ちなみに、<strong>「小さな制作会社」という選択肢</strong>もあります。弊社ミアキスもそうですが、少人数で運営している制作会社は、フリーランスの身軽さと制作会社の信頼性を両立できることが多いです。</p>
-
-                <h2>発注前に必ず確認したい3つのポイント</h2>
-
-                <p>最後に、フリーランスでも制作会社でも、発注前に確認してほしいことをお伝えします。</p>
-
-                <ol>
-                    <li><strong>制作後のサポート体制</strong>：「作って終わり」なのか、保守契約があるのか。特にWordPressサイトは継続的な更新が必要です。</li>
-                    <li><strong>連絡手段と対応スピード</strong>：メールだけなのか、電話やチャットも対応可能か。緊急時の連絡先は確保されているか。</li>
-                    <li><strong>データの所有権</strong>：ドメイン、サーバー、サイトデータは誰のものになるのか。これを曖昧にすると、後でトラブルになりがちです。</li>
-                </ol>
-
-                <p>埼玉県内、特に戸田市周辺の中小企業さんからは「地元で相談できる相手がいると安心」という声をよくいただきます。何かあったときに直接会って話せる関係は、やはり心強いものです。</p>
-
-                <p>フリーランスでも制作会社でも、大切なのは<strong>「この人（会社）と長く付き合えるか」</strong>という視点。価格だけで選ぶと、後から思わぬ出費や手間が発生することもあります。</p>
-
-                <p>ホームページは作って終わりではなく、育てていくもの。ぜひ、信頼できるパートナーを見つけてください。</p>
+<p>埼玉県戸田市でWeb制作会社を経営している私のもとには、こんな相談がよく届きます。正直に言うと、この質問に対する「絶対の正解」はありません。なぜなら、<strong>どちらが最適かは、あなたの会社の状況や求めるものによって変わる</strong>からです。</p>
+<p>ただ、「選び方の基準」を知っておくと、後悔しない判断ができます。今回は、制作会社を運営する立場から見た「フリーランスと制作会社の違い」を、包み隠さずお話しします。</p>
+<h2>フリーランスに依頼するメリットとデメリット</h2>
+<p>まずは、フリーランスに依頼する場合のメリットから見ていきましょう。</p>
+<h3>フリーランスのメリット</h3>
+<ul>
+<li><strong>費用が抑えられることが多い</strong>：会社としての経費がかからない分、制作会社より安い見積もりが出るケースがあります。5ページ程度のサイトなら、制作会社の半額近くで済むことも。</li>
+<li><strong>コミュニケーションがスムーズ</strong>：担当者が一人なので、「伝言ゲーム」にならない。直接やり取りできるので、細かいニュアンスも伝わりやすいです。</li>
+<li><strong>柔軟な対応</strong>：会社のルールに縛られず、急な修正や追加にも対応してもらいやすい傾向があります。</li>
+</ul>
+<h3>フリーランスのデメリット</h3>
+<ul>
+<li><strong>スキルの幅にばらつきがある</strong>：デザインは得意でもプログラミングは苦手、という人も。逆も然りです。一人で全部を高いレベルでこなせる人は限られます。</li>
+<li><strong>連絡が取れなくなるリスク</strong>：これは本当によく聞く話です。「納品後に連絡が取れなくなった」「廃業してしまった」というケース。埼玉県内でも、実際に困っている方からの相談を何度も受けています。</li>
+<li><strong>対応範囲の限界</strong>：SEO、セキュリティ対策、サーバー管理など、一人では対応しきれない領域が出てきます。</li>
+</ul>
+<h2>制作会社に依頼するメリットとデメリット</h2>
+<p>では、制作会社に依頼する場合はどうでしょうか。</p>
+<h3>制作会社のメリット</h3>
+<ul>
+<li><strong>チーム体制での対応</strong>：デザイナー、エンジニア、ディレクターなど、それぞれの専門家がチームで対応。各分野で高いクオリティが期待できます。</li>
+<li><strong>長期的なサポート</strong>：会社として存続している限り、保守・運用・改善までトータルで任せられます。担当者が辞めても、引き継ぎがされます。</li>
+<li><strong>信頼性</strong>：法人としての責任があるため、契約内容が明確で、トラブル時の対応も安心感があります。</li>
+</ul>
+<h3>制作会社のデメリット</h3>
+<ul>
+<li><strong>費用が高くなりがち</strong>：人件費やオフィス経費がかかる分、フリーランスより見積もりが高くなることが多いです。</li>
+<li><strong>担当者が変わる可能性</strong>：長期的なお付き合いの中で、担当者が異動・退職することも。引き継ぎがうまくいかないと、話が通じにくくなることもあります。</li>
+<li><strong>小回りが利きにくい場合も</strong>：社内の承認フローがあるため、急な対応に時間がかかることがあります。</li>
+</ul>
+<h2>実際にあった「こんなはずじゃなかった」エピソード</h2>
+<p>私が戸田市でWeb制作を始めてから、こんな相談を何度も受けてきました。</p>
+<blockquote>
+<p>「3年前にフリーランスの方にホームページを作ってもらったんですが、最近SSL証明書の更新通知が来て…でも、その方に連絡しても返信がないんです」</p>
+</blockquote>
+<p>実際にサイトを見てみると、WordPressのバージョンは古いまま、プラグインも放置状態。幸い大きなトラブルは起きていませんでしたが、セキュリティ的にはかなり危険な状態でした。</p>
+<p>一方で、こんな声も。</p>
+<blockquote>
+<p>「制作会社に頼んだら、ちょっとした文字修正にも1週間かかって、しかも毎回見積もりが発生するんです」</p>
+</blockquote>
+<p>これは制作会社の体制の問題ですが、確かに大手になればなるほど、小さな修正にも時間とコストがかかる傾向があります。</p>
+<h2>じゃあ、どうやって選べばいいの？</h2>
+<p>私なりの「選び方の基準」をお伝えします。</p>
+<h3>フリーランスが向いているケース</h3>
+<ul>
+<li>予算が限られていて、まずはシンプルなサイトが欲しい</li>
+<li>自分でもある程度Web知識があり、指示出しができる</li>
+<li>短期的なプロジェクト（LP制作など）</li>
+<li>デザイン or コーディングなど、特定スキルだけ外注したい</li>
+</ul>
+<h3>制作会社が向いているケース</h3>
+<ul>
+<li>会社の顔となるコーポレートサイトを作りたい</li>
+<li>制作後の保守・運用も任せたい</li>
+<li>SEO対策やマーケティングまで相談したい</li>
+<li>長期的にサイトを育てていきたい</li>
+</ul>
+<p>ちなみに、<strong>「小さな制作会社」という選択肢</strong>もあります。弊社ミアキスもそうですが、少人数で運営している制作会社は、フリーランスの身軽さと制作会社の信頼性を両立できることが多いです。</p>
+<h2>発注前に必ず確認したい3つのポイント</h2>
+<p>最後に、フリーランスでも制作会社でも、発注前に確認してほしいことをお伝えします。</p>
+<ol>
+<li><strong>制作後のサポート体制</strong>：「作って終わり」なのか、保守契約があるのか。特にWordPressサイトは継続的な更新が必要です。</li>
+<li><strong>連絡手段と対応スピード</strong>：メールだけなのか、電話やチャットも対応可能か。緊急時の連絡先は確保されているか。</li>
+<li><strong>データの所有権</strong>：ドメイン、サーバー、サイトデータは誰のものになるのか。これを曖昧にすると、後でトラブルになりがちです。</li>
+</ol>
+<p>埼玉県内、特に戸田市周辺の中小企業さんからは「地元で相談できる相手がいると安心」という声をよくいただきます。何かあったときに直接会って話せる関係は、やはり心強いものです。</p>
+<p>フリーランスでも制作会社でも、大切なのは<strong>「この人（会社）と長く付き合えるか」</strong>という視点。価格だけで選ぶと、後から思わぬ出費や手間が発生することもあります。</p>
+<p>ホームページは作って終わりではなく、育てていくもの。ぜひ、信頼できるパートナーを見つけてください。</p>
             </div>
 
             <div class="article-cta">
@@ -215,8 +471,16 @@
                 <a href="../index.html#contact" class="btn">無料相談はこちら</a>
             </div>
 
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
             <div class="article-footer">
-                <a href="../index.html#blog" class="back-to-blog">← ブログ一覧に戻る</a>
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
             </div>
         </article>
     </main>
@@ -232,6 +496,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const globalNavUl = document.querySelector('#header .global-nav ul');
         if (hamburgerMenu) {
@@ -240,9 +505,147 @@
                 hamburgerMenu.classList.toggle('active');
             });
         }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // 固定ヘッダー分のオフセットを調整
+                    window.scrollBy(0, -100);
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2025-12-03-freelance-vs-web-agency';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     });
     </script>
 </body>
 </html>
-
 

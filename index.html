@@ -38,6 +38,9 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Blog Articles Data (ローカルファイル対応) -->
+    <script src="blog/published_articles.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17728958495"></script>
     <script>
@@ -169,7 +172,7 @@
                     <li><a href="#pricing">料金プラン</a></li>
                     <li><a href="#testimonials">お客様の声</a></li>
                     <li><a href="#flow">制作の流れ</a></li>
-                    <li><a href="#blog">ブログ</a></li>
+                    <li><a href="blog.html">ブログ</a></li>
                     <li><a href="#company">会社概要</a></li>
                     <li><a href="#message">代表挨拶</a></li>
                     <li><a href="#contact">お問い合わせ</a></li>
@@ -667,67 +670,11 @@
                     <h2>ブログ</h2>
                     <hr class="section-title-underline">
                 </div>
-                <div class="blog-grid">
-                    <article class="blog-item">
-                        <a href="blog/2025-12-05-no-inquiry-website-fix.html">
-                            <div class="blog-image">
-                                <img src="image/ogp.png" alt="問い合わせが来ないホームページの特徴と改善点">
-                            </div>
-                            <div class="blog-content">
-                                <time class="blog-date" datetime="2025-12-05">2025.12.05</time>
-                                <h3 class="blog-title">問い合わせが来ないホームページの特徴と改善点</h3>
-                                <p class="blog-excerpt">ホームページを作ったのに問い合わせが来ない…その原因、意外なところにあるかもしれません。埼玉県戸田市のWeb制作会社が、問い合わせゼロだったサイトを改善した実例と、今すぐできる具体策を本音で解説します。</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-item">
-                        <a href="blog/2025-12-04-website-backup-importance.html">
-                            <div class="blog-image">
-                                <img src="image/ogp.png" alt="ホームページのバックアップ、取っていますか？放置が招く悲劇と今すぐできる対策">
-                            </div>
-                            <div class="blog-content">
-                                <time class="blog-date" datetime="2025-12-04">2025.12.04</time>
-                                <h3 class="blog-title">ホームページのバックアップ、取っていますか？放置が招く悲劇と今すぐできる対策</h3>
-                                <p class="blog-excerpt">ホームページのバックアップ、きちんと取れていますか？埼玉県戸田市のWeb制作会社が、バックアップを放置した企業の実例と、今すぐできる具体的な対策を本音で解説します。</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-item">
-                        <a href="blog/2025-12-03-freelance-vs-web-agency.html">
-                            <div class="blog-image">
-                                <img src="image/ogp.png" alt="Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方">
-                            </div>
-                            <div class="blog-content">
-                                <time class="blog-date" datetime="2025-12-03">2025.12.03</time>
-                                <h3 class="blog-title">Web制作はフリーランスと制作会社どちらに頼むべき？失敗しない選び方</h3>
-                                <p class="blog-excerpt">ホームページ制作をフリーランスに依頼するか、制作会社に依頼するか迷っていませんか？埼玉県戸田市のWeb制作会社が、それぞれのメリット・デメリットと、自社に合った発注先の選び方を本音で解説します。</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-item">
-                        <a href="blog/2025-12-02-sme-without-web-manager.html">
-                            <div class="blog-image">
-                                <img src="image/ogp.png" alt="Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準">
-                            </div>
-                            <div class="blog-content">
-                                <time class="blog-date" datetime="2025-12-02">2025.12.02</time>
-                                <h3 class="blog-title">Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準</h3>
-                                <p class="blog-excerpt">Web担当者がいない中小企業がホームページ運用で直面する課題と解決策を解説。埼玉県戸田市のWeb制作会社が、外注・内製の判断基準や具体的な対処法を本音でお伝えします。</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="blog-item">
-                        <a href="blog/2025-12-01-website-maintenance-contract-necessity.html">
-                            <div class="blog-image">
-                                <img src="image/ogp.png" alt="ホームページの保守契約は本当に必要？放置のリスクと判断基準">
-                            </div>
-                            <div class="blog-content">
-                                <time class="blog-date" datetime="2025-12-01">2025.12.01</time>
-                                <h3 class="blog-title">ホームページの保守契約は本当に必要？放置のリスクと判断基準</h3>
-                                <p class="blog-excerpt">ホームページの保守契約は必要なのか？埼玉県戸田市のWeb制作会社が、保守を契約しないリスクと、自社に合った判断基準を本音で解説します。</p>
-                            </div>
-                        </a>
-                    </article>
+                <div id="blog-grid-top" class="blog-grid">
+                    <!-- 最新3記事はJavaScriptで動的に読み込まれます -->
+                </div>
+                <div class="blog-more-button-container">
+                    <a href="blog.html" class="btn btn-secondary blog-more-button">もっと見る</a>
                 </div>
             </div>
         </section>
@@ -896,6 +843,109 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+    
+        // --- Blog Articles Dynamic Loading ---
+        async function loadTopBlogArticles() {
+            try {
+                let data;
+                
+                // まずグローバル変数をチェック（ローカルファイル対応）
+                if (window.BLOG_ARTICLES_DATA) {
+                    console.log('ローカルデータから記事を読み込みます');
+                    data = window.BLOG_ARTICLES_DATA;
+                } else {
+                    // グローバル変数がない場合はfetchを試みる
+                    console.log('JSONファイルから記事を読み込みます');
+                    const response = await fetch('blog/published_articles.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    data = await response.json();
+                }
+                
+                if (!data || !data.articles || !Array.isArray(data.articles)) {
+                    console.error('記事データの形式が正しくありません:', data);
+                    return;
+                }
+                
+                const articles = data.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const topArticles = articles.slice(0, 3);
+                
+                const container = document.getElementById('blog-grid-top');
+                if (!container) {
+                    console.error('ブログコンテナが見つかりません');
+                    return;
+                }
+                
+                container.innerHTML = '';
+                
+                topArticles.forEach(article => {
+                    const articleElement = document.createElement('article');
+                    articleElement.className = 'blog-item';
+                    
+                    const formattedDate = formatDate(article.date);
+                    
+                    // カテゴリバッジのHTML（カテゴリがある場合）
+                    const categoryBadge = article.category ? 
+                        `<span class="blog-category-badge">${getCategoryName(article.category)}</span>` : '';
+                    
+                    articleElement.innerHTML = `
+                        <a href="blog/${article.slug}.html">
+                            <div class="blog-image">
+                                <img src="blog/images/${article.slug}_thumbnail.jpg" 
+                                     alt="${article.title}"
+                                     onerror="this.src='image/ogp.png'">
+                            </div>
+                            <div class="blog-content">
+                                ${categoryBadge}
+                                <time class="blog-date" datetime="${article.date}">${formattedDate}</time>
+                                <h3 class="blog-title">${article.title}</h3>
+                                <p class="blog-excerpt">${article.description}</p>
+                            </div>
+                        </a>
+                    `;
+                    
+                    container.appendChild(articleElement);
+                });
+                
+                // 「もっと見る」ボタンの表示条件：記事が3件より多い場合のみ表示
+                const moreButtonContainer = document.querySelector('.blog-more-button-container');
+                if (moreButtonContainer) {
+                    if (articles.length > 3) {
+                        moreButtonContainer.style.display = 'flex';
+                    } else {
+                        moreButtonContainer.style.display = 'none';
+                    }
+                }
+                
+                console.log(`${topArticles.length}件のブログ記事を読み込みました`);
+            } catch (error) {
+                console.error('ブログ記事の読み込みに失敗しました:', error);
+                console.error('エラー詳細:', error.message);
+            }
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // カテゴリ名を日本語に変換
+        function getCategoryName(category) {
+            const categories = {
+                'A': '新規制作',
+                'B': '保守・運用',
+                'C': '課題解決',
+                'other': 'その他'
+            };
+            return categories[category] || category;
+        }
+        
+        // ブログ記事を読み込む
+        loadTopBlogArticles();
     
         // --- Contact Form Handler ---
         const contactForm = document.getElementById('contact-form');

@@ -4,9 +4,18 @@
 RewriteEngine On
 RewriteBase /
 
+# blogディレクトリへのアクセス処理（最優先で処理）
+# DirectorySlashによる自動リダイレクトを無効化
+DirectorySlash Off
+
+# /blog/ と /blog の両方を blog.html に直接内部リライト（リダイレクトなし）
+RewriteRule ^blog/?$ blog.html [L]
+
 # .html付きURLを拡張子なしURLへリダイレクト（SEO対策）
 # 例: /tokusho.html → /tokusho
+# ただし、blog.htmlは除外
 RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
+RewriteCond %{REQUEST_URI} !^/blog\.html$
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
 # 拡張子なしURLを.htmlファイルへ内部リライト

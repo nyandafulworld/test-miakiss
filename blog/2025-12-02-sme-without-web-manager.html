@@ -9,12 +9,12 @@
     <meta property="og:description" content="Web担当者がいない中小企業がホームページ運用で直面する課題と解決策を解説。埼玉県戸田市のWeb制作会社が、外注・内製の判断基準や具体的な対処法を本音でお伝えします。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.miakiss.co.jp/blog/2025-12-02-sme-without-web-manager.html">
-    <meta property="og:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2025-12-02-sme-without-web-manager_thumbnail.jpg">
     <meta property="og:site_name" content="株式会社ミアキス">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準">
     <meta name="twitter:description" content="Web担当者がいない中小企業がホームページ運用で直面する課題と解決策を解説。埼玉県戸田市のWeb制作会社が、外注・内製の判断基準や具体的な対処法を本音でお伝えします。">
-    <meta name="twitter:image" content="https://www.miakiss.co.jp/image/ogp.png">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2025-12-02-sme-without-web-manager_thumbnail.jpg">
     <link rel="canonical" href="https://www.miakiss.co.jp/blog/2025-12-02-sme-without-web-manager.html">
     <link rel="icon" href="../image/icon.avif" type="image/avif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
         "@type": "Article",
         "headline": "Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準",
         "description": "Web担当者がいない中小企業がホームページ運用で直面する課題と解決策を解説。埼玉県戸田市のWeb制作会社が、外注・内製の判断基準や具体的な対処法を本音でお伝えします。",
-        "image": "https://www.miakiss.co.jp/image/ogp.png",
+        "image": "https://www.miakiss.co.jp/blog/images/2025-12-02-sme-without-web-manager_thumbnail.jpg",
         "author": {
             "@type": "Organization",
             "name": "株式会社ミアキス"
@@ -45,30 +45,303 @@
     }
     </script>
     <style>
-        .blog-article { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .article-header { margin-bottom: 40px; text-align: center; }
-        .article-date { display: block; font-size: 0.9em; color: #999; margin-bottom: 15px; }
-        .article-title { font-size: 2em; color: #333; line-height: 1.4; margin-bottom: 20px; }
-        .article-content { line-height: 1.9; color: #333; }
-        .article-content h2 { font-size: 1.5em; color: #007bff; margin-top: 50px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007bff; }
-        .article-content h3 { font-size: 1.2em; color: #333; margin-top: 30px; margin-bottom: 15px; }
-        .article-content p { margin-bottom: 1.5em; font-size: 1em; }
-        .article-content ul, .article-content ol { margin: 20px 0; padding-left: 30px; }
-        .article-content li { margin-bottom: 12px; line-height: 1.8; }
-        .article-content blockquote { background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 20px; margin: 30px 0; }
-        .article-content strong { color: #007bff; }
-        .article-cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin: 50px 0; }
-        .article-cta h3 { font-size: 1.5em; margin-bottom: 15px; color: #fff; }
-        .article-cta p { margin-bottom: 25px; font-size: 1.1em; color: #fff; }
-        .article-cta .btn { display: inline-block; background-color: #fff; color: #667eea; padding: 12px 35px; border-radius: 50px; font-weight: bold; text-decoration: none; }
-        .article-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; text-align: center; }
-        .back-to-blog { color: #007bff; text-decoration: none; font-weight: bold; }
-        .qa-box { background-color: #fff9e6; border-radius: 8px; padding: 25px; margin: 30px 0; border: 1px solid #ffd54f; }
-        .qa-box .question { font-weight: bold; color: #e65100; margin-bottom: 15px; }
-        .qa-box .answer { color: #333; }
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #007bff;
+        }
+        
+        .article-toc li.active a {
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #007bff;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #007bff; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #007bff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0056b3;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #667eea; 
+            padding: 12px 35px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #007bff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0056b3;
+        }
+        
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
-            .article-title { font-size: 1.5em; }
-            .article-content h2 { font-size: 1.3em; }
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -88,7 +361,7 @@
                     <li><a href="../index.html#pricing">料金プラン</a></li>
                     <li><a href="../index.html#testimonials">お客様の声</a></li>
                     <li><a href="../index.html#flow">制作の流れ</a></li>
-                    <li><a href="../index.html#blog">ブログ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
                     <li><a href="../index.html#company">会社概要</a></li>
                     <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
@@ -101,156 +374,128 @@
 
     <main>
         <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2025-12-02-sme-without-web-manager_header.jpg" 
+                 alt="Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
             <div class="article-header">
                 <time class="article-date" datetime="2025-12-02">2025年12月2日</time>
                 <h1 class="article-title">Web担当者がいない中小企業はどうすべき？外注・内製の現実的な判断基準</h1>
             </div>
 
-            <div class="article-content">
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
                 <p>「ホームページの更新、誰がやればいいんだろう…」</p>
-
-                <p>埼玉県戸田市でWeb制作・保守運用を行っているミアキスです。この相談、実はめちゃくちゃ多いんです。特に従業員10名以下の中小企業さんからよくいただきます。</p>
-
-                <p>正直に言うと、<strong>Web担当者がいないのは「普通」</strong>です。むしろ、専任のWeb担当を置ける中小企業の方が珍しい。うちのお客様の8割以上が「Web専任担当者なし」の状態からスタートしています。</p>
-
-                <p>今日は、そんな「Web担当者不在問題」について、制作会社の立場から本音で解決策をお伝えしますね。</p>
-
-                <h2>なぜ中小企業にWeb担当者がいないのか？3つの現実</h2>
-
-                <p>まず、Web担当者がいない理由を整理してみましょう。「うちだけかな」と不安に思っている方、安心してください。これには明確な理由があります。</p>
-
-                <h3>理由①：そもそも人員に余裕がない</h3>
-
-                <p>従業員5人の会社で「Web専任」を置くなんて、現実的じゃないですよね。営業、経理、製造…と、みんな複数の役割を掛け持ちしているのが普通です。</p>
-
-                <p>私が以前お手伝いした戸田市内の製造業のお客様も、「総務の山田さんが詳しそうだから」という理由でWeb担当にされていました。でも山田さん、本業は経理なんですよね。</p>
-
-                <h3>理由②：Webスキルを持った人材が採用できない</h3>
-
-                <p>中小企業のWeb担当者の平均年収は350〜450万円程度。一方、Web制作会社やIT企業なら同じスキルで500〜600万円以上。<strong>スキルのある人材は、より条件の良いところに流れていく</strong>のが現実です。</p>
-
-                <p>埼玉エリアだと、東京のリモートワーク案件に人材が流れてしまうケースも多いですね。</p>
-
-                <h3>理由③：「ホームページは作って終わり」という認識</h3>
-
-                <p>これ、制作会社側にも責任があると思っています。「ホームページ作ります！納品します！はい終わり！」という売り方をしてきた業界の歴史があるからです。</p>
-
-                <p>本当は、ホームページって「作った後」のほうが大事なんですけどね。運用して、分析して、改善して…というサイクルを回してこそ、ビジネスの成果につながります。</p>
-
-                <h2>Web担当者不在で起きる「よくあるトラブル」5選</h2>
-
-                <p>Web担当者がいないと、具体的にどんな問題が起きるのか。実際にうちに相談が来たケースをもとにお話しします。</p>
-
-                <ol>
-                    <li><strong>ホームページが3年以上更新されていない</strong><br>「最新情報」の欄に2022年の記事が表示されている…なんてことも。お客様からすると「この会社、まだやってるの？」と思われてしまいます。</li>
-                    <li><strong>SSL証明書の期限切れで「安全ではありません」表示</strong><br>ある日突然、サイトにアクセスすると警告画面。営業中のお客様から「御社のサイト、危険って出てますけど」と連絡が入るパターンです。</li>
-                    <li><strong>WordPressがハッキングされて改ざん</strong><br>放置されたWordPressは格好の標的。見知らぬ英語のページが大量に生成されていた、という相談も年に数件あります。</li>
-                    <li><strong>前任者の退職でログイン情報が不明に</strong><br>「詳しかった○○さんが辞めてしまって…」これ、本当に多い。サーバーもドメインも何もわからない状態で引き継がれるケースです。</li>
-                    <li><strong>問い合わせフォームが動かなくなっていた</strong><br>何ヶ月も気づかず、お客様からの問い合わせを取りこぼしていた…という最悪のパターンもあります。</li>
-                </ol>
-
-                <p>どれも「担当者がいれば防げた」トラブルです。でも、だからといって今すぐ担当者を雇う必要はありません。</p>
-
-                <h2>外注 vs 内製化、どちらを選ぶべき？</h2>
-
-                <p>Web担当者不在の解決策は大きく2つ。「外注する」か「社内で内製化する」かです。</p>
-
-                <p>よくある誤解として「外注は高い」「内製化はタダ」というものがありますが、<strong>実際は逆転することも多い</strong>んです。</p>
-
-                <h3>外注が向いているケース</h3>
-
-                <ul>
-                    <li>月の更新作業が5時間以下</li>
-                    <li>セキュリティ対策やサーバー管理に不安がある</li>
-                    <li>社員の本業を圧迫したくない</li>
-                    <li>繁忙期と閑散期の差が激しい</li>
-                </ul>
-
-                <p>外注の月額相場は5,000円〜30,000円程度。時給換算で考えると、社員がやるより安くなることも多いです。</p>
-
-                <h3>内製化が向いているケース</h3>
-
-                <ul>
-                    <li>更新頻度が高い（週に何度も）</li>
-                    <li>社内にITに強い人がいる</li>
-                    <li>Web戦略を経営の柱にしたい</li>
-                    <li>ノウハウを社内に蓄積したい</li>
-                </ul>
-
-                <p>内製化の隠れコストとして「教育時間」があります。CMSの使い方、SEOの基礎、アクセス解析の見方…これを教える時間も含めると、最初の半年は外注より高くつくことも。</p>
-
-                <div class="qa-box">
-                    <p class="question">Q：うちは従業員3名の会社です。外注と内製、どちらがいいですか？</p>
-                    <p class="answer">A：3名規模なら、迷わず外注をおすすめします。本業に集中していただいて、Webは専門家に任せたほうが結果的にコスパが良いです。月1万円前後の保守プランなら、社員1人が月2時間Web作業するより効率的ですよ。</p>
-                </div>
-
-                <h2>「とりあえず」でもOKな最低限の対策3つ</h2>
-
-                <p>「外注も内製もすぐには決められない」という方へ。まずはこの3つだけ確認してください。今日中にできます。</p>
-
-                <h3>①ログイン情報を一覧化する</h3>
-
-                <p>サーバー、ドメイン、WordPress、Googleアナリティクス…最低でもこの4つのログイン情報を、紙でもExcelでも良いので一箇所にまとめてください。</p>
-
-                <p>「誰かが知ってるはず」は危険です。人は辞めます。記憶は薄れます。</p>
-
-                <h3>②月に1回、サイトの表示確認をする</h3>
-
-                <p>スマホとPCの両方で、自社サイトにアクセスしてみてください。エラーが出ていないか、表示が崩れていないか、フォームは動くか。</p>
-
-                <p>カレンダーに「毎月1日はサイト確認」と入れておくだけで、大きなトラブルは防げます。</p>
-
-                <h3>③更新期限をカレンダーに登録する</h3>
-
-                <p>ドメインとサーバーの契約更新日、SSL証明書の期限。この3つは絶対に忘れないようにリマインダー設定を。</p>
-
-                <p>期限切れでサイトが表示されなくなった…という相談は、実は一番多いトラブルなんです。</p>
-
-                <h2>埼玉県の中小企業がWeb運用で得する方法</h2>
-
-                <p>最後に、埼玉県内の中小企業さん向けのちょっとしたアドバイスを。</p>
-
-                <p>埼玉県は東京に近いぶん、「東京の大手制作会社に頼めばいいか」と思いがちです。でも、<strong>地元の制作会社を選ぶメリット</strong>って実はかなり大きいんですよ。</p>
-
-                <ul>
-                    <li><strong>打ち合わせがしやすい</strong>：「ちょっと来て話を聞いてほしい」に対応できる距離感</li>
-                    <li><strong>地域の商習慣を理解している</strong>：埼玉の中小企業がどうやって集客しているか、肌感覚でわかる</li>
-                    <li><strong>緊急時のレスポンスが早い</strong>：トラブル時に「今日中に対応します」が言える</li>
-                    <li><strong>東京より費用が抑えられることも</strong>：オフィス代などの固定費が違いますからね</li>
-                </ul>
-
-                <p>私たちミアキスも戸田市に拠点を置いていますが、さいたま市、川口市、蕨市、和光市など近隣エリアのお客様が多いです。「近くにいる安心感」って、Web運用では意外と大事だったりします。</p>
-
-                <div class="qa-box">
-                    <p class="question">Q：今の制作会社と連絡が取れなくなりました。他社に相談しても大丈夫？</p>
-                    <p class="answer">A：もちろん大丈夫です。実際、「前の会社が音信不通になった」という相談は珍しくありません。サーバーやドメインの情報さえあれば、引き継ぎは可能です。まずは現状を整理するところからお手伝いしますので、お気軽にご相談ください。</p>
-                </div>
-
-                <h2>まとめ：Web担当者がいなくても、ホームページは運用できる</h2>
-
-                <p>今日の内容をまとめます。</p>
-
-                <ul>
-                    <li>Web担当者がいない中小企業は「普通」。珍しくない</li>
-                    <li>放置すると、セキュリティ・機会損失・信用低下のリスクがある</li>
-                    <li>外注か内製かは、更新頻度と社内リソースで判断</li>
-                    <li>まずはログイン情報の整理と更新期限の管理から</li>
-                    <li>埼玉県内なら、地元の制作会社に相談するメリットも</li>
-                </ul>
-
-                <p>「誰かがやらなきゃ」と思いながら後回しにしてきたWeb周りのこと。一度、専門家に相談してみませんか？</p>
-
-                <p>「何から始めればいいかわからない」という状態でも大丈夫です。現状を聞いて、御社に合った方法を一緒に考えます。</p>
+<p>埼玉県戸田市でWeb制作・保守運用を行っているミアキスです。この相談、実はめちゃくちゃ多いんです。特に従業員10名以下の中小企業さんからよくいただきます。</p>
+<p>正直に言うと、<strong>Web担当者がいないのは「普通」</strong>です。むしろ、専任のWeb担当を置ける中小企業の方が珍しい。うちのお客様の8割以上が「Web専任担当者なし」の状態からスタートしています。</p>
+<p>今日は、そんな「Web担当者不在問題」について、制作会社の立場から本音で解決策をお伝えしますね。</p>
+<h2>なぜ中小企業にWeb担当者がいないのか？3つの現実</h2>
+<p>まず、Web担当者がいない理由を整理してみましょう。「うちだけかな」と不安に思っている方、安心してください。これには明確な理由があります。</p>
+<h3>理由①：そもそも人員に余裕がない</h3>
+<p>従業員5人の会社で「Web専任」を置くなんて、現実的じゃないですよね。営業、経理、製造…と、みんな複数の役割を掛け持ちしているのが普通です。</p>
+<p>私が以前お手伝いした戸田市内の製造業のお客様も、「総務の山田さんが詳しそうだから」という理由でWeb担当にされていました。でも山田さん、本業は経理なんですよね。</p>
+<h3>理由②：Webスキルを持った人材が採用できない</h3>
+<p>中小企業のWeb担当者の平均年収は350〜450万円程度。一方、Web制作会社やIT企業なら同じスキルで500〜600万円以上。<strong>スキルのある人材は、より条件の良いところに流れていく</strong>のが現実です。</p>
+<p>埼玉エリアだと、東京のリモートワーク案件に人材が流れてしまうケースも多いですね。</p>
+<h3>理由③：「ホームページは作って終わり」という認識</h3>
+<p>これ、制作会社側にも責任があると思っています。「ホームページ作ります！納品します！はい終わり！」という売り方をしてきた業界の歴史があるからです。</p>
+<p>本当は、ホームページって「作った後」のほうが大事なんですけどね。運用して、分析して、改善して…というサイクルを回してこそ、ビジネスの成果につながります。</p>
+<h2>Web担当者不在で起きる「よくあるトラブル」5選</h2>
+<p>Web担当者がいないと、具体的にどんな問題が起きるのか。実際にうちに相談が来たケースをもとにお話しします。</p>
+<ol>
+<li><strong>ホームページが3年以上更新されていない</strong><br/>「最新情報」の欄に2022年の記事が表示されている…なんてことも。お客様からすると「この会社、まだやってるの？」と思われてしまいます。</li>
+<li><strong>SSL証明書の期限切れで「安全ではありません」表示</strong><br/>ある日突然、サイトにアクセスすると警告画面。営業中のお客様から「御社のサイト、危険って出てますけど」と連絡が入るパターンです。</li>
+<li><strong>WordPressがハッキングされて改ざん</strong><br/>放置されたWordPressは格好の標的。見知らぬ英語のページが大量に生成されていた、という相談も年に数件あります。</li>
+<li><strong>前任者の退職でログイン情報が不明に</strong><br/>「詳しかった○○さんが辞めてしまって…」これ、本当に多い。サーバーもドメインも何もわからない状態で引き継がれるケースです。</li>
+<li><strong>問い合わせフォームが動かなくなっていた</strong><br/>何ヶ月も気づかず、お客様からの問い合わせを取りこぼしていた…という最悪のパターンもあります。</li>
+</ol>
+<p>どれも「担当者がいれば防げた」トラブルです。でも、だからといって今すぐ担当者を雇う必要はありません。</p>
+<h2>外注 vs 内製化、どちらを選ぶべき？</h2>
+<p>Web担当者不在の解決策は大きく2つ。「外注する」か「社内で内製化する」かです。</p>
+<p>よくある誤解として「外注は高い」「内製化はタダ」というものがありますが、<strong>実際は逆転することも多い</strong>んです。</p>
+<h3>外注が向いているケース</h3>
+<ul>
+<li>月の更新作業が5時間以下</li>
+<li>セキュリティ対策やサーバー管理に不安がある</li>
+<li>社員の本業を圧迫したくない</li>
+<li>繁忙期と閑散期の差が激しい</li>
+</ul>
+<p>外注の月額相場は5,000円〜30,000円程度。時給換算で考えると、社員がやるより安くなることも多いです。</p>
+<h3>内製化が向いているケース</h3>
+<ul>
+<li>更新頻度が高い（週に何度も）</li>
+<li>社内にITに強い人がいる</li>
+<li>Web戦略を経営の柱にしたい</li>
+<li>ノウハウを社内に蓄積したい</li>
+</ul>
+<p>内製化の隠れコストとして「教育時間」があります。CMSの使い方、SEOの基礎、アクセス解析の見方…これを教える時間も含めると、最初の半年は外注より高くつくことも。</p>
+<div class="qa-box">
+<p class="question">Q：うちは従業員3名の会社です。外注と内製、どちらがいいですか？</p>
+<p class="answer">A：3名規模なら、迷わず外注をおすすめします。本業に集中していただいて、Webは専門家に任せたほうが結果的にコスパが良いです。月1万円前後の保守プランなら、社員1人が月2時間Web作業するより効率的ですよ。</p>
+</div>
+<h2>「とりあえず」でもOKな最低限の対策3つ</h2>
+<p>「外注も内製もすぐには決められない」という方へ。まずはこの3つだけ確認してください。今日中にできます。</p>
+<h3>①ログイン情報を一覧化する</h3>
+<p>サーバー、ドメイン、WordPress、Googleアナリティクス…最低でもこの4つのログイン情報を、紙でもExcelでも良いので一箇所にまとめてください。</p>
+<p>「誰かが知ってるはず」は危険です。人は辞めます。記憶は薄れます。</p>
+<h3>②月に1回、サイトの表示確認をする</h3>
+<p>スマホとPCの両方で、自社サイトにアクセスしてみてください。エラーが出ていないか、表示が崩れていないか、フォームは動くか。</p>
+<p>カレンダーに「毎月1日はサイト確認」と入れておくだけで、大きなトラブルは防げます。</p>
+<h3>③更新期限をカレンダーに登録する</h3>
+<p>ドメインとサーバーの契約更新日、SSL証明書の期限。この3つは絶対に忘れないようにリマインダー設定を。</p>
+<p>期限切れでサイトが表示されなくなった…という相談は、実は一番多いトラブルなんです。</p>
+<h2>埼玉県の中小企業がWeb運用で得する方法</h2>
+<p>最後に、埼玉県内の中小企業さん向けのちょっとしたアドバイスを。</p>
+<p>埼玉県は東京に近いぶん、「東京の大手制作会社に頼めばいいか」と思いがちです。でも、<strong>地元の制作会社を選ぶメリット</strong>って実はかなり大きいんですよ。</p>
+<ul>
+<li><strong>打ち合わせがしやすい</strong>：「ちょっと来て話を聞いてほしい」に対応できる距離感</li>
+<li><strong>地域の商習慣を理解している</strong>：埼玉の中小企業がどうやって集客しているか、肌感覚でわかる</li>
+<li><strong>緊急時のレスポンスが早い</strong>：トラブル時に「今日中に対応します」が言える</li>
+<li><strong>東京より費用が抑えられることも</strong>：オフィス代などの固定費が違いますからね</li>
+</ul>
+<p>私たちミアキスも戸田市に拠点を置いていますが、さいたま市、川口市、蕨市、和光市など近隣エリアのお客様が多いです。「近くにいる安心感」って、Web運用では意外と大事だったりします。</p>
+<div class="qa-box">
+<p class="question">Q：今の制作会社と連絡が取れなくなりました。他社に相談しても大丈夫？</p>
+<p class="answer">A：もちろん大丈夫です。実際、「前の会社が音信不通になった」という相談は珍しくありません。サーバーやドメインの情報さえあれば、引き継ぎは可能です。まずは現状を整理するところからお手伝いしますので、お気軽にご相談ください。</p>
+</div>
+<h2>まとめ：Web担当者がいなくても、ホームページは運用できる</h2>
+<p>今日の内容をまとめます。</p>
+<ul>
+<li>Web担当者がいない中小企業は「普通」。珍しくない</li>
+<li>放置すると、セキュリティ・機会損失・信用低下のリスクがある</li>
+<li>外注か内製かは、更新頻度と社内リソースで判断</li>
+<li>まずはログイン情報の整理と更新期限の管理から</li>
+<li>埼玉県内なら、地元の制作会社に相談するメリットも</li>
+</ul>
+<p>「誰かがやらなきゃ」と思いながら後回しにしてきたWeb周りのこと。一度、専門家に相談してみませんか？</p>
+<p>「何から始めればいいかわからない」という状態でも大丈夫です。現状を聞いて、御社に合った方法を一緒に考えます。</p>
             </div>
 
             <div class="article-cta">
-                <h3>Web運用のお悩み、まずは無料相談から</h3>
-                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>「担当者がいなくて困っている」そんなご相談、お気軽にどうぞ。</p>
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
                 <a href="../index.html#contact" class="btn">無料相談はこちら</a>
             </div>
 
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
             <div class="article-footer">
-                <a href="../index.html#blog" class="back-to-blog">← ブログ一覧に戻る</a>
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
             </div>
         </article>
     </main>
@@ -266,6 +511,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const globalNavUl = document.querySelector('#header .global-nav ul');
         if (hamburgerMenu) {
@@ -274,9 +520,147 @@
                 hamburgerMenu.classList.toggle('active');
             });
         }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // 固定ヘッダー分のオフセットを調整
+                    window.scrollBy(0, -100);
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2025-12-02-sme-without-web-manager';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
     });
     </script>
 </body>
 </html>
-
 
