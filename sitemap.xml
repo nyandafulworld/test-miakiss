@@ -221,6 +221,22 @@
     
     
     <url>
+        <loc>https://miakiss.com/subsidy.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/logo_v3.avif</ns1:loc>
+            <ns1:title>株式会社ミアキス ロゴ</ns1:title>
+        </ns1:image>
+        <ns1:image>
+            <ns1:loc>https://miakiss.com/image/ogp.png</ns1:loc>
+            <ns1:title>ホームページ制作に使える補助金情報</ns1:title>
+        </ns1:image>
+    </url>
+    
+    <url>
         <loc>https://miakiss.com/tokusho.html</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
