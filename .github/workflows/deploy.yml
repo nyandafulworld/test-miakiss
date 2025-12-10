@@ -1,111 +1,48 @@
-name: Deploy to Xserver
+name: Deploy to Production
 
 on:
   push:
     branches:
       - master
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
+      
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          fetch-depth: 2
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install beautifulsoup4 lxml requests Pillow python-dotenv
-
-      - name: Check if blog files changed
-        id: blog-check
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      
+      - name: Add server to known hosts
         run: |
-          if git diff --name-only HEAD~1 HEAD | grep -q '^blog/'; then
-            echo "blog_changed=true" >> $GITHUB_OUTPUT
-            echo "ブログファイルの変更を検出しました"
-          else
-            echo "blog_changed=false" >> $GITHUB_OUTPUT
-            echo "ブログファイルの変更はありません"
-          fi
-
-      - name: Fetch blog images
-        if: steps.blog-check.outputs.blog_changed == 'true'
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: Deploy to server
         env:
-          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PATH: ${{ secrets.SERVER_PATH }}
         run: |
-          # 最新のブログ記事情報を取得
-          if [ -f blog/published_articles.json ]; then
-            # published_articles.jsonから最新記事を取得してpythonスクリプトで画像取得
-            python - <<EOF
-          import json
-          import subprocess
-          import os
-          
-          with open('blog/published_articles.json', 'r', encoding='utf-8') as f:
-              data = json.load(f)
-          
-          if data.get('articles'):
-              # 最新の記事（日付順で最新）
-              articles = sorted(data['articles'], key=lambda x: x['date'], reverse=True)
-              latest = articles[0]
-              
-              # 画像取得スクリプトを実行
-              try:
-                  result = subprocess.run(
-                      ['python', 'scripts/fetch_blog_images.py', 
-                       latest['slug'], latest['title'], latest['description']],
-                      capture_output=True,
-                      text=True,
-                      timeout=60
-                  )
-                  print(result.stdout)
-                  if result.stderr:
-                      print(result.stderr)
-              except Exception as e:
-                  print(f"画像取得でエラーが発生しましたが、処理を続行します: {e}")
-          EOF
-          fi
-
-      - name: Sync blog data
-        if: steps.blog-check.outputs.blog_changed == 'true'
-        run: python scripts/sync_blog_data.py
-
-      - name: Update sitemap.xml
-        if: steps.blog-check.outputs.blog_changed == 'true'
-        run: python scripts/update_sitemap.py
-
-      - name: Commit changes if any
-        if: steps.blog-check.outputs.blog_changed == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add blog/images/ blog/published_articles.js sitemap.xml
-          git diff --staged --quiet || git commit -m "Auto-update sitemap.xml, blog data and images"
-
-      - name: Deploy to Xserver via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.github/**
-            **/scripts/**
-            **/*.md
-            **/.cursorrules
-            **/.env
-            **/.env.example
-            **/requirements.txt
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'node_modules' \
+            --exclude '__pycache__' \
+            --exclude '.DS_Store' \
+            --exclude '.env' \
+            --exclude 'requirements.txt' \
+            --exclude 'scripts/' \
+            --exclude 'test_server.py' \
+            --exclude '*.md' \
+            --exclude 'assets/' \
+            ./ ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/
+      
+      - name: Deployment complete
+        run: echo "✅ Deployment to production completed successfully!"
