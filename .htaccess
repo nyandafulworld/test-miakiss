@@ -13,9 +13,10 @@ RewriteRule ^blog/?$ blog.html [L]
 
 # .html付きURLを拡張子なしURLへリダイレクト（SEO対策）
 # 例: /tokusho.html → /tokusho
-# ただし、blog.htmlは除外
+# ただし、blog.htmlとblog/ディレクトリ内のファイルは除外
 RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
 RewriteCond %{REQUEST_URI} !^/blog\.html$
+RewriteCond %{REQUEST_URI} !^/blog/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
 
 # 拡張子なしURLを.htmlファイルへ内部リライト
