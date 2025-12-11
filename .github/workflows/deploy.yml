@@ -22,8 +22,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           exclude: |
-            **/.git*
-            **/.git*/**
+            **/.git
+            **/.git/**
             **/.github/**
             **/node_modules/**
             **/__pycache__/**
