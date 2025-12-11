@@ -14,35 +14,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      
-      - name: Add server to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-      
-      - name: Deploy to server
-        env:
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_PATH: ${{ secrets.SERVER_PATH }}
-        run: |
-          rsync -avz --delete \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'node_modules' \
-            --exclude '__pycache__' \
-            --exclude '.DS_Store' \
-            --exclude '.env' \
-            --exclude 'requirements.txt' \
-            --exclude 'scripts/' \
-            --exclude 'test_server.py' \
-            --exclude '*.md' \
-            --exclude 'assets/' \
-            ./ ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/__pycache__/**
+            **/.DS_Store
+            **/.env
+            **/requirements.txt
+            **/scripts/**
+            **/test_server.py
+            **/*.md
+            **/assets/**
+            **/image_backup/**
       
       - name: Deployment complete
         run: echo "✅ Deployment to production completed successfully!"
