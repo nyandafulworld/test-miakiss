@@ -211,3 +211,6 @@ git push -f origin master
 
 デプロイに関する問題が解決しない場合は、GitHub Issuesで報告してください。
 
+
+
+

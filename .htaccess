@@ -29,6 +29,10 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{THE_REQUEST} ^GET\ /index\.html
 RewriteRule ^index\.html$ / [R=301,L]
 
+# /index へのアクセスをルートへリダイレクト
+RewriteCond %{THE_REQUEST} ^GET\ /index[?\s]
+RewriteRule ^index$ / [R=301,L]
+
 # 旧URLのリダイレクト設定（301: 恒久的な移動）
 # /calches/ → 実績セクション
 RewriteRule ^calches/?$ https://miakiss.com/#works [R=301,L]
