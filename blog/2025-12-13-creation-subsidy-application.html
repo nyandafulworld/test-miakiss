@@ -38,19 +38,27 @@
             "name": "株式会社ミアキス",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.miakiss.co.jp/image/logo_v3.avif"
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
             }
         },
         "datePublished": "2025-12-13",
         "dateModified": "2025-12-13"
     }
     </script>
+</head>
+<body class="white-header">
     <style>
         /* 記事本体のスタイル */
         .blog-article { 
             max-width: 900px; 
             margin: 0 auto; 
-            padding: 40px 20px; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
         }
         
         /* ヘッダー画像 */
@@ -206,13 +214,13 @@
         
         /* CTAセクション */
         .article-cta { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
             color: #fff; 
             padding: 30px; 
             border-radius: 12px; 
             text-align: center; 
             margin: 50px 0; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
         }
         
         .article-cta h3 { 
@@ -230,9 +238,9 @@
         .article-cta .btn { 
             display: inline-block; 
             background-color: #fff; 
-            color: #667eea; 
+            color: #0D9488; 
             padding: 12px 35px; 
-            border-radius: 50px; 
+            border-radius: 8px; 
             font-weight: bold; 
             text-decoration: none; 
             transition: all 0.3s ease;
@@ -242,6 +250,7 @@
         .article-cta .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
         }
         
         /* 関連記事セクション */
@@ -346,14 +355,14 @@
         }
     </style>
 </head>
-<body>
+<body class="white-header">
     <header id="header">
         <div class="container">
             <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
                 <div class="hamburger-icon"><span></span><span></span><span></span></div>
             </button>
             <div class="logo">
-                <a href="/"><img src="../image/logo-miakiss.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
             </div>
             <nav class="global-nav">
                 <ul>

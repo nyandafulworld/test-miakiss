@@ -27,6 +27,7 @@
         "@type": "Article",
         "headline": "ホームページ運用は内製と外注どちらが得か｜判断基準と失敗しない選び方",
         "description": "ホームページ運用を内製すべきか外注すべきか？埼玉県戸田市のWeb制作会社が、コスト・品質・リスクの観点から判断基準を実例とともに本音で解説します。",
+        "url": "https://www.miakiss.co.jp/blog/2025-12-11-website-operation-in-house-vs-outsource.html",
         "image": "https://www.miakiss.co.jp/blog/images/2025-12-11-website-operation-in-house-vs-outsource_thumbnail.jpg",
         "author": {
             "@type": "Organization",
@@ -37,19 +38,27 @@
             "name": "株式会社ミアキス",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.miakiss.co.jp/image/logo_v3.avif"
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
             }
         },
         "datePublished": "2025-12-11",
         "dateModified": "2025-12-11"
     }
     </script>
+</head>
+<body class="white-header">
     <style>
         /* 記事本体のスタイル */
         .blog-article { 
             max-width: 900px; 
             margin: 0 auto; 
-            padding: 40px 20px; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
         }
         
         /* ヘッダー画像 */
@@ -87,7 +96,7 @@
         /* 目次スタイル */
         .article-toc {
             background: #f8f9fa;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #0D9488;
             padding: 20px 25px;
             margin: 30px 0;
             border-radius: 8px;
@@ -116,7 +125,7 @@
             content: "▸";
             position: absolute;
             left: 0;
-            color: #007bff;
+            color: #0D9488;
             font-weight: bold;
         }
         
@@ -127,11 +136,11 @@
         }
         
         .article-toc a:hover {
-            color: #007bff;
+            color: #0D9488;
         }
         
         .article-toc li.active a {
-            color: #007bff;
+            color: #0D9488;
             font-weight: bold;
         }
         
@@ -148,7 +157,7 @@
             margin-top: 50px; 
             margin-bottom: 20px; 
             padding: 15px 20px;
-            border-left: 5px solid #007bff;  /* 左アクセントバー */
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
             background: #f8f9fa;
             border-radius: 4px;
         }
@@ -179,7 +188,7 @@
         
         .article-content blockquote { 
             background-color: #f8f9fa; 
-            border-left: 4px solid #007bff; 
+            border-left: 4px solid #0D9488; 
             padding: 20px; 
             margin: 30px 0; 
             border-radius: 4px;
@@ -194,24 +203,24 @@
         }
         
         .article-content a {
-            color: #007bff;
+            color: #0D9488;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
         
         .article-content a:hover {
-            color: #0056b3;
+            color: #0F766E;
         }
         
         /* CTAセクション */
         .article-cta { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
             color: #fff; 
             padding: 30px; 
             border-radius: 12px; 
             text-align: center; 
             margin: 50px 0; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
         }
         
         .article-cta h3 { 
@@ -229,9 +238,9 @@
         .article-cta .btn { 
             display: inline-block; 
             background-color: #fff; 
-            color: #667eea; 
+            color: #0D9488; 
             padding: 12px 35px; 
-            border-radius: 50px; 
+            border-radius: 8px; 
             font-weight: bold; 
             text-decoration: none; 
             transition: all 0.3s ease;
@@ -241,6 +250,7 @@
         .article-cta .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
         }
         
         /* 関連記事セクション */
@@ -314,14 +324,14 @@
         }
         
         .back-to-blog { 
-            color: #007bff; 
+            color: #0D9488; 
             text-decoration: none; 
             font-weight: bold; 
             transition: color 0.3s ease;
         }
         
         .back-to-blog:hover {
-            color: #0056b3;
+            color: #0F766E;
         }
         
         /* レスポンシブ対応 */
@@ -345,30 +355,34 @@
         }
     </style>
 </head>
-<body>
+<body class="white-header">
     <header id="header">
         <div class="container">
             <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
                 <div class="hamburger-icon"><span></span><span></span><span></span></div>
             </button>
             <div class="logo">
-                <a href="/"><img src="../image/logo_v3.avif" alt="株式会社ミアキス"></a>
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
             </div>
             <nav class="global-nav">
                 <ul>
                     <li><a href="/#service">サービス</a></li>
                     <li><a href="/#works">実績</a></li>
                     <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
                     <li><a href="/#testimonials">お客様の声</a></li>
                     <li><a href="/#flow">制作の流れ</a></li>
                     <li><a href="../blog.html">ブログ</a></li>
                     <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
                     <li><a href="/#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <a href="/#contact" class="header-contact-button">
-                <img src="../image/mail.avif" alt="お問い合わせ" class="mail-icon-img">
-            </a>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -576,7 +590,7 @@
     <footer id="footer">
         <div class="container">
             <p class="footer-links">
-                <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
             </p>
             <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
         </div>
@@ -736,4 +750,7 @@
     </script>
 </body>
 </html>
+
+
+
 

@@ -45,13 +45,17 @@
       gtag('js', new Date());
       gtag('config', 'AW-17728958495');
     </script>
+</head>
+<body class="white-header">
     
     <style>
         /* 補助金ページ専用スタイル */
         .subsidy-hero {
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%);
             color: #fff;
-            padding: 60px 0;
+            margin-top: -75px; /* ヘッダー高さ分上に移動 */
+            padding-top: 210px; /* 60px + 75px（ヘッダー高さ分） + 75px（余白） */
+            padding-bottom: 60px;
             text-align: center;
         }
         
@@ -85,7 +89,7 @@
         }
         
         .subsidy-intro-box h2 {
-            color: #1a365d;
+            color: #0F766E;
             font-size: 1.5em;
             margin-bottom: 15px;
         }
@@ -124,7 +128,7 @@
         }
         
         .subsidy-card-header.national {
-            background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+            background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
         }
         
         .subsidy-card-header.prefecture {
@@ -167,7 +171,7 @@
         .amount-value {
             font-size: 1.8em;
             font-weight: bold;
-            color: #1a365d;
+            color: #0F766E;
         }
         
         .amount-value .unit {
@@ -176,7 +180,7 @@
         }
         
         .subsidy-rate {
-            background: #e3f2fd;
+            background: #CCFBF1;
             padding: 10px 15px;
             border-radius: 8px;
         }
@@ -184,7 +188,7 @@
         .subsidy-rate .rate-value {
             font-size: 1.3em;
             font-weight: bold;
-            color: #1565c0;
+            color: #0D9488;
         }
         
         .subsidy-details {
@@ -234,19 +238,19 @@
         .subsidy-link {
             display: inline-block;
             margin-top: 20px;
-            color: #1565c0;
+            color: #0D9488;
             font-weight: bold;
             text-decoration: underline;
             transition: color 0.3s ease;
         }
         
         .subsidy-link:hover {
-            color: #0d47a1;
+            color: #0F766E;
         }
         
         /* CTAセクション */
         .subsidy-cta {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%);
             padding: 60px 0;
             text-align: center;
         }
@@ -261,7 +265,7 @@
         }
         
         .subsidy-cta-box h2 {
-            color: #2e7d32;
+            color: #0F766E;
             font-size: 1.8em;
             margin-bottom: 20px;
         }
@@ -289,7 +293,7 @@
         }
         
         .cta-feature .check-icon {
-            color: #4caf50;
+            color: #0D9488;
             font-size: 1.2em;
         }
         
@@ -305,7 +309,7 @@
             align-items: center;
             gap: 10px;
             padding: 15px 35px;
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 1.1em;
             font-weight: bold;
             text-decoration: none;
@@ -313,24 +317,24 @@
         }
         
         .cta-btn-primary {
-            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
         }
         
         .cta-btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,152,0,0.4);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
         }
         
         .cta-btn-secondary {
             background: #fff;
-            color: #2e7d32;
-            border: 2px solid #2e7d32;
+            color: #0D9488;
+            border: 2px solid #0D9488;
         }
         
         .cta-btn-secondary:hover {
-            background: #2e7d32;
+            background: #0D9488;
             color: #fff;
         }
         
@@ -343,6 +347,13 @@
         }
         
         /* レスポンシブ */
+        @media (max-width: 1024px) {
+            .subsidy-hero {
+                margin-top: -50px; /* タブレット/SP版ヘッダー高さ分上に移動 */
+                padding-top: 170px; /* 60px + 50px（ヘッダー高さ分） + 60px（余白） */
+            }
+        }
+        
         @media (max-width: 768px) {
             .subsidy-hero h1 {
                 font-size: 1.6em;
@@ -386,7 +397,7 @@
         }
     </style>
 </head>
-<body>
+<body class="white-header">
     <header id="header">
         <div class="container">
             <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
@@ -397,7 +408,7 @@
                 </div>
             </button>
             <div class="logo">
-                <a href="/"><img src="image/logo_v3.avif" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+                <a href="/"><img src="image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
             </div>
             <nav class="global-nav">
                 <ul>
@@ -662,14 +673,9 @@
                         </div>
                     </div>
                     
-                    <div class="cta-buttons">
+                    <div class="cta-buttons" style="justify-content: center;">
                         <a href="/#contact" class="cta-btn cta-btn-primary">
-                            <span>📩</span>
                             <span>無料で相談する</span>
-                        </a>
-                        <a href="tel:048-400-2808" class="cta-btn cta-btn-secondary">
-                            <span>📞</span>
-                            <span>048-400-2808</span>
                         </a>
                     </div>
                 </div>
@@ -687,7 +693,7 @@
     <footer id="footer">
         <div class="container">
             <p class="footer-links">
-                <a href="subsidy.html" class="footer-link">補助金情報</a> | <a href="tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="privacy.html" class="footer-link">プライバシーポリシー</a>
+                <a href="tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="privacy.html" class="footer-link">プライバシーポリシー</a>
             </p>
             <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
         </div>
