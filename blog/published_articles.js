@@ -125,7 +125,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": ".htaccess とは",
       "keywordId": 106,
       "description": ".htaccessとは何か？ホームページ運用で役立つ基本設定を、埼玉県戸田市のWeb制作会社が初心者にもわかりやすく解説。リダイレクト設定やセキュリティ対策など実務で使える知識をお伝えします。"
+    },
+    {
+      "slug": "2025-12-15-creation-subsidy-application",
+      "title": "Web制作会社の補助金申請サポート｜ミアキスの支援内容",
+      "date": "2025-12-15",
+      "category": "E",
+      "keyword": "Web制作 補助金 申請代行",
+      "keywordId": 145,
+      "description": "ホームページ制作で補助金を活用したいけど、申請が複雑で困っていませんか？埼玉県戸田市のミアキスが、補助金申請から制作まで一貫サポート。実際の採択事例や申請のポイントを代表の経験から解説します。"
     }
   ],
-  "lastUpdated": "2025-12-14T10:00:00+09:00"
+  "lastUpdated": "2025-12-15T12:00:00+09:00"
 };
