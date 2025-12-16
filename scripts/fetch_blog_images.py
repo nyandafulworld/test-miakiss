@@ -11,6 +11,7 @@ import os
 import sys
 import json
 import requests
+import random
 from pathlib import Path
 from typing import Optional, Dict, Tuple
 from dotenv import load_dotenv
@@ -109,6 +110,7 @@ def fetch_from_unsplash(query: str, orientation: str = "landscape") -> Optional[
             "query": query,
             "orientation": orientation,
             "per_page": 1,
+            "page": random.randint(1, 10),  # ランダムなページから取得
             "order_by": "relevant"
         }
         
@@ -154,7 +156,8 @@ def fetch_from_pexels(query: str, orientation: str = "landscape") -> Optional[st
         params = {
             "query": query,
             "orientation": orientation,
-            "per_page": 1
+            "per_page": 1,
+            "page": random.randint(1, 10)  # ランダムなページから取得
         }
         
         response = requests.get(url, headers=headers, params=params, timeout=10)
