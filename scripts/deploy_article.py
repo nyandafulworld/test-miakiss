@@ -68,6 +68,21 @@ def deploy_article(slug, commit_message=None):
     """
     print(f"\n🚀 記事デプロイを開始: {slug}\n")
     
+    # 1. published_articles.jsを同期
+    print("🔄 published_articles.jsを同期中...")
+    sync_script = PROJECT_ROOT / "scripts" / "sync_blog_data.py"
+    if sync_script.exists():
+        result = subprocess.run(
+            ["python3", str(sync_script)],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            print("✅ published_articles.js同期完了")
+        else:
+            print("⚠️  同期に失敗しましたが、続行します")
+    
     # デフォルトのコミットメッセージ
     if not commit_message:
         date = datetime.now().strftime("%Y-%m-%d")
@@ -79,6 +94,7 @@ def deploy_article(slug, commit_message=None):
         f"blog/images/{slug}_header.jpg",
         f"blog/images/{slug}_thumbnail.jpg",
         "blog/published_articles.json",
+        "blog/published_articles.js",  # ブログ一覧に表示するために必須
         "blog/used_images.json",
         "sitemap.xml"
     ]
