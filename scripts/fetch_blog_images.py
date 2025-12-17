@@ -12,17 +12,20 @@ import sys
 import json
 import requests
 import random
+import hashlib
 from pathlib import Path
-from typing import Optional, Dict, Tuple
+from typing import Optional, Dict, Tuple, Set
 from dotenv import load_dotenv
 from PIL import Image
 from io import BytesIO
+from datetime import datetime
 
 # プロジェクトルートのパスを取得
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 BLOG_DIR = PROJECT_ROOT / "blog"
 IMAGES_DIR = BLOG_DIR / "images"
+USED_IMAGES_FILE = BLOG_DIR / "used_images.json"
 
 # .envファイルを読み込み
 load_dotenv(PROJECT_ROOT / ".env")
@@ -62,6 +65,140 @@ TRANSLATION_DICT = {
 }
 
 
+def load_used_images() -> Dict:
+    """
+    used_images.jsonを読み込む
+    
+    Returns:
+        使用済み画像データの辞書
+    """
+    if not USED_IMAGES_FILE.exists():
+        return {"images": [], "last_updated": ""}
+    
+    try:
+        with open(USED_IMAGES_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"⚠️  used_images.jsonの読み込みエラー: {e}")
+        return {"images": [], "last_updated": ""}
+
+
+def save_used_images(data: Dict):
+    """
+    used_images.jsonに保存
+    
+    Args:
+        data: 保存するデータ
+    """
+    try:
+        data["last_updated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+09:00")
+        with open(USED_IMAGES_FILE, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"💾 used_images.jsonを更新しました")
+    except Exception as e:
+        print(f"❌ used_images.jsonの保存エラー: {e}")
+
+
+def get_used_image_hashes() -> Set[str]:
+    """
+    使用済み画像のURLハッシュセットを取得
+    
+    Returns:
+        URLハッシュのセット
+    """
+    data = load_used_images()
+    hashes = set()
+    for img in data.get("images", []):
+        if img.get("url_hash"):
+            hashes.add(img["url_hash"])
+    return hashes
+
+
+def get_used_filenames() -> Set[str]:
+    """
+    使用済み画像のファイル名セットを取得
+    
+    Returns:
+        ファイル名のセット
+    """
+    data = load_used_images()
+    filenames = set()
+    for img in data.get("images", []):
+        if img.get("filename"):
+            filenames.add(img["filename"])
+    return filenames
+
+
+def calculate_url_hash(url: str) -> str:
+    """
+    画像URLのハッシュ値を計算
+    
+    Args:
+        url: 画像URL
+    
+    Returns:
+        SHA256ハッシュ値（最初の16文字）
+    """
+    return hashlib.sha256(url.encode()).hexdigest()[:16]
+
+
+def is_image_used(url: str, filename: str) -> bool:
+    """
+    画像が既に使用されているかチェック
+    
+    Args:
+        url: 画像URL
+        filename: ファイル名
+    
+    Returns:
+        使用済みの場合True
+    """
+    url_hash = calculate_url_hash(url)
+    used_hashes = get_used_image_hashes()
+    used_filenames = get_used_filenames()
+    
+    # URLハッシュまたはファイル名が一致する場合は使用済み
+    if url_hash in used_hashes:
+        print(f"⚠️  URLハッシュが既に使用されています: {url_hash}")
+        return True
+    
+    if filename in used_filenames:
+        print(f"⚠️  ファイル名が既に使用されています: {filename}")
+        return True
+    
+    return False
+
+
+def add_used_image(url: str, filename: str, article_slug: str, source: str, image_type: str):
+    """
+    使用済み画像を記録
+    
+    Args:
+        url: 画像URL
+        filename: ファイル名
+        article_slug: 記事スラッグ
+        source: 画像ソース（unsplash/pexels/picsum）
+        image_type: 画像タイプ（header/thumbnail）
+    """
+    data = load_used_images()
+    
+    url_hash = calculate_url_hash(url)
+    used_date = datetime.now().strftime("%Y-%m-%d")
+    
+    image_record = {
+        "url_hash": url_hash,
+        "filename": filename,
+        "used_date": used_date,
+        "article_slug": article_slug,
+        "source": source,
+        "image_type": image_type
+    }
+    
+    data["images"].append(image_record)
+    save_used_images(data)
+    print(f"✅ 使用済み画像として記録: {filename}")
+
+
 def translate_keyword(keyword: str) -> str:
     """
     日本語キーワードを英語に変換（簡易版）
@@ -86,13 +223,14 @@ def translate_keyword(keyword: str) -> str:
     return translated.strip()
 
 
-def fetch_from_unsplash(query: str, orientation: str = "landscape") -> Optional[str]:
+def fetch_from_unsplash(query: str, orientation: str = "landscape", page: int = None) -> Optional[str]:
     """
     Unsplash APIから画像URLを取得
     
     Args:
         query: 検索クエリ（英語）
         orientation: 画像の向き（landscape/portrait/squarish）
+        page: ページ番号（Noneの場合はランダム）
     
     Returns:
         画像URL（取得失敗時はNone）
@@ -106,11 +244,16 @@ def fetch_from_unsplash(query: str, orientation: str = "landscape") -> Optional[
         headers = {
             "Authorization": f"Client-ID {UNSPLASH_ACCESS_KEY}"
         }
+        
+        # ページ番号が指定されていない場合はランダム
+        if page is None:
+            page = random.randint(1, 10)
+        
         params = {
             "query": query,
             "orientation": orientation,
             "per_page": 1,
-            "page": random.randint(1, 10),  # ランダムなページから取得
+            "page": page,
             "order_by": "relevant"
         }
         
@@ -122,7 +265,7 @@ def fetch_from_unsplash(query: str, orientation: str = "landscape") -> Optional[
         if data["total"] > 0 and len(data["results"]) > 0:
             photo = data["results"][0]
             image_url = photo["urls"]["regular"]  # 1080px幅
-            print(f"✅ Unsplashから画像を取得: {query}")
+            print(f"✅ Unsplashから画像を取得: {query} (page {page})")
             return image_url
         else:
             print(f"⚠️  Unsplashで画像が見つかりませんでした: {query}")
@@ -133,13 +276,14 @@ def fetch_from_unsplash(query: str, orientation: str = "landscape") -> Optional[
         return None
 
 
-def fetch_from_pexels(query: str, orientation: str = "landscape") -> Optional[str]:
+def fetch_from_pexels(query: str, orientation: str = "landscape", page: int = None) -> Optional[str]:
     """
     Pexels APIから画像URLを取得（フォールバック）
     
     Args:
         query: 検索クエリ（英語）
         orientation: 画像の向き（landscape/portrait/square）
+        page: ページ番号（Noneの場合はランダム）
     
     Returns:
         画像URL（取得失敗時はNone）
@@ -153,11 +297,16 @@ def fetch_from_pexels(query: str, orientation: str = "landscape") -> Optional[st
         headers = {
             "Authorization": PEXELS_API_KEY
         }
+        
+        # ページ番号が指定されていない場合はランダム
+        if page is None:
+            page = random.randint(1, 10)
+        
         params = {
             "query": query,
             "orientation": orientation,
             "per_page": 1,
-            "page": random.randint(1, 10)  # ランダムなページから取得
+            "page": page
         }
         
         response = requests.get(url, headers=headers, params=params, timeout=10)
@@ -168,7 +317,7 @@ def fetch_from_pexels(query: str, orientation: str = "landscape") -> Optional[st
         if data["total_results"] > 0 and len(data["photos"]) > 0:
             photo = data["photos"][0]
             image_url = photo["src"]["large"]  # 1280px幅
-            print(f"✅ Pexelsから画像を取得: {query}")
+            print(f"✅ Pexelsから画像を取得: {query} (page {page})")
             return image_url
         else:
             print(f"⚠️  Pexelsで画像が見つかりませんでした: {query}")
@@ -177,6 +326,55 @@ def fetch_from_pexels(query: str, orientation: str = "landscape") -> Optional[st
     except requests.RequestException as e:
         print(f"❌ Pexels API エラー: {e}")
         return None
+
+
+def fetch_unique_image(query: str, orientation: str = "landscape", max_retries: int = 5) -> Tuple[Optional[str], str]:
+    """
+    重複していない画像URLを取得（リトライあり）
+    
+    Args:
+        query: 検索クエリ（英語）
+        orientation: 画像の向き
+        max_retries: 最大リトライ回数
+    
+    Returns:
+        (画像URL, ソース名) のタプル。取得失敗時は (None, "")
+    """
+    for attempt in range(max_retries):
+        print(f"🔄 画像取得試行 {attempt + 1}/{max_retries}")
+        
+        # ページ番号を変えて取得
+        page = attempt + 1
+        
+        # Unsplash → Pexels の順で試行
+        image_url = None
+        source = ""
+        
+        if UNSPLASH_ACCESS_KEY:
+            image_url = fetch_from_unsplash(query, orientation, page)
+            source = "unsplash"
+        
+        if not image_url and PEXELS_API_KEY:
+            image_url = fetch_from_pexels(query, orientation, page)
+            source = "pexels"
+        
+        if not image_url:
+            print(f"⚠️  試行 {attempt + 1}: 画像が取得できませんでした")
+            continue
+        
+        # 重複チェック（URLハッシュのみ）
+        url_hash = calculate_url_hash(image_url)
+        used_hashes = get_used_image_hashes()
+        
+        if url_hash in used_hashes:
+            print(f"⚠️  試行 {attempt + 1}: 取得した画像は既に使用済みです（ハッシュ: {url_hash}）")
+            continue
+        
+        print(f"✅ 未使用の画像を取得しました（試行 {attempt + 1}回目）")
+        return image_url, source
+    
+    print(f"❌ {max_retries}回試行しましたが、未使用の画像が見つかりませんでした")
+    return None, ""
 
 
 def download_and_save_image(image_url: str, save_path: Path, target_width: int = 1200) -> bool:
@@ -220,7 +418,7 @@ def download_and_save_image(image_url: str, save_path: Path, target_width: int =
 
 def fetch_blog_images(slug: str, title: str, description: str) -> Tuple[bool, bool]:
     """
-    ブログ記事用の画像を取得
+    ブログ記事用の画像を取得（重複チェック・記録機能付き）
     
     Args:
         slug: 記事のスラッグ（ファイル名）
@@ -247,14 +445,15 @@ def fetch_blog_images(slug: str, title: str, description: str) -> Tuple[bool, bo
         print(f"✅ アイキャッチ画像は既に存在します: {thumbnail_path.name}")
         thumbnail_success = True
     else:
-        print("\n📥 アイキャッチ画像を取得中...")
-        # Unsplash → Pexels の順で試行
-        image_url = fetch_from_unsplash(search_query, orientation="landscape")
-        if not image_url:
-            image_url = fetch_from_pexels(search_query, orientation="landscape")
+        print("\n📥 アイキャッチ画像を取得中（重複チェック付き）...")
+        # 重複チェック付きで画像を取得（最大5回リトライ）
+        image_url, source = fetch_unique_image(search_query, orientation="landscape", max_retries=5)
         
         if image_url:
             thumbnail_success = download_and_save_image(image_url, thumbnail_path, target_width=800)
+            if thumbnail_success:
+                # 使用済み画像として記録
+                add_used_image(image_url, thumbnail_path.name, slug, source, "thumbnail")
     
     # ヘッダー画像を取得（より大きいサイズ）
     header_path = IMAGES_DIR / f"{slug}_header.jpg"
@@ -264,16 +463,16 @@ def fetch_blog_images(slug: str, title: str, description: str) -> Tuple[bool, bo
         print(f"✅ ヘッダー画像は既に存在します: {header_path.name}")
         header_success = True
     else:
-        print("\n📥 ヘッダー画像を取得中...")
+        print("\n📥 ヘッダー画像を取得中（重複チェック付き）...")
         # 異なる検索クエリで取得（バリエーションを持たせる）
         alt_query = f"{search_query} professional"
-        image_url = fetch_from_unsplash(alt_query, orientation="landscape")
-        if not image_url:
-            # 同じ画像でも良い場合は元のクエリで再取得
-            image_url = fetch_from_pexels(search_query, orientation="landscape")
+        image_url, source = fetch_unique_image(alt_query, orientation="landscape", max_retries=5)
         
         if image_url:
             header_success = download_and_save_image(image_url, header_path, target_width=1200)
+            if header_success:
+                # 使用済み画像として記録
+                add_used_image(image_url, header_path.name, slug, source, "header")
     
     return thumbnail_success, header_success
 

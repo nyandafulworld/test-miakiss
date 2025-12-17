@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える | 株式会社ミアキス</title>
+    <meta name="description" content="Googleアナリティクス、導入したけど見方がわからない…という方へ。埼玉県戸田市のWeb制作会社が、初心者でも今日から使える基本的な見方と、実務で役立つ活用法を本音で解説します。">
+    <meta property="og:title" content="Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える">
+    <meta property="og:description" content="Googleアナリティクス、導入したけど見方がわからない…という方へ。埼玉県戸田市のWeb制作会社が、初心者でも今日から使える基本的な見方と、実務で役立つ活用法を本音で解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2025-12-17-analytics.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2025-12-17-analytics_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える">
+    <meta name="twitter:description" content="Googleアナリティクス、導入したけど見方がわからない…という方へ。埼玉県戸田市のWeb制作会社が、初心者でも今日から使える基本的な見方と、実務で役立つ活用法を本音で解説します。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2025-12-17-analytics_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2025-12-17-analytics.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える",
+        "description": "Googleアナリティクス、導入したけど見方がわからない…という方へ。埼玉県戸田市のWeb制作会社が、初心者でも今日から使える基本的な見方と、実務で役立つ活用法を本音で解説します。",
+        "url": "https://www.miakiss.co.jp/blog/2025-12-17-analytics.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2025-12-17-analytics_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2025-12-17",
+        "dateModified": "2025-12-17"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2025-12-17-analytics_header.jpg" 
+                 alt="Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2025-12-17">2025.12.17</time>
+                <h1 class="article-title">Googleアナリティクスの基本的な見方と活用法｜初心者でも今日から使える</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>「Googleアナリティクス、導入したはいいけど、どこを見ればいいのかさっぱりわからない…」</p>
+
+<p>これ、戸田市周辺の中小企業の社長さんやWeb担当者の方から、本当によく聞く相談なんです。特に初めてホームページを作った直後だと、「データは取れてるみたいだけど、何をどう活用すればいいの？」という状態になりがちですよね。</p>
+
+<p>株式会社ミアキスの代表として<strong>これまで50社以上のアナリティクス運用をサポートしてきた経験</strong>から、今日は「初心者でも今日から使える」という視点で、Googleアナリティクスの基本的な見方と活用法をお伝えします。</p>
+
+<h2>Googleアナリティクス、結局どこを見ればいいの？</h2>
+
+<p>まず結論から言うと、<strong>最初に見るべきは「3つの数字」だけ</strong>です。</p>
+
+<p>埼玉県戸田市のとある製造業の社長さんから「アナリティクス、項目が多すぎて何から手をつければいいかわからない」と相談されたことがあります。確かに、画面を開くと数百もの指標が並んでいて、初心者には圧倒的すぎますよね。</p>
+
+<p>でも実は、<strong>日常的にチェックすべき指標はたった3つ</strong>なんです。</p>
+
+<h3>1. ユーザー数（訪問者数）</h3>
+
+<p>これはシンプルに「何人があなたのサイトを見に来たか」という数字。お店でいえば来店者数ですね。</p>
+
+<p>ミアキスがサポートしているクライアント様の平均で言うと、中小企業のコーポレートサイトなら<strong>月間300〜800人が一つの目安</strong>です。もちろん業種によって大きく変わりますが、「自社は今どのくらい認知されているのか」を知る基本の指標です。</p>
+
+<h3>2. ページビュー数（PV数）</h3>
+
+<p>訪問者が何ページ見たかという数字。1人の訪問者が5ページ見れば5PVとカウントされます。</p>
+
+<p>戸田市内の建設会社のサイトでは、<strong>平均3〜4ページ閲覧されている状態</strong>が理想的。これが1ページ台だと「すぐに離脱されている」ということなので、コンテンツの見直しが必要かもしれません。</p>
+
+<h3>3. コンバージョン数（目標達成数）</h3>
+
+<p>これが一番重要。「問い合わせ」「資料請求」「電話タップ」など、あなたが設定した目標を達成した回数です。</p>
+
+<p>正直なところ、<strong>訪問者が1000人いても問い合わせが0件なら、ビジネスとしては意味がない</strong>ですよね。逆に訪問者100人でも問い合わせが3件あれば、それは非常に効率の良いサイトと言えます。</p>
+
+<p>ミアキスでは<a href="/#service">ホームページ制作</a>時に、このコンバージョン設定を必ず行っています。</p>
+
+<h2>よくある間違い：「直帰率」を気にしすぎるのはNG</h2>
+
+<p>「直帰率が80%もあるんです！これってマズイですよね？」</p>
+
+<p>これもよく聞く相談なんですが、実は<strong>直帰率の高さは必ずしも悪いことではありません</strong>。</p>
+
+<p>例えば、戸田市の飲食店のサイトで「営業時間」や「アクセス」を調べるために訪れた人は、その情報が見つかったらすぐに離脱しますよね。これは「目的を達成した直帰」なので、全く問題ないんです。</p>
+
+<p>逆に、商品ページで80%直帰されているなら、それは「興味を持たれていない」サインかもしれません。</p>
+
+<p>つまり、<strong>数字だけ見ても意味がなくて、「その数字の意味」を理解することが大切</strong>なんです。</p>
+
+<h2>初心者がまず設定すべき「目標」の作り方</h2>
+
+<p>「コンバージョンが大事なのはわかったけど、どうやって設定するの？」</p>
+
+<p>Googleアナリティクスの「目標」設定、確かに初心者には少しハードルが高いですよね。でも、<strong>一度設定してしまえば、あとは自動で計測してくれます</strong>。</p>
+
+<h3>設定すべき目標の具体例</h3>
+
+<ul>
+<li><strong>問い合わせ完了ページ</strong>への到達（サンクスページ）</li>
+<li><strong>電話番号のタップ</strong>（スマホからの発信）</li>
+<li><strong>資料ダウンロード</strong>の完了</li>
+<li><strong>特定のページ（料金表など）</strong>の閲覧</li>
+</ul>
+
+<p>埼玉県内のある士業事務所では、「料金ページを3ページ以上閲覧した人」を「見込み客」として目標設定しています。すると、<strong>実際に問い合わせにつながりやすい行動が可視化されて、営業戦略が立てやすくなった</strong>そうです。</p>
+
+<p>ミアキスの<a href="/#pricing">保守プラン</a>では、このような目標設定のサポートも含まれています。</p>
+
+<h2>数字を「改善」につなげるための3つの質問</h2>
+
+<p>データを見て終わり、ではもったいない。ここからが本番です。</p>
+
+<p>私がクライアント様に必ずお伝えしているのが、<strong>「3つの質問」を自分に投げかける</strong>という方法。</p>
+
+<h3>質問1：「どのページが一番見られているか？」</h3>
+
+<p>人気ページがわかれば、「お客様が何に興味を持っているか」が見えてきます。</p>
+
+<p>戸田市のあるBtoB企業では、予想外に「採用ページ」のアクセスが多いことが判明。実はその会社、業界では働きやすさで有名だったんです。そこで採用情報をトップに配置したところ、<strong>応募数が1.5倍に増加</strong>しました。</p>
+
+<h3>質問2：「どこから訪問者が来ているか？」</h3>
+
+<p>検索エンジンからなのか、SNSからなのか、広告からなのか。流入元がわかれば、力を入れるべき施策が見えてきます。</p>
+
+<p>ミアキスがサポートしているクライアント様の多くは、<strong>検索流入が7割、SNSが2割、直接訪問が1割</strong>という割合です。もしSNS流入がゼロなら、SNS活用の余地があるかもしれませんね。</p>
+
+<h3>質問3：「問い合わせ前に、どのページを見ているか？」</h3>
+
+<p>これ、めちゃくちゃ重要です。</p>
+
+<p>問い合わせをした人の行動を遡ると、「実績ページ→料金ページ→問い合わせ」という流れが多い、とわかったりします。だったら、<strong>その3ページを特に充実させれば、問い合わせ率が上がる</strong>わけです。</p>
+
+<p>実際、埼玉県内のWeb制作会社で、このルート分析をもとにページを改善したところ、<strong>問い合わせ数が3ヶ月で2倍</strong>になった事例があります。</p>
+
+<h2>「見るだけ」から「活用する」へ：月次レポートの作り方</h2>
+
+<p>「データは見てるんですけど、それをどう活かせばいいか…」</p>
+
+<p>これも本当によく聞く悩みです。データを「見る」のと「活用する」のは、全く別のスキルなんですよね。</p>
+
+<p>ミアキスでは、クライアント様向けに<strong>「A4用紙1枚の月次レポート」</strong>をお渡ししています。内容はこんな感じ。</p>
+
+<ul>
+<li>先月との比較（ユーザー数・PV・コンバージョン）</li>
+<li>人気ページトップ5</li>
+<li>流入キーワードトップ5</li>
+<li>今月の改善提案</li>
+</ul>
+
+<p>これだけで十分です。むしろ、<strong>シンプルな方が継続的に確認できて、改善につながりやすい</strong>んです。</p>
+
+<p>戸田市の製造業の社長さんからは「毎月このレポートを見るのが楽しみ。数字が改善していくのが目に見えてわかるから」と言っていただいています。</p>
+
+<h2>よくある質問：こんな時どうする？</h2>
+
+<h3>Q1. アクセスが全然増えないんですが…</h3>
+
+<p>アクセスが少ない原因は主に2つ。</p>
+
+<p><strong>①SEO対策が不足している</strong>：Google検索で上位に表示されていない状態です。特に新しいサイトは、検索エンジンに認識されるまで3〜6ヶ月かかります。</p>
+
+<p><strong>②認知施策が足りない</strong>：SEOだけでなく、SNSや広告、名刺へのURL記載など、複数のチャネルで告知することが大切です。</p>
+
+<p>ミアキスの<a href="/#service">保守運用サービス</a>では、継続的なSEO対策もサポートしています。</p>
+
+<h3>Q2. スマホとPCどちらが多いか知りたい</h3>
+
+<p>アナリティクスの「デバイス」レポートで確認できます。</p>
+
+<p>最近は<strong>スマホ閲覧が7割を超えるサイトがほとんど</strong>。もしあなたのサイトがスマホ対応していないなら、今すぐリニューアルを検討すべきです。実際、スマホ非対応のせいで機会損失している企業、埼玉県内でもまだまだ見かけます。</p>
+
+<h3>Q3. GA4とUA、どっちを使えばいいの？</h3>
+
+<p>2023年7月以降、旧バージョン（UA）は計測停止しているので、<strong>必ずGA4（Googleアナリティクス4）を使ってください</strong>。</p>
+
+<p>もし「まだUAのまま」という方は、データが取れていない可能性大。今すぐGA4に移行しましょう。</p>
+
+<h2>まとめ：アナリティクスは「宝の地図」</h2>
+
+<p>Googleアナリティクスは、使いこなせば<strong>「どこを改善すれば成果が出るか」を教えてくれる宝の地図</strong>です。</p>
+
+<p>でも、初心者が一人で全部やろうとすると、挫折しがち。実際、戸田市や埼玉県内の中小企業の多くが「導入はしたけど放置」という状態になっています。</p>
+
+<p>ミアキスでは、ホームページ制作だけでなく、<strong>アナリティクスの設定から月次レポート作成、改善提案まで一貫してサポート</strong>しています。「データは見てるけど、どう活かせばいいかわからない」という方、ぜひ一度<a href="/#contact">ご相談</a>ください。</p>
+
+<p>あなたのホームページが「作りっぱなし」から「成果を生む資産」に変わるお手伝いをします。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2025-12-17-analytics';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>
+

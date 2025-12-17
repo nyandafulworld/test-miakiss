@@ -63,15 +63,59 @@ def get_used_keyword_ids():
     return used_ids
 
 
-def select_keyword_by_weight(categories, keywords):
+def check_keyword_theme_duplicate(keyword, articles):
+    """
+    選択されたキーワードが既存記事と重複していないかチェック
+    
+    Args:
+        keyword: チェック対象のキーワード辞書
+        articles: 既存記事のリスト
+    
+    Returns:
+        (is_duplicate, reason) - 重複している場合True、理由の説明文
+    """
+    keyword_text = keyword["keyword"]
+    theme_text = keyword["theme"]
+    
+    for article in articles:
+        # 1. キーワードの完全一致チェック
+        if "keyword" in article and article["keyword"] == keyword_text:
+            return True, f"キーワード '{keyword_text}' が既に使用されています（記事: {article.get('title', article.get('slug'))}）"
+        
+        # 2. テーマの類似性チェック（主要単語の重複率）
+        if "title" in article:
+            # タイトルから主要な単語を抽出
+            article_words = set([w for w in article["title"] if len(w) > 1])
+            theme_words = set([w for w in theme_text if len(w) > 1])
+            
+            # 共通単語の数をカウント
+            common_words = article_words & theme_words
+            if len(common_words) >= 4:  # 4文字以上の共通単語がある場合
+                similarity = len(common_words) / max(len(theme_words), 1)
+                if similarity > 0.6:  # 60%以上類似している場合
+                    return True, f"テーマが類似しています（記事: {article['title']}、類似度: {similarity:.0%}）"
+    
+    return False, ""
+
+
+def select_keyword_by_weight(categories, keywords, exclude_ids=None):
     """
     配分比率に基づいてキーワードを選択
+    
+    Args:
+        categories: カテゴリ辞書
+        keywords: キーワードリスト
+        exclude_ids: 除外するキーワードIDのセット（オプション）
     
     Returns:
         選択されたキーワード辞書、またはNone
     """
     # 使用済みキーワードIDを取得
     used_ids = get_used_keyword_ids()
+    
+    # 除外IDを追加
+    if exclude_ids:
+        used_ids = used_ids | exclude_ids
     
     # 未使用キーワードをカテゴリ別に分類
     available_by_category = {cat: [] for cat in CATEGORY_WEIGHTS.keys()}
@@ -95,21 +139,64 @@ def select_keyword_by_weight(categories, keywords):
         return None
     
     # 重み付けリストを作成
+    # 注意: 各キーワードを重みの回数分だけ追加するが、キーワード自体は一意
     weighted_pool = []
     for category, weight in CATEGORY_WEIGHTS.items():
         category_keywords = available_by_category.get(category, [])
         if category_keywords:
-            # 各カテゴリのキーワードを重みに応じて追加
-            weighted_pool.extend([(kw, category)] * weight)
+            # 各カテゴリのキーワードをweight回だけプールに追加
+            # これにより、カテゴリごとの選択確率が重みに応じて変わる
+            for kw in category_keywords:
+                weighted_pool.extend([kw] * weight)
     
     if not weighted_pool:
         print("\n❌ 選択可能なキーワードがありません")
         return None
     
     # ランダムに選択
-    selected_kw, selected_category = random.choice(weighted_pool)
+    selected_kw = random.choice(weighted_pool)
     
     return selected_kw
+
+
+def select_keyword_with_retry(categories, keywords, max_retries=3):
+    """
+    重複チェック付きでキーワードを選択（リトライあり）
+    
+    Args:
+        categories: カテゴリ辞書
+        keywords: キーワードリスト
+        max_retries: 最大リトライ回数
+    
+    Returns:
+        選択されたキーワード辞書、またはNone
+    """
+    articles = load_published_articles()
+    exclude_ids = set()
+    
+    for attempt in range(max_retries):
+        print(f"\n🔄 キーワード選択試行 {attempt + 1}/{max_retries}")
+        
+        # キーワードを選択
+        selected = select_keyword_by_weight(categories, keywords, exclude_ids)
+        
+        if not selected:
+            print("❌ 選択可能なキーワードがありません")
+            return None
+        
+        # 重複チェック
+        is_duplicate, reason = check_keyword_theme_duplicate(selected, articles)
+        
+        if not is_duplicate:
+            print(f"✅ 重複なし - キーワードID {selected['id']} を採用")
+            return selected
+        else:
+            print(f"⚠️  重複検出: {reason}")
+            print(f"   キーワードID {selected['id']} を除外して再試行します")
+            exclude_ids.add(selected["id"])
+    
+    print(f"\n❌ {max_retries}回試行しましたが、重複のないキーワードが見つかりませんでした")
+    return None
 
 
 def generate_slug(keyword, date_str):
@@ -252,12 +339,12 @@ def main():
     articles = load_published_articles()
     print(f"✅ {len(articles)}個の公開済み記事を確認しました")
     
-    # キーワードを選択
-    print("\n🎲 配分比率に基づいてキーワードを選択中...")
+    # キーワードを選択（重複チェック付き、最大3回リトライ）
+    print("\n🎲 配分比率に基づいてキーワードを選択中（重複チェック付き）...")
     print(f"   配分: A={CATEGORY_WEIGHTS['A']}%, B={CATEGORY_WEIGHTS['B']}%, "
           f"C={CATEGORY_WEIGHTS['C']}%, D={CATEGORY_WEIGHTS['D']}%, E={CATEGORY_WEIGHTS['E']}%")
     
-    selected = select_keyword_by_weight(categories, keywords)
+    selected = select_keyword_with_retry(categories, keywords, max_retries=3)
     
     if not selected:
         print("\n❌ キーワードの選択に失敗しました")
@@ -291,4 +378,11 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         sys.exit(1)
+
+
+
+
+
+
+
 
