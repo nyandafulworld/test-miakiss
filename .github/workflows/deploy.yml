@@ -14,6 +14,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      
+      - name: Show files to be deployed
+        run: |
+          echo "=== Files that will be deployed ==="
+          ls -la blog/ | head -20
+          echo ""
+          echo "=== Checking 2025-12-17 article files ==="
+          ls -la blog/2025-12-17-analytics.html 2>/dev/null || echo "❌ Article file not found"
+          ls -la blog/images/2025-12-17-analytics_*.jpg 2>/dev/null || echo "❌ Image files not found"
+          ls -la blog/published_articles.js 2>/dev/null || echo "❌ published_articles.js not found"
+          echo ""
+          echo "=== published_articles.js content (last 20 lines) ==="
+          tail -20 blog/published_articles.js
         
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -22,6 +35,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
+          log-level: verbose
           exclude: |
             **/.git*
             **/.git*/**
