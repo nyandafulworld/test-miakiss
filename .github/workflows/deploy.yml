@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy to Production via FTP
 
 on:
   push:
@@ -8,33 +8,30 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to FTP Server
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+        
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: /
           exclude: |
-            **/.git
-            **/.git/**
-            **/.github/**
+            **/.git*
+            **/.git*/**
             **/node_modules/**
-            **/__pycache__/**
-            **/.DS_Store
-            **/.env
-            **/requirements.txt
             **/scripts/**
-            **/test_server.py
+            **/.env
+            **/.DS_Store
+            **/README.md
             **/*.md
-            **/assets/**
+            **/requirements.txt
+            **/test_server.py
+            **/.cursor/**
             **/image_backup/**
-      
-      - name: Deployment complete
-        run: echo "✅ Deployment to production completed successfully!"
