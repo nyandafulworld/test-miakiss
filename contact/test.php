@@ -22,8 +22,8 @@ require_once __DIR__ . '/mail.php';
         .info { color: #0c5460; background: #d1ecf1; border: 1px solid #bee5eb; }
         .warning { color: #856404; background: #fff3cd; border: 1px solid #ffeaa7; }
         pre { background: #f1f1f1; padding: 10px; border-radius: 3px; overflow-x: auto; }
-        .button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; }
-        .button:hover { background: #0056b3; }
+        .button { background: #0D9488; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; }
+        .button:hover { background: #0F766E; }
     </style>
 </head>
 <body>

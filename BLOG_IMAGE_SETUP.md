@@ -205,3 +205,12 @@ ls -la blog/images/
 
 
 
+
+
+
+
+
+
+
+
+
