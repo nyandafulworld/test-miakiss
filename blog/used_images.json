@@ -281,21 +281,37 @@
       "image_type": "custom"
     },
     {
-      "url_hash": "da309607c3d9679a",
+      "url_hash": "seed306",
       "filename": "2025-12-17-analytics_thumbnail.jpg",
       "used_date": "2025-12-17",
       "article_slug": "2025-12-17-analytics",
-      "source": "unsplash",
+      "source": "picsum",
       "image_type": "thumbnail"
     },
     {
-      "url_hash": "1f29e5685e4f3117",
+      "url_hash": "seed784",
       "filename": "2025-12-17-analytics_header.jpg",
       "used_date": "2025-12-17",
       "article_slug": "2025-12-17-analytics",
-      "source": "unsplash",
+      "source": "picsum",
       "image_type": "header"
+    },
+    {
+      "url_hash": "seed4586",
+      "filename": "2025-12-18-seo_header.jpg",
+      "used_date": "2025-12-18",
+      "article_slug": "2025-12-18-seo",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed3914",
+      "filename": "2025-12-18-seo_thumbnail.jpg",
+      "used_date": "2025-12-18",
+      "article_slug": "2025-12-18-seo",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-17T12:23:20+09:00"
+  "last_updated": "2025-12-18T13:04:02.747861"
 }

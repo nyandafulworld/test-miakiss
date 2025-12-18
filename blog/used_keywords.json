@@ -1,0 +1,138 @@
+{
+  "used_keyword_ids": [
+    3,
+    8,
+    29,
+    31,
+    42,
+    47,
+    52,
+    53,
+    54,
+    56,
+    78,
+    82,
+    106,
+    145
+  ],
+  "used_keyword_texts": [
+    "海外変換プラグ",
+    "保守契約 必要か",
+    "Web担当 いない 中小企業",
+    "フリーランス 制作会社 違い",
+    "バックアップ ホームページ",
+    "問い合わせ 来ない",
+    "戸田市 ホームページ制作",
+    "ホームページ 保守 費用",
+    "Web制作 見積もり",
+    "古いホームページ デメリット",
+    "月額保守 サブスク",
+    "運用 内製 外注 比較",
+    "Web制作 補助金 申請代行",
+    ".htaccess とは",
+    "Googleアナリティクス 見方",
+    "SEO 継続支援"
+  ],
+  "keyword_usage_history": [
+    {
+      "keywordId": null,
+      "keyword": "海外変換プラグ",
+      "date": "2025-10-06",
+      "slug": "calches-travel-adapter-story"
+    },
+    {
+      "keywordId": 52,
+      "keyword": "保守契約 必要か",
+      "date": "2025-12-01",
+      "slug": "2025-12-01-website-maintenance-contract-necessity"
+    },
+    {
+      "keywordId": 76,
+      "keyword": "Web担当 いない 中小企業",
+      "date": "2025-12-02",
+      "slug": "2025-12-02-sme-without-web-manager"
+    },
+    {
+      "keywordId": 29,
+      "keyword": "フリーランス 制作会社 違い",
+      "date": "2025-12-03",
+      "slug": "2025-12-03-freelance-vs-web-agency"
+    },
+    {
+      "keywordId": 47,
+      "keyword": "バックアップ ホームページ",
+      "date": "2025-12-04",
+      "slug": "2025-12-04-website-backup-importance"
+    },
+    {
+      "keywordId": 82,
+      "keyword": "問い合わせ 来ない",
+      "date": "2025-12-05",
+      "slug": "2025-12-05-no-inquiry-website-fix"
+    },
+    {
+      "keywordId": 3,
+      "keyword": "戸田市 ホームページ制作",
+      "date": "2025-12-06",
+      "slug": "2025-12-06-toda-sme-website-necessity"
+    },
+    {
+      "keywordId": 31,
+      "keyword": "ホームページ 保守 費用",
+      "date": "2025-12-07",
+      "slug": "2025-12-07-website-maintenance-cost-breakdown"
+    },
+    {
+      "keywordId": 8,
+      "keyword": "Web制作 見積もり",
+      "date": "2025-12-08",
+      "slug": "2025-12-08-web-estimate-5-checkpoints"
+    },
+    {
+      "keywordId": 78,
+      "keyword": "古いホームページ デメリット",
+      "date": "2025-12-09",
+      "slug": "2025-12-09-old-website-disadvantages"
+    },
+    {
+      "keywordId": 54,
+      "keyword": "月額保守 サブスク",
+      "date": "2025-12-10",
+      "slug": "2025-12-10-monthly-maintenance-plan-benefits"
+    },
+    {
+      "keywordId": 53,
+      "keyword": "運用 内製 外注 比較",
+      "date": "2025-12-11",
+      "slug": "2025-12-11-website-operation-in-house-vs-outsource"
+    },
+    {
+      "keywordId": 145,
+      "keyword": "Web制作 補助金 申請代行",
+      "date": "2025-12-12",
+      "slug": "2025-12-12-creation-subsidy-application",
+      "note": "重複使用（12/12-16で4回使用）"
+    },
+    {
+      "keywordId": 106,
+      "keyword": ".htaccess とは",
+      "date": "2025-12-14",
+      "slug": "2025-12-14-htaccess-basics"
+    },
+    {
+      "keywordId": 56,
+      "keyword": "Googleアナリティクス 見方",
+      "date": "2025-12-17",
+      "slug": "2025-12-17-analytics"
+    },
+    {
+      "keywordId": 42,
+      "keyword": "SEO 継続支援",
+      "date": "2025-12-18",
+      "slug": "2025-12-18-seo"
+    }
+  ],
+  "last_updated": "2025-12-18T12:00:00+09:00",
+  "notes": "このファイルは使用済みキーワードを管理します。新しい記事を作成する際に重複を防止します。"
+}
+
