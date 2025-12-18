@@ -2537,14 +2537,24 @@ h2.privacy-heading {
 }
 
 .map-note {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px 20px;
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     border-radius: 8px;
     color: #2e7d32;
-    font-size: 0.95em;
+    font-size: 0.9em;
     text-align: center;
     font-weight: 500;
+}
+
+.map-note a {
+    color: #0D9488;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.map-note a:hover {
+    color: #0F766E;
 }
 
 /* 制作の流れ - ハイライト */
@@ -2563,6 +2573,38 @@ h2.privacy-heading {
     color: #e65100;
 }
 
+/* 制作の流れ - 訪問対応エリア */
+.flow-visit-area {
+    margin-top: 50px;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 8px;
+    color: #2e7d32;
+    font-size: 0.95em;
+    text-align: left;
+    font-weight: 500;
+}
+
+.flow-visit-area p {
+    margin: 0 0 10px 0;
+}
+
+.flow-visit-area-title {
+    margin: 15px 0 10px 0;
+    font-size: 1.05em;
+}
+
+.flow-visit-area-list {
+    margin: 10px 0 0 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+    line-height: 1.8;
+}
+
+.flow-visit-area-list li {
+    margin-bottom: 8px;
+}
+
 /* レスポンシブ対応 - ローカルビジネス追加分 */
 @media (max-width: 768px) {
     .header-actions {
@@ -2579,13 +2621,24 @@ h2.privacy-heading {
     }
     
     .map-note {
-        font-size: 0.9em;
-        padding: 15px;
+        font-size: 0.85em;
+        padding: 12px 15px;
     }
     
     .flow-highlight {
         padding: 12px;
         font-size: 0.9em;
+    }
+    
+    .flow-visit-area {
+        font-size: 0.9em;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .flow-visit-area-list {
+        margin-left: 10px;
+        padding-left: 15px;
     }
 }
 
@@ -2793,5 +2846,66 @@ h2.privacy-heading {
     .subsidy-top-btn {
         width: 100%;
         max-width: 300px;
+    }
+}
+
+/* ===================================
+   Back to Top Button
+   =================================== */
+.back-to-top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top-btn:active {
+    transform: translateY(-1px);
+}
+
+.back-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        width: 44px;
+        height: 44px;
+        right: 15px;
+        bottom: 85px;
+        font-size: 20px;
     }
 }

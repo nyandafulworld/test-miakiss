@@ -34,7 +34,7 @@
     <!-- Google Fonts: Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -59,7 +59,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "株式会社ミアキス",
-        "image": "https://www.miakiss.co.jp/image/logo_v3.avif",
+        "image": "https://www.miakiss.co.jp/image/logo_v4.png",
         "description": "埼玉県戸田市のホームページ制作会社。LP制作、ECサイト構築、SEO対策まで一貫対応。Amazonベストセラー1位獲得のノウハウで売上を伸ばすWebサイトを制作します。",
         "@id": "https://www.miakiss.co.jp",
         "url": "https://www.miakiss.co.jp",
@@ -100,7 +100,7 @@
         "name": "株式会社ミアキス",
         "alternateName": "Miakiss Inc.",
         "url": "https://www.miakiss.co.jp",
-        "logo": "https://www.miakiss.co.jp/image/logo_v3.avif",
+        "logo": "https://www.miakiss.co.jp/image/logo_v4.png",
         "foundingDate": "2020-04-07",
         "founders": [
             {
@@ -136,7 +136,7 @@
             "name": "株式会社ミアキス",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.miakiss.co.jp/image/logo_v3.avif"
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
             }
         }
     }
@@ -163,7 +163,7 @@
                 </div>
             </button>
             <div class="logo">
-                <a href="#"><img src="image/logo_v3.avif" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+                <a href="#"><img src="image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
             </div>
             <nav class="global-nav">
                 <ul>
@@ -698,7 +698,6 @@
                         <div class="flow-step-content">
                             <h3>ヒアリング</h3>
                             <p>Webサイトを作成する目的とイメージ、ご希望の納期、ご予算など、ご依頼内容の詳細をお伺いいたします。</p>
-                            <p class="flow-highlight"><strong>埼玉県内・東京23区は直接お伺いいたします。</strong>対面でじっくりお話しいただけますので、初めての方もご安心ください。</p>
                         </div>
                     </div>
                     <div class="flow-step">
@@ -742,6 +741,18 @@
                             <p class="flow-notes">※納品後、お客様のご都合による内容変更などに関してはサポート対象外となりますので、ご了承願います。</p>
                         </div>
                     </div>
+                </div>
+                
+                <!-- 訪問対応エリア -->
+                <div class="flow-visit-area" id="visit-area">
+                    <p>事業所が下記エリアに該当する場合は、直接お伺いしてお打ち合わせ可能です。</p>
+                    <p class="flow-visit-area-title"><strong>【訪問対応エリア】</strong></p>
+                    <ul class="flow-visit-area-list">
+                        <li>埼玉県全域（例：戸田市／さいたま市／川口市／蕨市／和光市 など）</li>
+                        <li>東京都内</li>
+                        <li>神奈川県内</li>
+                        <li>千葉県内</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -826,7 +837,7 @@
                                 title="株式会社ミアキス 所在地">
                             </iframe>
                         </div>
-                        <p class="map-note">※お見積もり・ご相談の際は、貴社の事業所が埼玉県全域（戸田市、さいたま市、川口市、蕨市、和光市など）、東京23区・神奈川県・千葉県内の場合、必要に応じて、直接事業所までお伺いします。</p>
+                        <p class="map-note">埼玉県全域および東京・神奈川・千葉県内へ訪問対応可能です。<a href="#visit-area">詳細はこちら</a></p>
                     </div>
                 </div>
                 
@@ -934,7 +945,7 @@
     <footer id="footer">
         <div class="container">
             <p class="footer-links">
-                <a href="subsidy.html" class="footer-link">補助金情報</a> | <a href="tokusho" class="footer-link">特定商取引法に基づく表記</a> | <a href="privacy" class="footer-link">プライバシーポリシー</a>
+                <a href="tokusho" class="footer-link">特定商取引法に基づく表記</a> | <a href="privacy" class="footer-link">プライバシーポリシー</a>
             </p>
             <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
         </div>
@@ -946,6 +957,13 @@
         <img class="modal-content" id="modal-image">
         <div id="caption"></div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1134,13 +1152,22 @@
             setLoading(true);
             
             try {
-                // reCAPTCHA v3トークンを取得
-                await grecaptcha.ready(async function() {
-                    const token = await grecaptcha.execute('6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV', {action: 'submit'});
-                    document.getElementById('recaptcha_token').value = token;
+                // reCAPTCHA v3トークンを取得（確実に完了するまで待機）
+                const recaptchaToken = await new Promise((resolve) => {
+                    grecaptcha.ready(async function() {
+                        const token = await grecaptcha.execute('6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV', {action: 'submit'});
+                        resolve(token);
+                    });
                 });
                 
+                // デバッグ用ログ（本番環境では削除可能）
+                console.log('reCAPTCHAトークンを取得しました:', recaptchaToken.substring(0, 50) + '...');
+                
+                // FormDataを作成
                 const formData = new FormData(contactForm);
+                
+                // reCAPTCHAトークンを明示的に追加（確実に送信されるようにする）
+                formData.set('recaptcha_token', recaptchaToken);
                 
                 const response = await fetch('contact/handler.php', {
                     method: 'POST',
@@ -1210,6 +1237,23 @@
                 }
             });
         });
+
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // スクロールイベントリスナーを追加
+        window.addEventListener('scroll', handleScroll);
+        
+        // 初期状態でもチェック
+        handleScroll();
 
         // --- Hamburger Menu ---
         const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -1287,6 +1331,41 @@
                 }
             });
         });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let lastScrollTop = 0;
+        let ticking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            lastScrollTop = scrollTop;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                ticking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
     });
     </script>
 </body>

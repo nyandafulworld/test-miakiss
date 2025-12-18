@@ -25,7 +25,7 @@ define('RECAPTCHA_SCORE_THRESHOLD', 0.5); // スコア閾値（0.0-1.0、低い�
 define('RECAPTCHA_VERIFY_URL', 'https://www.google.com/recaptcha/api/siteverify');
 
 // スパム対策設定
-define('MAX_SUBMISSIONS_PER_HOUR', 5); // 1時間あたりの最大送信数
+define('MAX_SUBMISSIONS_PER_HOUR', 10); // 1時間あたりの最大送信数
 define('HONEYPOT_FIELD', 'website'); // ハニーポットフィールド名
 
 // ログ設定
