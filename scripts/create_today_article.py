@@ -8,13 +8,14 @@
 
 実行内容:
 1. keywords.jsonから配分比率に基づいてランダム選択
-2. 未使用キーワードから選択（重複チェック付き）
+2. 未使用キーワードから選択（厳密な重複チェック付き）
 3. 選択したキーワード情報を出力
 4. AIに記事生成を依頼（このスクリプトは情報提供のみ）
 
-注意:
-- 記事HTML生成、画像取得、デプロイはAIアシスタントが実行
-- このスクリプトはキーワード選択のみを行う
+重複防止機能:
+- keywordIdベースの厳密な重複チェック
+- keywordテキストベースの重複チェック（古い記事対応）
+- used_keywords.jsonで使用済みキーワードを管理
 """
 
 import json
@@ -27,6 +28,7 @@ from datetime import datetime
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 BLOG_DIR = PROJECT_ROOT / "blog"
+USED_KEYWORDS_FILE = BLOG_DIR / "used_keywords.json"
 
 # カテゴリ別の配分比率
 CATEGORY_WEIGHTS = {
@@ -54,102 +56,176 @@ def load_published_articles():
     return data.get("articles", [])
 
 
-def get_used_keyword_ids():
-    """既に使用されたキーワードIDのセットを取得"""
+def load_used_keywords():
+    """used_keywords.jsonを読み込む"""
+    if not USED_KEYWORDS_FILE.exists():
+        return {"used_keyword_ids": [], "used_keyword_texts": [], "last_updated": None}
+    
+    try:
+        with open(USED_KEYWORDS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, Exception) as e:
+        print(f"⚠️  used_keywords.json の読み込みエラー: {e}")
+        return {"used_keyword_ids": [], "used_keyword_texts": [], "last_updated": None}
+
+
+def save_used_keywords(data):
+    """used_keywords.jsonを保存する"""
+    data["last_updated"] = datetime.now().isoformat()
+    
+    with open(USED_KEYWORDS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    
+    print(f"✅ used_keywords.json を更新しました")
+
+
+def build_used_keywords_from_articles():
+    """
+    published_articles.jsonから使用済みキーワード情報を構築
+    （初回実行時やデータ修復時に使用）
+    """
     articles = load_published_articles()
-    used_ids = set()
+    
+    used_keyword_ids = set()
+    used_keyword_texts = set()
     
     for article in articles:
-        # keywordフィールドからIDを抽出（存在する場合）
+        # keywordIdがある場合
+        if "keywordId" in article:
+            used_keyword_ids.add(article["keywordId"])
+        
+        # keywordテキストがある場合
+        if "keyword" in article:
+            used_keyword_texts.add(article["keyword"])
+    
+    return {
+        "used_keyword_ids": sorted(list(used_keyword_ids)),
+        "used_keyword_texts": sorted(list(used_keyword_texts)),
+        "last_updated": datetime.now().isoformat()
+    }
+
+
+def get_used_keyword_data():
+    """
+    使用済みキーワードのデータを取得
+    used_keywords.jsonとpublished_articles.jsonの両方をマージ
+    """
+    # used_keywords.jsonを読み込み
+    used_keywords = load_used_keywords()
+    
+    # published_articles.jsonからも取得してマージ
+    articles = load_published_articles()
+    
+    used_ids = set(used_keywords.get("used_keyword_ids", []))
+    used_texts = set(used_keywords.get("used_keyword_texts", []))
+    
+    for article in articles:
         if "keywordId" in article:
             used_ids.add(article["keywordId"])
+        if "keyword" in article:
+            used_texts.add(article["keyword"])
     
-    return used_ids
+    return used_ids, used_texts
 
 
-def check_keyword_theme_duplicate(keyword, articles):
+def is_keyword_used(keyword, used_ids, used_texts):
     """
-    選択されたキーワードが既存記事と重複していないかチェック
+    キーワードが既に使用済みかどうかをチェック
     
     Args:
         keyword: チェック対象のキーワード辞書
-        articles: 既存記事のリスト
+        used_ids: 使用済みkeywordIdのセット
+        used_texts: 使用済みkeywordテキストのセット
     
     Returns:
-        (is_duplicate, reason) - 重複している場合True、理由の説明文
+        (is_used, reason) - 使用済みの場合True、理由の説明文
     """
-    keyword_text = keyword["keyword"]
-    theme_text = keyword["theme"]
+    keyword_id = keyword.get("id")
+    keyword_text = keyword.get("keyword", "")
     
-    for article in articles:
-        # 1. キーワードの完全一致チェック
-        if "keyword" in article and article["keyword"] == keyword_text:
-            return True, f"キーワード '{keyword_text}' が既に使用されています（記事: {article.get('title', article.get('slug'))}）"
-        
-        # 2. テーマの類似性チェック（主要単語の重複率）
-        if "title" in article:
-            # タイトルから主要な単語を抽出
-            article_words = set([w for w in article["title"] if len(w) > 1])
-            theme_words = set([w for w in theme_text if len(w) > 1])
-            
-            # 共通単語の数をカウント
-            common_words = article_words & theme_words
-            if len(common_words) >= 4:  # 4文字以上の共通単語がある場合
-                similarity = len(common_words) / max(len(theme_words), 1)
-                if similarity > 0.6:  # 60%以上類似している場合
-                    return True, f"テーマが類似しています（記事: {article['title']}、類似度: {similarity:.0%}）"
+    # 1. keywordIdでチェック（最優先）
+    if keyword_id in used_ids:
+        return True, f"keywordId {keyword_id} は既に使用されています"
+    
+    # 2. keywordテキストでチェック
+    if keyword_text in used_texts:
+        return True, f"キーワード '{keyword_text}' は既に使用されています"
     
     return False, ""
 
 
-def select_keyword_by_weight(categories, keywords, exclude_ids=None):
+def register_used_keyword(keyword):
     """
-    配分比率に基づいてキーワードを選択
+    使用したキーワードを登録
+    
+    Args:
+        keyword: 使用するキーワード辞書
+    """
+    used_keywords = load_used_keywords()
+    
+    keyword_id = keyword.get("id")
+    keyword_text = keyword.get("keyword", "")
+    
+    # IDを追加
+    if keyword_id and keyword_id not in used_keywords.get("used_keyword_ids", []):
+        if "used_keyword_ids" not in used_keywords:
+            used_keywords["used_keyword_ids"] = []
+        used_keywords["used_keyword_ids"].append(keyword_id)
+    
+    # テキストを追加
+    if keyword_text and keyword_text not in used_keywords.get("used_keyword_texts", []):
+        if "used_keyword_texts" not in used_keywords:
+            used_keywords["used_keyword_texts"] = []
+        used_keywords["used_keyword_texts"].append(keyword_text)
+    
+    save_used_keywords(used_keywords)
+
+
+def select_keyword_by_weight(categories, keywords, used_ids, used_texts):
+    """
+    配分比率に基づいてキーワードを選択（厳密な重複チェック付き）
     
     Args:
         categories: カテゴリ辞書
         keywords: キーワードリスト
-        exclude_ids: 除外するキーワードIDのセット（オプション）
+        used_ids: 使用済みkeywordIdのセット
+        used_texts: 使用済みkeywordテキストのセット
     
     Returns:
         選択されたキーワード辞書、またはNone
     """
-    # 使用済みキーワードIDを取得
-    used_ids = get_used_keyword_ids()
-    
-    # 除外IDを追加
-    if exclude_ids:
-        used_ids = used_ids | exclude_ids
-    
     # 未使用キーワードをカテゴリ別に分類
     available_by_category = {cat: [] for cat in CATEGORY_WEIGHTS.keys()}
     
     for kw in keywords:
-        if kw["id"] not in used_ids:
+        is_used, _ = is_keyword_used(kw, used_ids, used_texts)
+        if not is_used:
             category = kw["category"]
             if category in available_by_category:
                 available_by_category[category].append(kw)
     
     # 各カテゴリの未使用キーワード数を表示
     print("\n📊 カテゴリ別未使用キーワード数:")
+    total_available = 0
     for cat, kw_list in available_by_category.items():
         cat_name = categories.get(cat, cat)
         print(f"  {cat} ({cat_name}): {len(kw_list)}個")
+        total_available += len(kw_list)
+    
+    print(f"\n📊 合計未使用キーワード: {total_available}個")
+    print(f"📊 使用済みキーワードID数: {len(used_ids)}個")
+    print(f"📊 使用済みキーワードテキスト数: {len(used_texts)}個")
     
     # 利用可能なキーワードがない場合
-    total_available = sum(len(kws) for kws in available_by_category.values())
     if total_available == 0:
         print("\n❌ 利用可能な未使用キーワードがありません")
         return None
     
     # 重み付けリストを作成
-    # 注意: 各キーワードを重みの回数分だけ追加するが、キーワード自体は一意
     weighted_pool = []
     for category, weight in CATEGORY_WEIGHTS.items():
         category_keywords = available_by_category.get(category, [])
         if category_keywords:
-            # 各カテゴリのキーワードをweight回だけプールに追加
-            # これにより、カテゴリごとの選択確率が重みに応じて変わる
             for kw in category_keywords:
                 weighted_pool.extend([kw] * weight)
     
@@ -163,46 +239,6 @@ def select_keyword_by_weight(categories, keywords, exclude_ids=None):
     return selected_kw
 
 
-def select_keyword_with_retry(categories, keywords, max_retries=3):
-    """
-    重複チェック付きでキーワードを選択（リトライあり）
-    
-    Args:
-        categories: カテゴリ辞書
-        keywords: キーワードリスト
-        max_retries: 最大リトライ回数
-    
-    Returns:
-        選択されたキーワード辞書、またはNone
-    """
-    articles = load_published_articles()
-    exclude_ids = set()
-    
-    for attempt in range(max_retries):
-        print(f"\n🔄 キーワード選択試行 {attempt + 1}/{max_retries}")
-        
-        # キーワードを選択
-        selected = select_keyword_by_weight(categories, keywords, exclude_ids)
-        
-        if not selected:
-            print("❌ 選択可能なキーワードがありません")
-            return None
-        
-        # 重複チェック
-        is_duplicate, reason = check_keyword_theme_duplicate(selected, articles)
-        
-        if not is_duplicate:
-            print(f"✅ 重複なし - キーワードID {selected['id']} を採用")
-            return selected
-        else:
-            print(f"⚠️  重複検出: {reason}")
-            print(f"   キーワードID {selected['id']} を除外して再試行します")
-            exclude_ids.add(selected["id"])
-    
-    print(f"\n❌ {max_retries}回試行しましたが、重複のないキーワードが見つかりませんでした")
-    return None
-
-
 def generate_slug(keyword, date_str):
     """
     スラッグを生成
@@ -214,7 +250,6 @@ def generate_slug(keyword, date_str):
     Returns:
         スラッグ文字列
     """
-    # キーワードから英語スラッグを生成（簡易版）
     keyword_text = keyword["keyword"].lower()
     
     # 簡易的な変換マッピング
@@ -261,12 +296,70 @@ def generate_slug(keyword, date_str):
         "キャッシュ": "cache",
         "リダイレクト": "redirect",
         "バックアップ": "backup",
+        "meo": "meo",
+        "google": "google",
+        "ビジネス": "business",
+        "プロフィール": "profile",
+        "sns": "sns",
+        "連携": "integration",
+        "コンテンツ": "content",
+        "マーケティング": "marketing",
+        "問い合わせ": "inquiry",
+        "増やす": "increase",
+        "リニューアル": "renewal",
+        "納期": "deadline",
+        "見積もり": "estimate",
+        "選び方": "selection",
+        "格安": "budget",
+        "採用": "recruitment",
+        "店舗": "store",
+        "士業": "professional",
+        "医療": "medical",
+        "クリニック": "clinic",
+        "飲食店": "restaurant",
+        "美容室": "salon",
+        "不動産": "realestate",
+        "btob": "btob",
+        "トレンド": "trend",
+        "素材": "material",
+        "準備": "preparation",
+        "フリーランス": "freelance",
+        "丸投げ": "outsource",
+        "月額": "monthly",
+        "セキュリティ": "security",
+        "更新": "update",
+        "バックアップ": "backup",
+        "サイト": "site",
+        "改善": "improvement",
+        "pdca": "pdca",
+        "コスト": "cost",
+        "削減": "reduction",
+        "契約": "contract",
+        "引き継ぎ": "handover",
+        "トラブル": "trouble",
+        "緊急": "emergency",
+        "監視": "monitoring",
+        "放置": "neglect",
+        "リスク": "risk",
+        "ハッキング": "hacking",
+        "改ざん": "tampering",
+        "復旧": "recovery",
+        "古い": "old",
+        "スマホ": "mobile",
+        "非対応": "incompatible",
+        "検索": "search",
+        "集客": "marketing",
+        "離脱率": "bounce-rate",
+        "直帰率": "exit-rate",
+        "効果測定": "analytics",
+        "競合": "competitor",
     }
     
     slug_parts = []
     for jp, en in slug_map.items():
         if jp in keyword_text:
-            slug_parts.append(en)
+            if en not in slug_parts:  # 重複を避ける
+                slug_parts.append(en)
     
     # スラッグが生成できなかった場合はデフォルト
     if not slug_parts:
@@ -329,6 +422,18 @@ def display_selected_keyword(keyword, categories):
     }
 
 
+def sync_used_keywords():
+    """
+    used_keywords.jsonをpublished_articles.jsonから再構築
+    （データ修復用）
+    """
+    print("🔄 used_keywords.json を再構築中...")
+    data = build_used_keywords_from_articles()
+    save_used_keywords(data)
+    print(f"✅ 再構築完了: {len(data['used_keyword_ids'])}個のID、{len(data['used_keyword_texts'])}個のテキスト")
+    return data
+
+
 def main():
     """メイン処理"""
     print("\n🚀 ブログ記事自動生成ワークフローを開始します\n")
@@ -343,12 +448,20 @@ def main():
     articles = load_published_articles()
     print(f"✅ {len(articles)}個の公開済み記事を確認しました")
     
-    # キーワードを選択（重複チェック付き、最大3回リトライ）
-    print("\n🎲 配分比率に基づいてキーワードを選択中（重複チェック付き）...")
+    # used_keywords.jsonが存在しない場合は再構築
+    if not USED_KEYWORDS_FILE.exists():
+        print("\n⚠️  used_keywords.json が見つかりません。再構築します...")
+        sync_used_keywords()
+    
+    # 使用済みキーワードデータを取得
+    used_ids, used_texts = get_used_keyword_data()
+    
+    # キーワードを選択（厳密な重複チェック付き）
+    print("\n🎲 配分比率に基づいてキーワードを選択中（厳密な重複チェック付き）...")
     print(f"   配分: A={CATEGORY_WEIGHTS['A']}%, B={CATEGORY_WEIGHTS['B']}%, "
           f"C={CATEGORY_WEIGHTS['C']}%, D={CATEGORY_WEIGHTS['D']}%, E={CATEGORY_WEIGHTS['E']}%")
     
-    selected = select_keyword_with_retry(categories, keywords, max_retries=3)
+    selected = select_keyword_by_weight(categories, keywords, used_ids, used_texts)
     
     if not selected:
         print("\n❌ キーワードの選択に失敗しました")
@@ -366,27 +479,24 @@ def main():
     print("  1. 上記のキーワード・テーマで記事HTMLを生成してください")
     print("  2. 画像を取得します（自動）")
     print("  3. published_articles.jsonを更新します（自動）")
-    print("  4. デプロイします（自動）")
+    print("  4. used_keywords.jsonを更新します（自動）")
+    print("  5. デプロイします（自動）")
     print("\n" + "="*60)
     
     return info
 
 
 if __name__ == "__main__":
+    # コマンドライン引数で同期モードを指定可能
+    if len(sys.argv) > 1 and sys.argv[1] == "--sync":
+        sync_used_keywords()
+        sys.exit(0)
+    
     try:
         info = main()
-        # 成功時は情報を返す
         sys.exit(0)
     except Exception as e:
         print(f"\n❌ エラーが発生しました: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
-
-
-
-
-
-
-
-

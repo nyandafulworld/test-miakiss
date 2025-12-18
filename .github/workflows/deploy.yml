@@ -5,28 +5,159 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      force_full_sync:
+        description: 'Force full sync (reset FTP state)'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
-  deploy:
-    name: Deploy to FTP Server
+  validate:
+    name: Validate Blog Data
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Show files to be deployed
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Validate JSON files
         run: |
-          echo "=== Files that will be deployed ==="
-          ls -la blog/ | head -20
+          echo "📋 Validating blog data files..."
+          
+          # Check if required files exist
           echo ""
-          echo "=== Checking 2025-12-17 article files ==="
-          ls -la blog/2025-12-17-analytics.html 2>/dev/null || echo "❌ Article file not found"
-          ls -la blog/images/2025-12-17-analytics_*.jpg 2>/dev/null || echo "❌ Image files not found"
-          ls -la blog/published_articles.js 2>/dev/null || echo "❌ published_articles.js not found"
+          echo "=== Required Files Check ==="
+          
+          if [ -f "blog/published_articles.json" ]; then
+            echo "✅ blog/published_articles.json exists"
+            python3 -c "import json; json.load(open('blog/published_articles.json'))" && echo "   ✅ Valid JSON" || echo "   ❌ Invalid JSON"
+          else
+            echo "❌ blog/published_articles.json not found"
+            exit 1
+          fi
+          
+          if [ -f "blog/published_articles.js" ]; then
+            echo "✅ blog/published_articles.js exists"
+          else
+            echo "❌ blog/published_articles.js not found"
+            exit 1
+          fi
+          
+          if [ -f "blog/keywords.json" ]; then
+            echo "✅ blog/keywords.json exists"
+            python3 -c "import json; json.load(open('blog/keywords.json'))" && echo "   ✅ Valid JSON" || echo "   ❌ Invalid JSON"
+          else
+            echo "⚠️  blog/keywords.json not found (optional)"
+          fi
+          
+          if [ -f "blog/used_keywords.json" ]; then
+            echo "✅ blog/used_keywords.json exists"
+            python3 -c "import json; json.load(open('blog/used_keywords.json'))" && echo "   ✅ Valid JSON" || echo "   ❌ Invalid JSON"
+          else
+            echo "⚠️  blog/used_keywords.json not found (will be created on first article)"
+          fi
+          
+          if [ -f "blog/used_images.json" ]; then
+            echo "✅ blog/used_images.json exists"
+            python3 -c "import json; json.load(open('blog/used_images.json'))" && echo "   ✅ Valid JSON" || echo "   ❌ Invalid JSON"
+          else
+            echo "⚠️  blog/used_images.json not found (will be created on first article)"
+          fi
+      
+      - name: Check article count consistency
+        run: |
           echo ""
-          echo "=== published_articles.js content (last 20 lines) ==="
-          tail -20 blog/published_articles.js
+          echo "=== Article Count Check ==="
+          
+          # Count articles in JSON
+          JSON_COUNT=$(python3 -c "import json; data=json.load(open('blog/published_articles.json')); print(len(data.get('articles', [])))")
+          echo "📊 Articles in published_articles.json: $JSON_COUNT"
+          
+          # Count HTML files
+          HTML_COUNT=$(find blog/ -maxdepth 1 -name "*.html" ! -name "article_template.html" | wc -l | tr -d ' ')
+          echo "📊 HTML files in blog/: $HTML_COUNT"
+          
+          # Check for recent articles (last 7 days)
+          echo ""
+          echo "=== Recent Articles (HTML files) ==="
+          find blog/ -maxdepth 1 -name "2025-12-*.html" -type f | sort -r | head -5
+      
+      - name: Check for duplicate keywords
+        run: |
+          echo ""
+          echo "=== Keyword Duplication Check ==="
+          
+          python3 << 'EOF'
+          import json
+          
+          with open('blog/published_articles.json', 'r') as f:
+              data = json.load(f)
+          
+          articles = data.get('articles', [])
+          keyword_count = {}
+          
+          for article in articles:
+              keyword = article.get('keyword', '')
+              if keyword:
+                  keyword_count[keyword] = keyword_count.get(keyword, 0) + 1
+          
+          duplicates = {k: v for k, v in keyword_count.items() if v > 1}
+          
+          if duplicates:
+              print("⚠️  Duplicate keywords detected:")
+              for keyword, count in duplicates.items():
+                  print(f"   - '{keyword}': used {count} times")
+              print("")
+              print("Note: These are existing duplicates. New articles will not use duplicate keywords.")
+          else:
+              print("✅ No duplicate keywords found")
+          EOF
+
+  deploy:
+    name: Deploy to FTP Server
+    runs-on: ubuntu-latest
+    needs: validate
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Show deployment summary
+        run: |
+          echo "🚀 Deployment Summary"
+          echo "====================="
+          echo ""
+          echo "=== Blog Files ==="
+          ls -la blog/*.html 2>/dev/null | tail -10 || echo "No HTML files"
+          echo ""
+          echo "=== Blog Images (recent) ==="
+          ls -la blog/images/*.jpg 2>/dev/null | tail -10 || echo "No image files"
+          echo ""
+          echo "=== Data Files ==="
+          ls -la blog/*.json 2>/dev/null || echo "No JSON files"
+          ls -la blog/*.js 2>/dev/null || echo "No JS files"
+          echo ""
+          echo "=== Last 5 articles in published_articles.json ==="
+          python3 -c "
+          import json
+          with open('blog/published_articles.json', 'r') as f:
+              data = json.load(f)
+          articles = data.get('articles', [])[-5:]
+          for a in articles:
+              print(f\"  - {a.get('date', 'N/A')}: {a.get('title', 'No title')[:50]}...\")
+          "
+      
+      - name: Reset FTP state (if force sync)
+        if: ${{ github.event.inputs.force_full_sync == 'true' }}
+        run: |
+          echo "🔄 Force full sync requested - FTP state will be reset"
+          echo "   All files will be re-uploaded on this deployment"
         
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -35,7 +166,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
-          state-name: .ftp-deploy-sync-state-v2.json
+          state-name: ${{ github.event.inputs.force_full_sync == 'true' && '.ftp-deploy-sync-state-reset.json' || '.ftp-deploy-sync-state-v2.json' }}
           log-level: verbose
           exclude: |
             **/.git*
@@ -50,3 +181,15 @@ jobs:
             **/test_server.py
             **/.cursor/**
             **/image_backup/**
+            **/*.plan.md
+      
+      - name: Deployment complete
+        run: |
+          echo ""
+          echo "✅ Deployment completed successfully!"
+          echo ""
+          echo "📝 Notes:"
+          echo "   - If you uploaded files directly via FTP, run this workflow with 'Force full sync' to resync"
+          echo "   - Blog articles are now live at https://www.miakiss.co.jp/blog/"
+          echo ""
+          echo "🔗 Latest articles should be visible within 1-2 minutes"

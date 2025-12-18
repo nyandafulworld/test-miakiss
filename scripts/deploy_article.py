@@ -95,7 +95,8 @@ def deploy_article(slug, commit_message=None):
         f"blog/images/{slug}_thumbnail.jpg",
         "blog/published_articles.json",
         "blog/published_articles.js",  # ブログ一覧に表示するために必須
-        "blog/used_images.json",
+        "blog/used_images.json",       # 画像重複防止用
+        "blog/used_keywords.json",     # キーワード重複防止用
         "sitemap.xml"
     ]
     
