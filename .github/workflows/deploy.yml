@@ -165,8 +165,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /
-          state-name: ${{ github.event.inputs.force_full_sync == 'true' && '.ftp-deploy-sync-state-reset.json' || '.ftp-deploy-sync-state-v3.json' }}
+          server-dir: /miakiss.com/public_html/
+          state-name: ${{ github.event.inputs.force_full_sync == 'true' && '.ftp-deploy-sync-state-reset.json' || '.ftp-deploy-sync-state-v4.json' }}
           log-level: verbose
           exclude: |
             **/.git*
