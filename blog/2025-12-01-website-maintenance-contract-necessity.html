@@ -550,9 +550,13 @@
                 
                 a.addEventListener('click', function(e) {
                     e.preventDefault();
-                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // 固定ヘッダー分のオフセットを調整
-                    window.scrollBy(0, -100);
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 });
                 
                 li.appendChild(a);
@@ -657,8 +661,48 @@
                 ticking = true;
             }
         });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
     });
     </script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 </body>
 </html>
 

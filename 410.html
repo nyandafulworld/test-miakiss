@@ -25,7 +25,7 @@
                 </div>
             </button>
             <div class="logo">
-                <a href="/"><img src="image/logo_v3.avif" alt="株式会社ミアキス"></a>
+                <a href="/"><img src="image/logo_v4.png" alt="株式会社ミアキス"></a>
             </div>
             <nav class="global-nav">
                 <ul>
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="image/logo_v3.avif" alt="株式会社ミアキス">
+                    <img src="image/logo_v4.png" alt="株式会社ミアキス">
                 </div>
                 <nav class="footer-nav">
                     <ul>
@@ -94,6 +94,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script>
         // ハンバーガーメニューの動作
@@ -109,6 +116,39 @@
                     this.classList.toggle('active');
                 });
             }
+
+            // --- Back to Top Button ---
+            const backToTopBtn = document.getElementById('back-to-top');
+            let backToTopTicking = false;
+
+            function updateBackToTopButton() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+                
+                backToTopTicking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!backToTopTicking) {
+                    window.requestAnimationFrame(updateBackToTopButton);
+                    backToTopTicking = true;
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 初期状態チェック
+            updateBackToTopButton();
         });
     </script>
 </body>

@@ -85,7 +85,7 @@ class MailHelper {
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .header { background-color: #0D9488; color: white; padding: 20px; text-align: center; }
         .content { padding: 20px; background-color: #f8f9fa; }
         .field { margin-bottom: 15px; }
         .label { font-weight: bold; color: #495057; }
@@ -110,7 +110,7 @@ class MailHelper {
             </div>
             <div class=\"field\">
                 <span class=\"label\">お問い合わせ内容:</span>
-                <div class=\"value\" style=\"margin-top: 10px; padding: 15px; background-color: white; border-left: 3px solid #007bff;\">
+                <div class=\"value\" style=\"margin-top: 10px; padding: 15px; background-color: white; border-left: 3px solid #0D9488;\">
                     " . nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')) . "
                 </div>
             </div>
@@ -145,9 +145,9 @@ class MailHelper {
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .header { background-color: #0D9488; color: white; padding: 20px; text-align: center; }
         .content { padding: 20px; }
-        .message-box { background-color: #f8f9fa; padding: 15px; border-left: 3px solid #007bff; margin: 20px 0; }
+        .message-box { background-color: #f8f9fa; padding: 15px; border-left: 3px solid #0D9488; margin: 20px 0; }
         .footer { padding: 20px; text-align: center; font-size: 12px; color: #6c757d; border-top: 1px solid #eee; }
     </style>
 </head>
