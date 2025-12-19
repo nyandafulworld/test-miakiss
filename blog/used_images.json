@@ -343,7 +343,23 @@
       "article_slug": "2025-12-17-analytics",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed2006",
+      "filename": "2025-12-19-subsidy-sustainability-subsidy_header.jpg",
+      "used_date": "2025-12-19",
+      "article_slug": "2025-12-19-subsidy-sustainability-subsidy",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed8372",
+      "filename": "2025-12-19-subsidy-sustainability-subsidy_thumbnail.jpg",
+      "used_date": "2025-12-19",
+      "article_slug": "2025-12-19-subsidy-sustainability-subsidy",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-18T15:35:44.362221"
+  "last_updated": "2025-12-19T12:03:42.645523"
 }
