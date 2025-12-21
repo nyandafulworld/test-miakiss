@@ -375,7 +375,23 @@
       "article_slug": "2025-12-20-site-monitoring",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed1567",
+      "filename": "2025-12-21-website-cost-guide-2025_header.jpg",
+      "used_date": "2025-12-21",
+      "article_slug": "2025-12-21-website-cost-guide-2025",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed5959",
+      "filename": "2025-12-21-website-cost-guide-2025_thumbnail.jpg",
+      "used_date": "2025-12-21",
+      "article_slug": "2025-12-21-website-cost-guide-2025",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-20T12:09:28.380844"
+  "last_updated": "2025-12-21T12:32:44.014403"
 }
