@@ -16,6 +16,12 @@
 4. blog/ に保存
 5. blog/published_articles.json に追記
 
+### HTML生成の重要ルール
+- **Markdown記法を使わず、すべてHTMLタグで記述すること**
+- 太字: `**太字**` ではなく `<strong>太字</strong>`
+- 斜体: `*斜体*` ではなく `<em>斜体</em>`
+- リンク: `[text](url)` ではなく `<a href="url">text</a>`
+
 ## オリジナル記事の必須ルール
 
 1. 独自視点: ミアキス代表の経験談や自社事例を入れる
