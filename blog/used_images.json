@@ -391,7 +391,23 @@
       "article_slug": "2025-12-21-website-cost-guide-2025",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed740",
+      "filename": "2025-12-22-saitama-web-agency-selection_header.jpg",
+      "used_date": "2025-12-22",
+      "article_slug": "2025-12-22-saitama-web-agency-selection",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed5860",
+      "filename": "2025-12-22-saitama-web-agency-selection_thumbnail.jpg",
+      "used_date": "2025-12-22",
+      "article_slug": "2025-12-22-saitama-web-agency-selection",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-21T12:32:44.014403"
+  "last_updated": "2025-12-22T12:17:38.612688"
 }
