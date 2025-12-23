@@ -407,7 +407,23 @@
       "article_slug": "2025-12-22-saitama-web-agency-selection",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed3622",
+      "filename": "2025-12-23-wordpress-update-necessity_header.jpg",
+      "used_date": "2025-12-23",
+      "article_slug": "2025-12-23-wordpress-update-necessity",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed9161",
+      "filename": "2025-12-23-wordpress-update-necessity_thumbnail.jpg",
+      "used_date": "2025-12-23",
+      "article_slug": "2025-12-23-wordpress-update-necessity",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-22T12:17:38.612688"
+  "last_updated": "2025-12-23T12:01:48.748295"
 }

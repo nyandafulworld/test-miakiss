@@ -7,6 +7,7 @@
     29,
     31,
     42,
+    45,
     47,
     52,
     53,
@@ -39,7 +40,8 @@
     "持続化補助金 Web広告",
     "サイト監視 サービス",
     "ホームページ制作 費用 相場",
-    "埼玉県 Web制作会社"
+    "埼玉県 Web制作会社",
+    "WordPress アップデート 必要"
   ],
   "keyword_usage_history": [
     {
@@ -162,9 +164,15 @@
       "keyword": "埼玉県 Web制作会社",
       "date": "2025-12-22",
       "slug": "2025-12-22-saitama-web-agency-selection"
+    },
+    {
+      "keywordId": 45,
+      "keyword": "WordPress アップデート 必要",
+      "date": "2025-12-23",
+      "slug": "2025-12-23-wordpress-update-necessity"
     }
   ],
-  "last_updated": "2025-12-22T00:00:00+09:00",
+  "last_updated": "2025-12-23T00:00:00+09:00",
   "notes": "このファイルは使用済みキーワードを管理します。新しい記事を作成する際に重複を防止します。"
 }
 
