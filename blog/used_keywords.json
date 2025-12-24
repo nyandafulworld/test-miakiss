@@ -6,6 +6,7 @@
     8,
     29,
     31,
+    37,
     42,
     45,
     47,
@@ -41,7 +42,8 @@
     "サイト監視 サービス",
     "ホームページ制作 費用 相場",
     "埼玉県 Web制作会社",
-    "WordPress アップデート 必要"
+    "WordPress アップデート 必要",
+    "ホームページ 管理 丸投げ"
   ],
   "keyword_usage_history": [
     {
@@ -170,9 +172,15 @@
       "keyword": "WordPress アップデート 必要",
       "date": "2025-12-23",
       "slug": "2025-12-23-wordpress-update-necessity"
+    },
+    {
+      "keywordId": 37,
+      "keyword": "ホームページ 管理 丸投げ",
+      "date": "2025-12-24",
+      "slug": "2025-12-24-website-management-outsourcing"
     }
   ],
-  "last_updated": "2025-12-23T00:00:00+09:00",
+  "last_updated": "2025-12-24T00:00:00+09:00",
   "notes": "このファイルは使用済みキーワードを管理します。新しい記事を作成する際に重複を防止します。"
 }
 
