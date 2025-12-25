@@ -439,7 +439,23 @@
       "article_slug": "2025-12-24-website-management-outsourcing",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed7101",
+      "filename": "2025-12-25-website-security-basics_header.jpg",
+      "used_date": "2025-12-25",
+      "article_slug": "2025-12-25-website-security-basics",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed7417",
+      "filename": "2025-12-25-website-security-basics_thumbnail.jpg",
+      "used_date": "2025-12-25",
+      "article_slug": "2025-12-25-website-security-basics",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-24T12:11:29.716218"
+  "last_updated": "2025-12-25T11:56:24.020007"
 }

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページのセキュリティ対策で最低限やるべきこと | 株式会社ミアキス</title>
+    <meta name="description" content="埼玉県戸田市のWeb制作会社が教える、中小企業のホームページで最低限実施すべきセキュリティ対策。SSL証明書、WordPress更新、バックアップなど実践的な防御策を解説します。">
+    <meta property="og:title" content="ホームページのセキュリティ対策で最低限やるべきこと">
+    <meta property="og:description" content="埼玉県戸田市のWeb制作会社が教える、中小企業のホームページで最低限実施すべきセキュリティ対策。SSL証明書、WordPress更新、バックアップなど実践的な防御策を解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2025-12-25-website-security-basics.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2025-12-25-website-security-basics_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ホームページのセキュリティ対策で最低限やるべきこと">
+    <meta name="twitter:description" content="埼玉県戸田市のWeb制作会社が教える、中小企業のホームページで最低限実施すべきセキュリティ対策。SSL証明書、WordPress更新、バックアップなど実践的な防御策を解説します。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2025-12-25-website-security-basics_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2025-12-25-website-security-basics.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ホームページのセキュリティ対策で最低限やるべきこと",
+        "description": "埼玉県戸田市のWeb制作会社が教える、中小企業のホームページで最低限実施すべきセキュリティ対策。SSL証明書、WordPress更新、バックアップなど実践的な防御策を解説します。",
+        "url": "https://www.miakiss.co.jp/blog/2025-12-25-website-security-basics.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2025-12-25-website-security-basics_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2025-12-25",
+        "dateModified": "2025-12-25"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2025-12-25-website-security-basics_header.jpg" 
+                 alt="ホームページのセキュリティ対策で最低限やるべきこと" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2025-12-25">2025.12.25</time>
+                <h1 class="article-title">ホームページのセキュリティ対策で最低限やるべきこと</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>こんにちは。埼玉県戸田市でWeb制作・保守運用を手がけている株式会社ミアキスです。</p>
+
+                <p>先日、お客様からこんなご相談がありました。「ホームページのセキュリティって何をすればいいの？SSL証明書だけで大丈夫？」という質問です。実は、<strong>SSL証明書だけでは不十分</strong>なんですよね。</p>
+
+                <p>今回は、中小企業のホームページで最低限やるべきセキュリティ対策について、実践的な視点から解説していきます。</p>
+
+                <h2>セキュリティ対策を怠るとどうなる？実際にあった事例</h2>
+
+                <p>まず最初に、「セキュリティ対策って本当に必要？」と思っている方に、リアルな事例をお伝えします。</p>
+
+                <p>戸田市内のある企業様から緊急のご連絡をいただいたことがあります。「突然サイトが真っ白になって、変な英語が表示されている」と。確認すると、<strong>WordPressの脆弱性を突かれた不正アクセス</strong>でした。</p>
+
+                <p>この企業様は、制作会社に作ってもらったまま3年間一度も更新していませんでした。復旧には緊急対応費用を含めて約18万円、営業機会の損失も含めると大きな痛手となりました。</p>
+
+                <p>もう一つ、埼玉県内の製造業の事例です。お問い合わせフォームから<strong>大量のスパムメール</strong>が送信され、サーバー会社からアカウント停止の警告を受けました。原因はフォームのセキュリティ設定が甘かったことです。</p>
+
+                <p>これらの事例に共通するのは、「うちは小さな会社だから狙われないだろう」という油断です。実際には、<strong>セキュリティの甘いサイトほど自動攻撃の標的</strong>になりやすいんです。</p>
+
+                <h2>最低限これだけは！5つの必須セキュリティ対策</h2>
+
+                <p>では、具体的に何をすればいいのか。ミアキスがお客様に必ず実施している<strong>5つの必須対策</strong>を紹介します。</p>
+
+                <h3>1. SSL証明書の導入と維持管理</h3>
+
+                <p>これは今や常識になっていますが、まだ対応していないサイトも見かけます。SSL証明書（https化）は、<strong>通信の暗号化とサイトの信頼性証明</strong>の役割を果たします。</p>
+
+                <p>重要なのは導入だけでなく、<strong>更新管理</strong>です。証明書の期限が切れると、訪問者に「このサイトは危険です」という警告が表示され、信頼を大きく損ないます。</p>
+
+                <p>ミアキスの保守プランでは、SSL証明書の更新日を管理し、自動更新設定のチェックも行っています。お客様が気づかないうちに期限切れ、ということは絶対に起こさせません。</p>
+
+                <h3>2. WordPressとプラグインの定期更新</h3>
+
+                <p>WordPressサイトの場合、<strong>本体・テーマ・プラグインの更新</strong>が最重要です。更新しないことが脆弱性の温床になります。</p>
+
+                <p>ただし、更新には注意が必要です。いきなり本番サイトで更新すると、プラグイン同士の相性問題でサイトが崩れることがあります。</p>
+
+                <p>私たちが行っている手順はこうです：</p>
+
+                <ul>
+                    <li>まず<strong>完全バックアップ</strong>を取得</li>
+                    <li>可能であればテスト環境で更新を試行</li>
+                    <li>本番環境で更新実施</li>
+                    <li>全ページの表示確認と機能チェック</li>
+                    <li>問題があればすぐに復旧</li>
+                </ul>
+
+                <p>「自分で更新したらサイトが壊れた」というご相談は本当に多いです。<strong>更新作業こそプロに任せるべき</strong>だと考えています。</p>
+
+                <h3>3. 定期的なバックアップ取得</h3>
+
+                <p>セキュリティ対策の基本中の基本が<strong>バックアップ</strong>です。どんなに対策しても、100%安全ということはありません。万が一の時に復旧できる体制が必須です。</p>
+
+                <p>理想的なバックアップ体制：</p>
+
+                <ul>
+                    <li><strong>週1回の自動バックアップ</strong>（最低でも月1回）</li>
+                    <li>データベースとファイル両方を保存</li>
+                    <li>複数世代（最低3世代）を保持</li>
+                    <li>定期的な復旧テストの実施</li>
+                </ul>
+
+                <p>埼玉県内のある飲食店様は、バックアップなしでサイトが改ざんされ、<strong>ゼロから作り直し</strong>になりました。制作費用だけで40万円以上かかっています。</p>
+
+                <p>ミアキスの月額保守プランでは、週1回の自動バックアップと月1回の復旧可能性チェックを標準で行っています。詳細は<a href="../index.html#pricing">料金プラン</a>をご覧ください。</p>
+
+                <h3>4. 管理画面のログイン強化</h3>
+
+                <p>WordPressの管理画面は<strong>不正ログインの標的</strong>になりやすい場所です。最低限、以下の対策が必要です：</p>
+
+                <ul>
+                    <li><strong>強固なパスワード設定</strong>（12文字以上、英数字記号混在）</li>
+                    <li>ユーザー名を「admin」から変更</li>
+                    <li>2段階認証の導入</li>
+                    <li>ログイン試行回数の制限</li>
+                    <li>不要なユーザーアカウントの削除</li>
+                </ul>
+
+                <p>特に複数人で管理している場合、<strong>退職者のアカウント削除</strong>を忘れがちです。アクセス権限の定期的な見直しも重要です。</p>
+
+                <h3>5. 問い合わせフォームのスパム対策</h3>
+
+                <p>意外と見落とされがちなのが<strong>フォームのセキュリティ</strong>です。対策が甘いと、スパムメールの送信元にされたり、サーバーに過負荷がかかったりします。</p>
+
+                <p>基本的な対策：</p>
+
+                <ul>
+                    <li>reCAPTCHA（画像認証）の導入</li>
+                    <li>トークン検証による不正送信防止</li>
+                    <li>メール送信数の制限設定</li>
+                    <li>禁止ワードフィルターの設定</li>
+                </ul>
+
+                <p>実際、ミアキスで制作したサイトは全てこれらの対策を標準実装しています。おかげで「スパムが減った」というお声を多数いただいています。</p>
+
+                <h2>「うちは小さな会社だから大丈夫」は危険な考え方</h2>
+
+                <p>よくある誤解が「大企業じゃないからサイバー攻撃なんて関係ない」というものです。これは<strong>大きな間違い</strong>です。</p>
+
+                <p>現代のサイバー攻撃の多くは自動化されています。人間が狙うのではなく、<strong>プログラムが脆弱性のあるサイトを自動検索</strong>して攻撃します。つまり、会社の規模は関係なく、セキュリティの穴があるサイトが標的になるんです。</p>
+
+                <p>特にWordPressは世界シェアが高いため、<strong>攻撃プログラムのターゲット</strong>になりやすいCMSです。だからこそ、適切な対策が必須なんですね。</p>
+
+                <p>戸田市や埼玉県内の中小企業様でも、実際に被害に遭われたケースを何件も見てきました。「事前対策のコスト」と「事後対応のコスト」を比較すると、<strong>予防の方が圧倒的に安い</strong>です。</p>
+
+                <h2>自社でやる？外注する？それぞれのメリット・デメリット</h2>
+
+                <p>ここまで読んで「自分でできそう」と思った方もいるかもしれません。確かに、知識がある担当者がいれば社内でも可能です。</p>
+
+                <h3>自社対応のメリット・デメリット</h3>
+
+                <p><strong>メリット：</strong></p>
+                <ul>
+                    <li>月額費用がかからない</li>
+                    <li>即座に対応できる</li>
+                    <li>社内にノウハウが蓄積される</li>
+                </ul>
+
+                <p><strong>デメリット：</strong></p>
+                <ul>
+                    <li>担当者の負担が大きい</li>
+                    <li>更新作業でミスが起きやすい</li>
+                    <li>最新のセキュリティ情報を追う必要がある</li>
+                    <li>緊急時の対応が難しい</li>
+                    <li>担当者の退職でノウハウが失われる</li>
+                </ul>
+
+                <h3>外注のメリット・デメリット</h3>
+
+                <p><strong>メリット：</strong></p>
+                <ul>
+                    <li>専門知識を持つプロが対応</li>
+                    <li>社内の負担がゼロ</li>
+                    <li>緊急時も迅速に対応可能</li>
+                    <li>最新のセキュリティ対策が適用される</li>
+                    <li>バックアップ・復旧体制が万全</li>
+                </ul>
+
+                <p><strong>デメリット：</strong></p>
+                <ul>
+                    <li>月額費用がかかる</li>
+                    <li>軽微な修正でも依頼が必要</li>
+                </ul>
+
+                <p>ミアキスの経験から言うと、<strong>Web担当者がいない企業、本業が忙しい企業</strong>は外注が断然おすすめです。月1〜2万円程度の保守費用で安心を買えると考えれば、むしろコスパが良いと言えます。</p>
+
+                <p>実際、「自分でやっていたけど不安で外注に切り替えた」というお客様は多いですね。詳しくは<a href="../index.html#service">サービス内容</a>をご確認ください。</p>
+
+                <h2>よくある質問：セキュリティ対策のQ&amp;A</h2>
+
+                <p>お客様からよく聞かれる質問をまとめました。</p>
+
+                <h3>Q1. セキュリティ対策にどのくらい費用がかかりますか？</h3>
+
+                <p>A. 自社で対応する場合、ツールやプラグインの費用として年間1〜3万円程度です。外注の場合、月額1.5〜3万円が相場です。</p>
+
+                <p>ミアキスでは<strong>月額1.5万円から</strong>のプランをご用意しています。バックアップ、更新作業、セキュリティ監視、緊急対応をすべて含んでいます。詳細は<a href="../index.html#pricing">料金プラン</a>でご確認ください。</p>
+
+                <h3>Q2. SSL証明書は有料と無料どちらがいいですか？</h3>
+
+                <p>A. 一般的な企業サイトであれば、<strong>無料のLet's Encrypt</strong>で十分です。ECサイトや会員登録のあるサイトは、有料の証明書（年間5〜10万円）も検討価値があります。</p>
+
+                <h3>Q3. セキュリティプラグインは何を使えばいいですか？</h3>
+
+                <p>A. WordPressなら「Wordfence」や「SiteGuard WP Plugin」が定番です。ただし、<strong>設定を誤ると自分もログインできなくなる</strong>ことがあるので注意が必要です。</p>
+
+                <h3>Q4. 攻撃を受けたらどうすればいいですか？</h3>
+
+                <p>A. まず<strong>サイトを一時的に閉鎖</strong>し、被害拡大を防ぎます。次にバックアップから復旧、原因の特定と対策を行います。自力での対応が難しい場合は、すぐに専門業者に連絡してください。</p>
+
+                <p>ミアキスでは緊急対応も可能です。<a href="../index.html#contact">お問い合わせフォーム</a>からご連絡いただければ、迅速に対応いたします。</p>
+
+                <h3>Q5. どのくらいの頻度で確認すればいいですか？</h3>
+
+                <p>A. 理想は<strong>週1回のチェック</strong>です。最低でも月1回は、WordPress更新の有無、SSL証明書の有効期限、バックアップの状態を確認しましょう。</p>
+
+                <h2>まとめ：セキュリティは「保険」ではなく「必須の投資」</h2>
+
+                <p>ホームページのセキュリティ対策は、もはや「やった方がいい」レベルではなく、<strong>「やらないとリスクが大きすぎる」</strong>レベルになっています。</p>
+
+                <p>今回紹介した5つの対策を改めてまとめます：</p>
+
+                <ol>
+                    <li><strong>SSL証明書の導入と維持管理</strong></li>
+                    <li><strong>WordPressとプラグインの定期更新</strong></li>
+                    <li><strong>定期的なバックアップ取得</strong></li>
+                    <li><strong>管理画面のログイン強化</strong></li>
+                    <li><strong>問い合わせフォームのスパム対策</strong></li>
+                </ol>
+
+                <p>これらは最低限の対策です。業種やサイトの規模によっては、さらに高度な対策が必要になる場合もあります。</p>
+
+                <p>埼玉県戸田市を拠点に活動する株式会社ミアキスでは、<strong>セキュリティ対策を含む包括的な保守運用サービス</strong>を提供しています。「自社では管理しきれない」「専門家に任せたい」という企業様は、ぜひご相談ください。</p>
+
+                <p>初回相談は無料です。現状のセキュリティ状況を診断し、最適なプランをご提案いたします。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2025-12-25-website-security-basics';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>
+
