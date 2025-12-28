@@ -242,7 +242,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "サイト 放置 リスク",
       "keywordId": 72,
       "description": "Webサイトを放置していると、セキュリティ・SEO・信頼性など様々なリスクが発生します。埼玉県戸田市のWeb制作会社が、放置されたサイトの実例と今すぐできる対策を本音で解説します。"
+    },
+    {
+      "slug": "2025-12-28-web-manager-outsourcing",
+      "title": "Web担当者がいない会社の外注活用術",
+      "date": "2025-12-28",
+      "category": "B",
+      "keyword": "Web担当者 外注",
+      "keywordId": 38,
+      "description": "Web担当者がいない中小企業が外注を活用してホームページ運用を成功させる方法を、埼玉県戸田市のWeb制作会社ミアキスが実例と共に解説します。"
     }
   ],
-  "lastUpdated": "2025-12-27T00:00:00+09:00"
+  "lastUpdated": "2025-12-28T00:00:00+09:00"
 };

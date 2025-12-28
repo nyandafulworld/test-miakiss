@@ -495,7 +495,31 @@
       "article_slug": "2025-12-27-website-abandonment-risks",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed429",
+      "filename": "2025-12-28",
+      "used_date": "2025-12-28",
+      "article_slug": "2025-12-28",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed5379",
+      "filename": "2025-12-28-web-manager-outsourcing_header.jpg",
+      "used_date": "2025-12-28",
+      "article_slug": "2025-12-28-web-manager-outsourcing",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed4171",
+      "filename": "2025-12-28-web-manager-outsourcing_thumbnail.jpg",
+      "used_date": "2025-12-28",
+      "article_slug": "2025-12-28-web-manager-outsourcing",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-27T12:11:06.572842"
+  "last_updated": "2025-12-28T12:30:43.566883"
 }
