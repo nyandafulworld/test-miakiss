@@ -202,9 +202,15 @@
       "keyword": "サイト 放置 リスク",
       "date": "2025-12-27",
       "slug": "2025-12-27-website-abandonment-risks"
+    },
+    {
+      "keywordId": 38,
+      "keyword": "Web担当者 外注",
+      "date": "2025-12-29",
+      "slug": "2025-12-29-web-manager-outsourcing"
     }
   ],
-  "last_updated": "2025-12-27T00:00:00+09:00",
+  "last_updated": "2025-12-29T00:00:00+09:00",
   "notes": "このファイルは使用済みキーワードを管理します。新しい記事を作成する際に重複を防止します。"
 }
 

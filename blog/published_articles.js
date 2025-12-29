@@ -251,7 +251,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "Web担当者 外注",
       "keywordId": 38,
       "description": "Web担当者がいない中小企業が外注を活用してホームページ運用を成功させる方法を、埼玉県戸田市のWeb制作会社ミアキスが実例と共に解説します。"
+    },
+    {
+      "slug": "2025-12-29-web-manager-outsourcing",
+      "title": "Web担当者がいない会社の外注活用術【埼玉の現場から】",
+      "date": "2025-12-29",
+      "category": "B",
+      "keyword": "Web担当者 外注",
+      "keywordId": 38,
+      "description": "Web担当者の外注は「丸投げ」ではありません。埼玉県戸田市のWeb制作会社ミアキスが、中小企業のWeb担当者外注の成功事例と失敗しない選び方を解説します。"
     }
   ],
-  "lastUpdated": "2025-12-28T00:00:00+09:00"
+  "lastUpdated": "2025-12-29T00:00:00+09:00"
 };
