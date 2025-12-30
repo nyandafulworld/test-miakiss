@@ -535,7 +535,23 @@
       "article_slug": "2025-12-29-web-manager-outsourcing",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed3805",
+      "filename": "2025-12-30-sme-website-essential-content_header.jpg",
+      "used_date": "2025-12-30",
+      "article_slug": "2025-12-30-sme-website-essential-content",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed8785",
+      "filename": "2025-12-30-sme-website-essential-content_thumbnail.jpg",
+      "used_date": "2025-12-30",
+      "article_slug": "2025-12-30-sme-website-essential-content",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2025-12-29T15:37:26.367006"
+  "last_updated": "2025-12-30T11:57:41.370112"
 }

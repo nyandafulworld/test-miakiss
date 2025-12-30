@@ -260,7 +260,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "Web担当者 外注",
       "keywordId": 38,
       "description": "Web担当者の外注は「丸投げ」ではありません。埼玉県戸田市のWeb制作会社ミアキスが、中小企業のWeb担当者外注の成功事例と失敗しない選び方を解説します。"
+    },
+    {
+      "slug": "2025-12-30-sme-website-essential-content",
+      "title": "中小企業のホームページに必要なコンテンツとは？成果を出す7つの要素",
+      "date": "2025-12-30",
+      "category": "A",
+      "keyword": "中小企業 ホームページ",
+      "keywordId": 10,
+      "description": "中小企業のホームページに載せるべきコンテンツを、埼玉・戸田市のWeb制作会社が解説。訪問者を顧客に変える7つの必須要素と、実際の事例から見る成功パターンをご紹介します。"
     }
   ],
-  "lastUpdated": "2025-12-29T00:00:00+09:00"
+  "lastUpdated": "2025-12-30T00:00:00+09:00"
 };
