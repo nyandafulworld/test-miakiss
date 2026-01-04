@@ -615,7 +615,31 @@
       "article_slug": "2026-01-03-website-update-agency",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed713",
+      "filename": "1",
+      "used_date": "2026-01-04",
+      "article_slug": "1",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed5894",
+      "filename": "2026-01-04-saitama-website-creation-guide_header.jpg",
+      "used_date": "2026-01-04",
+      "article_slug": "2026-01-04-saitama-website-creation-guide",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed8326",
+      "filename": "2026-01-04-saitama-website-creation-guide_thumbnail.jpg",
+      "used_date": "2026-01-04",
+      "article_slug": "2026-01-04-saitama-website-creation-guide",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-03T12:04:42.102238"
+  "last_updated": "2026-01-04T12:06:08.150063"
 }
