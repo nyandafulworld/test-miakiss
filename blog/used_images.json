@@ -655,7 +655,23 @@
       "article_slug": "2026-01-05-wordpress-monthly-maintenance",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed1872",
+      "filename": "2026-01-06-website-update-error_header.jpg",
+      "used_date": "2026-01-06",
+      "article_slug": "2026-01-06-website-update-error",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed6694",
+      "filename": "2026-01-06-website-update-error_thumbnail.jpg",
+      "used_date": "2026-01-06",
+      "article_slug": "2026-01-06-website-update-error",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-05T12:11:57.448869"
+  "last_updated": "2026-01-06T12:16:13.095272"
 }

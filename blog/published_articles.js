@@ -323,7 +323,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "WordPress 保守 月額",
       "keywordId": 35,
       "description": "WordPress保守の月額費用は月額5,000円～30,000円が相場。具体的な作業内容と価格帯別のサービス内容を埼玉県戸田市のWeb制作会社が実例とともに解説します。"
+    },
+    {
+      "slug": "2026-01-06-website-update-error",
+      "title": "ホームページが更新できない時の原因と解決策",
+      "date": "2026-01-06",
+      "category": "C",
+      "keyword": "ホームページ 更新 できない",
+      "keywordId": 75,
+      "description": "ホームページが更新できなくて困っていませんか？埼玉県戸田市のWeb制作会社が、よくある原因7つと今すぐできる解決策を実例とともに本音で解説します。"
     }
   ],
-  "lastUpdated": "2026-01-05T00:00:00+09:00"
+  "lastUpdated": "2026-01-06T00:00:00+09:00"
 };

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページが更新できない時の原因と解決策 | 株式会社ミアキス</title>
+    <meta name="description" content="ホームページが更新できなくて困っていませんか？埼玉県戸田市のWeb制作会社が、よくある原因7つと今すぐできる解決策を実例とともに本音で解説します。">
+    <meta property="og:title" content="ホームページが更新できない時の原因と解決策">
+    <meta property="og:description" content="ホームページが更新できなくて困っていませんか？埼玉県戸田市のWeb制作会社が、よくある原因7つと今すぐできる解決策を実例とともに本音で解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2026-01-06-website-update-error.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2026-01-06-website-update-error_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ホームページが更新できない時の原因と解決策">
+    <meta name="twitter:description" content="ホームページが更新できなくて困っていませんか？埼玉県戸田市のWeb制作会社が、よくある原因7つと今すぐできる解決策を実例とともに本音で解説します。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2026-01-06-website-update-error_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2026-01-06-website-update-error.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ホームページが更新できない時の原因と解決策",
+        "description": "ホームページが更新できなくて困っていませんか？埼玉県戸田市のWeb制作会社が、よくある原因7つと今すぐできる解決策を実例とともに本音で解説します。",
+        "url": "https://www.miakiss.co.jp/blog/2026-01-06-website-update-error.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2026-01-06-website-update-error_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2026-01-06",
+        "dateModified": "2026-01-06"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2026-01-06-website-update-error_header.jpg" 
+                 alt="ホームページが更新できない時の原因と解決策" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2026-01-06">2026.01.06</time>
+                <h1 class="article-title">ホームページが更新できない時の原因と解決策</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>「いつものようにホームページを更新しようとしたら、突然できなくなった…」</p>
+
+                <p>そんなお困りの声、埼玉県戸田市のミアキスにも毎月数件は寄せられます。ホームページが更新できないトラブルは、<strong>原因がわからないと本当に焦る</strong>んですよね。</p>
+
+                <p>先日も、戸田市のお客様から「今日中に新商品の情報を掲載したいのに、管理画面が真っ白で何もできない」という緊急のご相談がありました。原因を調べたところ、あるプラグインの更新によって他のプラグインと競合していたことが判明。すぐに対処して無事に更新できるようになりましたが、<strong>突然のトラブルは本当に困りますよね</strong>。</p>
+
+                <p>この記事では、ホームページが更新できなくなる原因と、その解決策を実例とともに解説します。技術的なことに詳しくない方でも理解できるよう、できるだけわかりやすくお伝えしていきますね。</p>
+
+                <h2>「更新できない」症状別に見る原因</h2>
+
+                <p>ひとくちに「更新できない」といっても、症状はさまざまです。まずは、どんな状況なのかを整理しましょう。</p>
+
+                <h3>管理画面にログインできない</h3>
+
+                <p>これは比較的多いケースです。IDやパスワードを入れても弾かれてしまう、ログインボタンを押しても反応しない、といった症状が該当します。</p>
+
+                <p><strong>主な原因は以下の3つ</strong>です。</p>
+
+                <ul>
+                    <li><strong>パスワードを忘れた・間違えている</strong>：大文字・小文字の区別、全角・半角のミスが意外と多い</li>
+                    <li><strong>ブラウザのキャッシュが原因</strong>：古い認証情報が残っていてログインできない</li>
+                    <li><strong>アカウントがロックされている</strong>：セキュリティ対策でパスワードを何度も間違えるとロックされる場合がある</li>
+                </ul>
+
+                <p>埼玉のお客様で、「昨日まで使えていたパスワードが今日は通らない」というご相談がありました。よくよく聞くと、前日にサーバー会社からセキュリティ強化のお知らせメールが来ていて、<strong>一時的にアカウントがロックされていた</strong>んです。サーバー会社に連絡したら、すぐに解除できました。</p>
+
+                <h3>管理画面が真っ白 / エラー画面が出る</h3>
+
+                <p>ログインはできたけど、管理画面が真っ白になって何も表示されない。あるいは「Fatal Error」「500 Internal Server Error」といったエラーメッセージが表示される。これは<strong>WordPressサイトで特に多いトラブル</strong>です。</p>
+
+                <p><strong>よくある原因</strong>は以下のとおり。</p>
+
+                <ul>
+                    <li><strong>プラグインやテーマの不具合</strong>：更新後に競合が発生し、サイトが動かなくなる</li>
+                    <li><strong>PHPのバージョンが古い</strong>：サーバーのPHPバージョンが古いと、最新のWordPressやプラグインが動かない</li>
+                    <li><strong>サーバーの容量不足</strong>：画像や動画をたくさんアップして、ディスク容量がいっぱいになっている</li>
+                </ul>
+
+                <p>実際にあったのが、さいたま市のお客様の事例。「管理画面が真っ白で何も触れない」というご相談でした。原因は<strong>PHPのバージョンが5.6のままだった</strong>こと。WordPressの最新版はPHP7.4以上を推奨しているため、動かなくなっていたんです。サーバー側でPHPを7.4に変更したら、すぐに復旧しました。</p>
+
+                <h3>編集はできるけど保存や公開ができない</h3>
+
+                <p>管理画面にはログインできて、記事も編集できる。でも「公開」ボタンを押しても反応しない、保存しようとするとエラーになる。これも厄介なトラブルです。</p>
+
+                <p><strong>主な原因はこちら</strong>。</p>
+
+                <ul>
+                    <li><strong>通信エラー（タイムアウト）</strong>：画像が重すぎたり、サーバーの処理能力が低い場合に起こる</li>
+                    <li><strong>ブラウザの拡張機能が干渉している</strong>：広告ブロッカーなどが誤って管理画面の機能をブロックしている</li>
+                    <li><strong>JavaScriptが無効化されている</strong>：ブラウザ設定でJavaScriptがオフになっていると、一部の機能が動かない</li>
+                </ul>
+
+                <p>戸田市の飲食店のお客様で、「編集はできるのに保存だけできない」という症状がありました。調べたところ、お客様がアップロードしようとしていた画像が<strong>1枚で8MBもある超高画質の写真</strong>だったんです。サーバーのアップロード容量制限に引っかかっていました。画像を圧縮して再アップロードしたら、無事に保存できるようになりました。</p>
+
+                <h2>今すぐ試せる解決策7選</h2>
+
+                <p>では、実際にどうすれば解決できるのか。技術的な知識がなくてもできる対処法から順に紹介します。</p>
+
+                <h3>1. ブラウザのキャッシュをクリアする</h3>
+
+                <p>これが<strong>一番カンタンで、意外と効果がある方法</strong>です。ブラウザには「キャッシュ」という、過去に見たページの情報を保存する機能があります。これが古いまま残っていると、正しく表示されないことがあります。</p>
+
+                <p>ChromeやEdgeなら「Ctrl + Shift + Delete」（Macは「Command + Shift + Delete」）で削除画面が開きます。Safariなら「環境設定」→「詳細」から削除できます。</p>
+
+                <h3>2. 別のブラウザで試してみる</h3>
+
+                <p>使っているブラウザに問題がある場合もあります。普段Chromeを使っているなら、EdgeやFirefoxなど別のブラウザでログインしてみてください。<strong>ブラウザを変えただけで解決するケースも実は多い</strong>んです。</p>
+
+                <h3>3. パスワードをリセットする</h3>
+
+                <p>ログインできない場合は、パスワードリセットを試しましょう。WordPressなら、ログイン画面の「パスワードをお忘れですか？」からメールでリセットできます。</p>
+
+                <p>ただし、<strong>メールアドレスが古いままだとリセットメールが届かない</strong>ので注意してください。その場合は、サーバーの管理画面から直接パスワードを変更するか、制作会社に依頼する必要があります。</p>
+
+                <h3>4. プラグインを無効化する（WordPress）</h3>
+
+                <p>WordPressで管理画面が真っ白になった場合、プラグインが原因の可能性が高いです。FTPソフト（FileZillaなど）を使えるなら、サーバーに接続して「wp-content/plugins」フォルダの名前を一時的に変更します（例：「plugins_old」など）。</p>
+
+                <p>これで<strong>すべてのプラグインが無効化</strong>され、管理画面にアクセスできるようになることが多いです。その後、プラグインを1つずつ有効化して、どれが原因か特定します。</p>
+
+                <h3>5. PHPのバージョンを確認する</h3>
+
+                <p>サーバーの管理画面で、PHPのバージョンを確認してください。WordPressなら、PHP7.4以上が推奨されています。古いバージョンのままだと、最新のWordPressやプラグインが動きません。</p>
+
+                <p><strong>ただし、PHPのバージョンアップは慎重に</strong>。いきなり変更すると、既存のプラグインやテーマが動かなくなる可能性があります。事前にバックアップを取るか、専門家に相談することをおすすめします。</p>
+
+                <h3>6. サーバーの容量を確認する</h3>
+
+                <p>サーバーの容量がいっぱいだと、新しいデータを保存できません。サーバーの管理画面で、ディスク使用量を確認してください。</p>
+
+                <p>もし容量が90%以上になっているなら、不要な画像や古いバックアップファイルを削除するか、<strong>サーバーのプランをアップグレード</strong>することを検討しましょう。</p>
+
+                <h3>7. セキュリティプラグインの設定を見直す</h3>
+
+                <p>セキュリティ対策のプラグインが、誤って自分自身をブロックしてしまうことがあります。特に「SiteGuard」や「Wordfence」といったプラグインを使っている場合、IPアドレス制限やログイン試行回数制限に引っかかっていることがあります。</p>
+
+                <p>もしFTPでサーバーにアクセスできるなら、一時的にセキュリティプラグインを無効化してみてください。</p>
+
+                <h2>根本的な予防策：定期保守の重要性</h2>
+
+                <p>これまで紹介した対処法は、<strong>あくまで応急処置</strong>です。本当に大切なのは、トラブルが起こらないように予防すること。</p>
+
+                <p>ミアキスでは、月額保守プランでこんなサポートをしています。</p>
+
+                <ul>
+                    <li><strong>WordPress本体・プラグインの定期更新</strong>：競合が起きないよう、テスト環境で確認してから更新</li>
+                    <li><strong>定期バックアップ</strong>：万が一トラブルが起きても、すぐに復旧できる</li>
+                    <li><strong>PHPバージョンの管理</strong>：サーバー環境を最適な状態に保つ</li>
+                    <li><strong>セキュリティ対策</strong>：不正アクセスやハッキングのリスクを最小化</li>
+                </ul>
+
+                <p>「更新できない」トラブルは、<strong>定期的なメンテナンスをしていればほとんど防げます</strong>。逆に、何年も放置していると、今回紹介したようなトラブルが次々に起こります。</p>
+
+                <p>埼玉・戸田市でホームページの保守運用にお困りなら、<a href="../index.html#contact">ミアキスにお気軽にご相談ください</a>。</p>
+
+                <h2>どうしても解決できない時は？</h2>
+
+                <p>ここまで紹介した方法を試しても解決しない場合は、<strong>無理に自分で対処しようとせず、専門家に相談</strong>することをおすすめします。</p>
+
+                <p>特に、以下のような状況では早めにプロに依頼しましょう。</p>
+
+                <ul>
+                    <li>サーバーにアクセスする方法がわからない</li>
+                    <li>FTPやデータベースの操作が必要</li>
+                    <li>サイトが完全に表示されなくなった（真っ白 or エラー画面）</li>
+                    <li>制作会社と連絡が取れない</li>
+                </ul>
+
+                <p>ミアキスでは、<strong>他社で作ったサイトのトラブル対応</strong>も行っています。戸田市のお客様で、「以前の制作会社が廃業してしまい、困っていた」という方もいらっしゃいました。サイトの状態を確認して、無事に引き継ぎ・復旧できました。</p>
+
+                <p>緊急のトラブル対応も可能ですので、まずは<a href="../index.html#contact">お問い合わせフォーム</a>からご相談ください。</p>
+
+                <h2>まとめ：更新できないトラブルは予防が最善策</h2>
+
+                <p>ホームページが更新できなくなる原因と解決策を紹介してきました。</p>
+
+                <p><strong>まとめると</strong>、こんな流れで対処してください。</p>
+
+                <ol>
+                    <li>まずはブラウザのキャッシュをクリアして、別のブラウザで試す</li>
+                    <li>ログインできないならパスワードリセットを試す</li>
+                    <li>管理画面が真っ白ならプラグインを疑う</li>
+                    <li>それでもダメなら、サーバー環境（PHP、容量）をチェック</li>
+                    <li>解決しない場合は専門家に相談</li>
+                </ol>
+
+                <p>そして何より大切なのが、<strong>トラブルが起こる前に定期メンテナンスをしておくこと</strong>。更新作業が怖くなくなり、安心してホームページを運用できます。</p>
+
+                <p>埼玉県戸田市のミアキスでは、月額5,000円から保守プランをご用意しています。「更新できなくて困った」という経験がある方は、ぜひ一度ご相談ください。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2026-01-06-website-update-error';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>
+
