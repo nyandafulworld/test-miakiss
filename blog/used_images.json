@@ -671,7 +671,23 @@
       "article_slug": "2026-01-06-website-update-error",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed8400",
+      "filename": "2026-01-07-saitama-city-web-trends_header.jpg",
+      "used_date": "2026-01-07",
+      "article_slug": "2026-01-07-saitama-city-web-trends",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed8923",
+      "filename": "2026-01-07-saitama-city-web-trends_thumbnail.jpg",
+      "used_date": "2026-01-07",
+      "article_slug": "2026-01-07-saitama-city-web-trends",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-06T12:16:13.095272"
+  "last_updated": "2026-01-07T11:30:17.659582"
 }
