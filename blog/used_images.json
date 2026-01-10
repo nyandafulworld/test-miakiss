@@ -727,7 +727,39 @@
       "article_slug": "2026-01-09-saitama-lp-creation",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed3969",
+      "filename": "2026-01-10",
+      "used_date": "2026-01-10",
+      "article_slug": "2026-01-10",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed1474",
+      "filename": "43",
+      "used_date": "2026-01-10",
+      "article_slug": "43",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed1957",
+      "filename": "2026-01-10-website-update-frequency_header.jpg",
+      "used_date": "2026-01-10",
+      "article_slug": "2026-01-10-website-update-frequency",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed4910",
+      "filename": "2026-01-10-website-update-frequency_thumbnail.jpg",
+      "used_date": "2026-01-10",
+      "article_slug": "2026-01-10-website-update-frequency",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-09T14:02:21.316843"
+  "last_updated": "2026-01-10T13:15:59.909309"
 }
