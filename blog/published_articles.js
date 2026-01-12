@@ -377,7 +377,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "埼玉 ECサイト構築",
       "keywordId": 6,
       "description": "埼玉県でECサイトを始めたい事業者向けに、実際の制作費用相場から必要な準備、運用コストまで、地域密着で支援してきたミアキスが実例をもとに解説します。"
+    },
+    {
+      "slug": "2026-01-12-ssl-certificate-renewal",
+      "title": "SSL証明書の更新を忘れるとどうなる？対策を解説",
+      "date": "2026-01-12",
+      "category": "B",
+      "keyword": "SSL証明書 更新 代行",
+      "keywordId": 39,
+      "description": "SSL証明書の更新を忘れると、サイトが表示されなくなり信頼を失います。埼玉県戸田市のミアキスが、SSL証明書の重要性と更新代行サービスについて解説します。"
     }
   ],
-  "lastUpdated": "2026-01-11T00:00:00+09:00"
+  "lastUpdated": "2026-01-12T00:00:00+09:00"
 };

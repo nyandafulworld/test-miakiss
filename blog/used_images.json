@@ -783,7 +783,31 @@
       "article_slug": "2026-01-11-saitama-ec-site-startup",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed7051",
+      "filename": "SSL証明書の更新を忘れるとどうなる？対策を解説",
+      "used_date": "2026-01-12",
+      "article_slug": "SSL証明書の更新を忘れるとどうなる？対策を解説",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed4648",
+      "filename": "2026-01-12-ssl-certificate-renewal_header.jpg",
+      "used_date": "2026-01-12",
+      "article_slug": "2026-01-12-ssl-certificate-renewal",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed590",
+      "filename": "2026-01-12-ssl-certificate-renewal_thumbnail.jpg",
+      "used_date": "2026-01-12",
+      "article_slug": "2026-01-12-ssl-certificate-renewal",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-11T12:45:25.841007"
+  "last_updated": "2026-01-12T12:18:59.561838"
 }

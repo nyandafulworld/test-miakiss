@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSL証明書の更新を忘れるとどうなる？対策を解説 | 株式会社ミアキス</title>
+    <meta name="description" content="SSL証明書の更新を忘れると、サイトが表示されなくなり信頼を失います。埼玉県戸田市のミアキスが、SSL証明書の重要性と更新代行サービスについて解説します。">
+    <meta property="og:title" content="SSL証明書の更新を忘れるとどうなる？対策を解説">
+    <meta property="og:description" content="SSL証明書の更新を忘れると、サイトが表示されなくなり信頼を失います。埼玉県戸田市のミアキスが、SSL証明書の重要性と更新代行サービスについて解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2026-01-12-ssl-certificate-renewal.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2026-01-12-ssl-certificate-renewal_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SSL証明書の更新を忘れるとどうなる？対策を解説">
+    <meta name="twitter:description" content="SSL証明書の更新を忘れると、サイトが表示されなくなり信頼を失います。埼玉県戸田市のミアキスが、SSL証明書の重要性と更新代行サービスについて解説します。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2026-01-12-ssl-certificate-renewal_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2026-01-12-ssl-certificate-renewal.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "SSL証明書の更新を忘れるとどうなる？対策を解説",
+        "description": "SSL証明書の更新を忘れると、サイトが表示されなくなり信頼を失います。埼玉県戸田市のミアキスが、SSL証明書の重要性と更新代行サービスについて解説します。",
+        "url": "https://www.miakiss.co.jp/blog/2026-01-12-ssl-certificate-renewal.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2026-01-12-ssl-certificate-renewal_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2026-01-12",
+        "dateModified": "2026-01-12"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2026-01-12-ssl-certificate-renewal_header.jpg" 
+                 alt="SSL証明書の更新を忘れるとどうなる？対策を解説" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2026-01-12">2026.01.12</time>
+                <h1 class="article-title">SSL証明書の更新を忘れるとどうなる？対策を解説</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>「サイトにアクセスすると警告が表示される」「お客様から『ホームページが見られない』と連絡があった」——こんな経験はありませんか？</p>
+
+                <p>その原因の多くは、<strong>SSL証明書の期限切れ</strong>です。SSL証明書は通常1年ごとに更新が必要ですが、更新を忘れてしまうと大きなトラブルに発展します。</p>
+
+                <p>埼玉県戸田市を拠点に、ホームページの保守運用を行っている株式会社ミアキスが、SSL証明書の更新を忘れた場合に起こること、そして更新代行サービスの必要性について詳しく解説します。</p>
+
+                <h2>SSL証明書とは？なぜ必要なのか</h2>
+
+                <p>SSL証明書は、ホームページとユーザーの間で送受信される情報を<strong>暗号化する仕組み</strong>です。「https://」で始まるURLや、ブラウザのアドレスバーに表示される鍵マークがSSL証明書が有効な証拠です。</p>
+
+                <h3>SSL証明書の主な役割</h3>
+
+                <ul>
+                    <li><strong>通信の暗号化：</strong>個人情報やクレジットカード情報などを保護</li>
+                    <li><strong>サイトの信頼性証明：</strong>正規の運営者であることを証明</li>
+                    <li><strong>SEO対策：</strong>Googleが推奨し、検索順位にも影響</li>
+                    <li><strong>ユーザーの安心感：</strong>警告表示がなく、安心して閲覧できる</li>
+                </ul>
+
+                <p>SSL証明書は2020年以降、<strong>有効期間が最大398日（約13ヶ月）</strong>に短縮されました。つまり、年に1回は必ず更新作業が必要になります。</p>
+
+                <h2>SSL証明書の更新を忘れると起こる4つの問題</h2>
+
+                <h3>1. ブラウザに警告が表示され、サイトが見られなくなる</h3>
+
+                <p>SSL証明書が期限切れになると、ブラウザに<strong>「この接続ではプライバシーが保護されません」</strong>といった警告が表示されます。</p>
+
+                <p>多くのユーザーはこの警告を見ると、「危険なサイトだ」と判断して離脱してしまいます。実際、警告画面を無視して先に進むユーザーはほとんどいません。</p>
+
+                <h3>2. 問い合わせや売上が激減する</h3>
+
+                <p>サイトにアクセスできない、または警告が表示される状態が続くと、<strong>問い合わせや購入が途絶えてしまいます</strong>。</p>
+
+                <p>特にECサイトや予約システムを運営している企業では、たった1日のSSL証明書失効でも大きな機会損失につながります。週末に期限が切れて月曜日まで気づかなかった、というケースも珍しくありません。</p>
+
+                <h3>3. 企業の信頼性が大きく損なわれる</h3>
+
+                <p>SSL証明書の期限切れは、<strong>「このサイトはきちんと管理されていない」</strong>というメッセージをユーザーに与えてしまいます。</p>
+
+                <p>特にBtoB企業の場合、取引先からの信頼低下につながり、その後のビジネスにも影響を及ぼす可能性があります。</p>
+
+                <h3>4. SEO（検索順位）に悪影響が出る</h3>
+
+                <p>GoogleはSSL対応（HTTPS化）を推奨しており、SSL証明書が無効になると<strong>検索順位が下がる可能性</strong>があります。</p>
+
+                <p>また、期限切れの状態が長く続くと、Googleがサイトを低品質と判断し、インデックスから削除されるリスクもあります。</p>
+
+                <h2>SSL証明書の更新を忘れてしまう原因</h2>
+
+                <p>では、なぜSSL証明書の更新忘れが起こってしまうのでしょうか？</p>
+
+                <h3>よくある原因</h3>
+
+                <ul>
+                    <li><strong>Web担当者の異動や退職：</strong>引き継ぎが不十分で更新時期を把握していない</li>
+                    <li><strong>メールの見落とし：</strong>証明書会社からの通知メールが迷惑メールフォルダに入っていた</li>
+                    <li><strong>更新手続きの複雑さ：</strong>更新方法がわからず、後回しにしているうちに期限が切れた</li>
+                    <li><strong>複数サイト管理の混乱：</strong>管理するサイトが多く、どのサイトの期限がいつか把握しきれていない</li>
+                    <li><strong>他の業務に追われている：</strong>日常業務が忙しく、SSL更新まで手が回らない</li>
+                </ul>
+
+                <p>実際、ミアキスにご相談いただくお客様の中にも、「前任者が管理していたが、引き継ぎ資料がなくて困っている」という声が少なくありません。</p>
+
+                <h2>SSL証明書更新を忘れた時の対処法</h2>
+
+                <p>もしSSL証明書が期限切れになってしまった場合、どうすればよいのでしょうか。</p>
+
+                <h3>緊急対応の手順</h3>
+
+                <ol>
+                    <li><strong>SSL証明書の発行・管理会社に連絡する：</strong>証明書を発行した会社（レジストラ）に至急連絡し、更新手続きを依頼します。</li>
+                    <li><strong>更新手続きを完了させる：</strong>認証方法（メール認証、DNS認証など）を選択し、指示に従って手続きを進めます。</li>
+                    <li><strong>サーバーに新しい証明書をインストールする：</strong>証明書が発行されたら、Webサーバーにインストールします（技術的知識が必要です）。</li>
+                    <li><strong>動作確認を行う：</strong>各ブラウザでサイトが正常に表示されるか、警告が消えているかを確認します。</li>
+                    <li><strong>お客様・取引先への案内：</strong>必要に応じて、一時的にアクセスできなかったことをお詫びする通知を出します。</li>
+                </ol>
+
+                <p>ただし、この対応には<strong>専門的な知識と時間</strong>が必要です。特に緊急時は焦ってしまい、ミスが起こりやすいため注意が必要です。</p>
+
+                <h2>SSL証明書更新代行サービスのメリット</h2>
+
+                <p>こうしたトラブルを未然に防ぐために、多くの企業が<strong>SSL証明書の更新代行サービス</strong>を利用しています。</p>
+
+                <h3>更新代行サービスの主なメリット</h3>
+
+                <ul>
+                    <li><strong>更新忘れの心配がなくなる：</strong>専門業者が期限を管理し、期限前に確実に更新作業を実施します。</li>
+                    <li><strong>複雑な手続きを任せられる：</strong>証明書の発行申請からサーバーへのインストールまで、すべて代行してもらえます。</li>
+                    <li><strong>担当者の異動・退職でも安心：</strong>社内の人事異動に関係なく、継続的な管理ができます。</li>
+                    <li><strong>トラブル時も迅速に対応してもらえる：</strong>万が一問題が起きても、専門家がすぐに対処してくれます。</li>
+                    <li><strong>本業に集中できる：</strong>SSL管理の手間から解放され、本来の業務に専念できます。</li>
+                </ul>
+
+                <h2>ミアキスのSSL証明書更新代行サービス</h2>
+
+                <p>株式会社ミアキスでは、埼玉県内の中小企業を中心に、<strong>SSL証明書の更新代行を含む保守運用サービス</strong>を提供しています。</p>
+
+                <h3>ミアキスの保守運用サービスの特徴</h3>
+
+                <ul>
+                    <li><strong>期限管理を徹底：</strong>お客様のSSL証明書の有効期限をデータベースで一元管理し、期限の2ヶ月前から準備を開始します。</li>
+                    <li><strong>更新作業を完全代行：</strong>証明書の取得からサーバーへのインストール、動作確認まで、すべて弊社で対応します。</li>
+                    <li><strong>月額定額制で安心：</strong>SSL更新だけでなく、サイトのバックアップやセキュリティ対策、軽微な修正も含めた月額プランをご用意しています。</li>
+                    <li><strong>緊急時も迅速対応：</strong>万が一のトラブル発生時も、埼玉県内であれば迅速に対応可能です。</li>
+                    <li><strong>担当者が丁寧に説明：</strong>専門用語をできるだけ使わず、わかりやすく状況を説明します。</li>
+                </ul>
+
+                <h3>こんな企業におすすめです</h3>
+
+                <ul>
+                    <li>Web担当者がいない、またはITに詳しい社員がいない</li>
+                    <li>過去にSSL証明書の更新を忘れてトラブルになった経験がある</li>
+                    <li>複数のサイトを運営していて管理が大変</li>
+                    <li>制作会社と連絡が取れなくなってしまった</li>
+                    <li>本業に集中したいので、Web周りは全部任せたい</li>
+                </ul>
+
+                <h2>SSL証明書以外にも気をつけるべき期限管理</h2>
+
+                <p>ホームページを運営する上で、SSL証明書以外にも<strong>期限管理が必要なもの</strong>があります。</p>
+
+                <h3>主な管理項目</h3>
+
+                <ul>
+                    <li><strong>ドメインの更新：</strong>通常1年ごと。失効するとサイトが表示されなくなります。</li>
+                    <li><strong>サーバーの契約更新：</strong>レンタルサーバーの契約期限。更新を忘れるとサイトが消えます。</li>
+                    <li><strong>CMSやプラグインのアップデート：</strong>WordPressなどは定期的に更新が必要です。</li>
+                    <li><strong>バックアップの管理：</strong>定期的なバックアップがなければ、トラブル時に復旧できません。</li>
+                </ul>
+
+                <p>これらを個別に管理するのは大変です。保守運用サービスを利用すれば、<strong>まとめて管理を任せることができます</strong>。</p>
+
+                <h2>まとめ：SSL証明書は「更新代行」で安心運用</h2>
+
+                <p>SSL証明書の更新忘れは、企業の信頼性や売上に直結する重大なトラブルです。しかし、日々の業務に追われる中で、期限を管理し続けるのは簡単ではありません。</p>
+
+                <p><strong>ポイントのまとめ</strong></p>
+
+                <ul>
+                    <li>SSL証明書の期限切れは、警告表示や検索順位低下など深刻な問題を引き起こす</li>
+                    <li>更新忘れの原因は、担当者の異動や日常業務の多忙さなど様々</li>
+                    <li>更新代行サービスを利用すれば、期限管理の不安から解放される</li>
+                    <li>ミアキスでは埼玉県内の企業を中心に、SSL更新を含む保守運用サービスを提供</li>
+                </ul>
+
+                <p>株式会社ミアキスでは、埼玉県戸田市を拠点に、<strong>月額定額制の保守運用サービス</strong>をご提供しています。SSL証明書の更新はもちろん、ドメイン管理、バックアップ、セキュリティ対策まで、ホームページに関するあらゆる管理業務を代行いたします。</p>
+
+                <p>「更新時期を気にせず、安心してビジネスに専念したい」とお考えの企業様は、ぜひ一度ご相談ください。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2026-01-12-ssl-certificate-renewal';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>
