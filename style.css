@@ -2135,18 +2135,111 @@ html.dark .work-item .work-description {
     }
 }
 
-/* Partner Section (プロジェクトパートナー企業様一覧) */
+/* Awards Section (認定・受賞) */
+.awards-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.awards-title {
+    font-size: 1.25em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.awards-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.award-item {
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.award-item:hover {
+    opacity: 0.85;
+    transform: translateY(-3px);
+}
+
+.award-logo {
+    max-height: 130px;
+    width: auto;
+    display: block;
+}
+
+.award-logo-hikakubiz {
+    max-height: 110px;
+}
+
+/* Awards Section - Dark Mode */
+html.dark .awards-section {
+    border-top-color: #4a5568;
+}
+
+html.dark .awards-title {
+    color: #e2e8f0;
+}
+
+/* Awards Section - Responsive */
+@media (max-width: 768px) {
+    .awards-section {
+        margin-top: 40px;
+        padding: 30px 0;
+    }
+    
+    .awards-title {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+    
+    .awards-grid {
+        gap: 30px;
+    }
+    
+    .award-logo {
+        max-height: 100px;
+    }
+    
+    .award-logo-hikakubiz {
+        max-height: 85px;
+    }
+}
+
+@media (max-width: 480px) {
+    .awards-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .award-logo {
+        max-height: 90px;
+    }
+    
+    .award-logo-hikakubiz {
+        max-height: 75px;
+    }
+}
+
+/* Partner Section (パートナー企業) */
 .partner-section {
     margin-top: 60px;
     text-align: center;
     padding: 40px 0;
+    border-top: 1px solid #e5e5e5;
 }
 
 .partner-title {
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: #333;
-    margin-bottom: 40px;
-    font-weight: bold;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .partner-item {
@@ -2182,10 +2275,10 @@ html.dark .work-item .work-description {
 }
 
 .partner-company-name {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #333;
     margin-bottom: 12px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .partner-description {
@@ -2196,6 +2289,10 @@ html.dark .work-item .work-description {
 }
 
 /* Partner Section - Dark Mode */
+html.dark .partner-section {
+    border-top-color: #4a5568;
+}
+
 html.dark .partner-title {
     color: #e2e8f0;
 }
@@ -2216,8 +2313,8 @@ html.dark .partner-description {
     }
     
     .partner-title {
-        font-size: 1.3em;
-        margin-bottom: 30px;
+        font-size: 1.1em;
+        margin-bottom: 25px;
     }
     
     .partner-logo {
@@ -2225,7 +2322,7 @@ html.dark .partner-description {
     }
     
     .partner-company-name {
-        font-size: 1.2em;
+        font-size: 1em;
     }
     
     .partner-description {
@@ -2239,7 +2336,7 @@ html.dark .partner-description {
     }
     
     .partner-company-name {
-        font-size: 1.1em;
+        font-size: 0.95em;
     }
 }
 
