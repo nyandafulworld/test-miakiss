@@ -2169,13 +2169,13 @@ html.dark .work-item .work-description {
 }
 
 .award-logo {
-    max-height: 130px;
+    max-height: 100px;
     width: auto;
     display: block;
 }
 
 .award-logo-hikakubiz {
-    max-height: 110px;
+    max-height: 95px;
 }
 
 /* Awards Section - Dark Mode */
@@ -2204,11 +2204,11 @@ html.dark .awards-title {
     }
     
     .award-logo {
-        max-height: 100px;
+        max-height: 80px;
     }
     
     .award-logo-hikakubiz {
-        max-height: 85px;
+        max-height: 75px;
     }
 }
 
@@ -2219,11 +2219,11 @@ html.dark .awards-title {
     }
     
     .award-logo {
-        max-height: 90px;
+        max-height: 70px;
     }
     
     .award-logo-hikakubiz {
-        max-height: 75px;
+        max-height: 65px;
     }
 }
 
