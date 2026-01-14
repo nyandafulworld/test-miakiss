@@ -823,7 +823,23 @@
       "article_slug": "2026-01-13-corporate-site-creation",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed5151",
+      "filename": "2026-01-14-wordpress-hacking-countermeasures_header.jpg",
+      "used_date": "2026-01-14",
+      "article_slug": "2026-01-14-wordpress-hacking-countermeasures",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed1662",
+      "filename": "2026-01-14-wordpress-hacking-countermeasures_thumbnail.jpg",
+      "used_date": "2026-01-14",
+      "article_slug": "2026-01-14-wordpress-hacking-countermeasures",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-13T11:55:39.161351"
+  "last_updated": "2026-01-14T14:07:33.895907"
 }

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPressがハッキングされた時の対処法と予防策 | 株式会社ミアキス</title>
+    <meta name="description" content="WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。">
+    <meta property="og:title" content="WordPressがハッキングされた時の対処法と予防策">
+    <meta property="og:description" content="WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2026-01-14-wordpress-hacking-countermeasures.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2026-01-14-wordpress-hacking-countermeasures_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WordPressがハッキングされた時の対処法と予防策">
+    <meta name="twitter:description" content="WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2026-01-14-wordpress-hacking-countermeasures_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2026-01-14-wordpress-hacking-countermeasures.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "WordPressがハッキングされた時の対処法と予防策",
+        "description": "WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。",
+        "url": "https://www.miakiss.co.jp/blog/2026-01-14-wordpress-hacking-countermeasures.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2026-01-14-wordpress-hacking-countermeasures_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2026-01-14",
+        "dateModified": "2026-01-14"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px; /* ヘッダー高さ分（75px）を追加 */
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px; /* タブレット/SP版ヘッダー高さ分（50px）を追加 */
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        /* タイトルを左揃えに変更 */
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;  /* より濃いグレー */
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;  /* 中央→左揃え */
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;  /* 1.9 → 1.8 */
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;  /* 左アクセントバー */
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;  /* 1.5em → 2em */
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;  /* 青 → ダークグレー */
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%); /* 蛍光ペン風 */
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2026-01-14-wordpress-hacking-countermeasures_header.jpg" 
+                 alt="WordPressがハッキングされた時の対処法と予防策" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2026-01-14">2026.01.14</time>
+                <h1 class="article-title">WordPressがハッキングされた時の対処法と予防策</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>こんにちは、埼玉県戸田市でWeb制作を手がけている株式会社ミアキスの代表です。</p>
+
+                <p>先日、お客様から緊急の電話がかかってきました。「サイトを開いたら変な海外サイトに飛ばされるんです！」。実際に確認してみると、<strong>WordPressサイトがハッキング被害に遭っていました</strong>。</p>
+
+                <p>このような事態は決して他人事ではありません。WordPressは世界中で使われているCMSだからこそ、攻撃者のターゲットにもなりやすいんです。今回は、実際の経験をもとに、ハッキングされた時の対処法と予防策を詳しく解説します。</p>
+
+                <h2>WordPressがハッキングされた？まず確認すべき症状</h2>
+
+                <p>「なんかサイトの様子がおかしい」と感じたら、以下のような症状が出ていないか確認してください。</p>
+
+                <ul>
+                    <li><strong>変なページに自動でリダイレクトされる</strong>（海外サイトやアダルトサイトなど）</li>
+                    <li>管理画面にログインできなくなる</li>
+                    <li>見覚えのないユーザーアカウントが作成されている</li>
+                    <li>サイトの表示が極端に遅くなった</li>
+                    <li>Googleから「このサイトはハッキングされている可能性があります」という警告が出る</li>
+                    <li>ファイル一覧に身に覚えのないファイルが増えている</li>
+                    <li>急に英語や中国語のスパム記事が大量投稿される</li>
+                </ul>
+
+                <p>これらの症状が1つでも当てはまれば、<strong>ハッキングされている可能性が高い</strong>です。放置すればするほど被害が拡大するので、早急な対応が必要です。</p>
+
+                <h2>実際に起きた事例から学ぶ（ミアキスの経験談）</h2>
+
+                <p>埼玉県内の製造業のお客様から相談を受けた時のことです。</p>
+
+                <blockquote>
+                    <p>「お客様から『御社のサイト、開くと全然違うページになりますよ』って連絡があって…。確認したら確かに変なんです。どうしたらいいでしょうか？」</p>
+                </blockquote>
+
+                <p>すぐに調査したところ、<strong>プラグインの脆弱性を突かれて不正ファイルが埋め込まれていました</strong>。しかも、WordPressの管理者パスワードが「password123」という簡単なものだったため、総当たり攻撃で突破されていたんです。</p>
+
+                <p>この事例では、以下のような状況でした。</p>
+
+                <ul>
+                    <li>WordPressのバージョンが3年前のまま放置</li>
+                    <li>使っていないプラグインが10個以上インストールされたまま</li>
+                    <li>バックアップを一度も取っていない</li>
+                    <li>セキュリティ対策プラグインは未導入</li>
+                </ul>
+
+                <p>結果として、サイトの完全復旧まで3日かかり、その間は<strong>ビジネスチャンスを逃すことになってしまいました</strong>。お客様からの信頼も一時的に損なわれてしまったことは、とても残念でした。</p>
+
+                <h2>ハッキングされた際の緊急対処法</h2>
+
+                <p>もしWordPressがハッキングされてしまったら、以下の手順で対応してください。</p>
+
+                <h3>1. サイトを一時的に閉鎖する</h3>
+
+                <p>訪問者を守るため、まずは<strong>サイトをメンテナンスモードにする</strong>か、一時的に閉鎖しましょう。被害が拡大するのを防ぐための最優先事項です。</p>
+
+                <h3>2. パスワードをすべて変更する</h3>
+
+                <p>管理画面にログインできる場合は、WordPress管理者、FTP、データベースなど、<strong>関連するすべてのパスワードを複雑なものに変更</strong>してください。</p>
+
+                <h3>3. 不正なファイルを特定・削除する</h3>
+
+                <p>FTPソフトでサーバーに接続し、見覚えのないファイルや更新日時が不自然なファイルを探します。特に以下のディレクトリを重点的にチェックしましょう。</p>
+
+                <ul>
+                    <li>wp-content/uploads/</li>
+                    <li>wp-includes/</li>
+                    <li>wp-admin/</li>
+                    <li>テーマフォルダ内</li>
+                </ul>
+
+                <p>もし専門知識がない場合は、<strong>無理に自分で対処せず、専門業者に依頼することをおすすめします</strong>。誤って重要なファイルを削除すると、さらに状況が悪化する可能性があります。</p>
+
+                <h3>4. WordPressとプラグインを最新版に更新</h3>
+
+                <p>クリーンアップが完了したら、WordPressコア、すべてのプラグイン、テーマを最新版にアップデートします。脆弱性が残っていると、再度攻撃される可能性があるためです。</p>
+
+                <h3>5. バックアップから復元（可能な場合）</h3>
+
+                <p>もし定期的にバックアップを取っていれば、感染前の状態に戻すのが最も確実です。ただし、<strong>バックアップ自体が感染している可能性</strong>もあるので、必ず感染前の日付のものを選びましょう。</p>
+
+                <h2>WordPressハッキングを予防する5つの対策</h2>
+
+                <p>「予防は治療に勝る」という言葉がありますが、これはWordPressのセキュリティにも当てはまります。日頃から以下の対策を実施しておきましょう。</p>
+
+                <h3>1. 定期的なアップデートを徹底する</h3>
+
+                <p>WordPress本体、プラグイン、テーマは常に最新版に保ちましょう。<strong>アップデートの通知が来たら、できるだけ早く対応する</strong>ことが重要です。</p>
+
+                <p>ミアキスでは、<a href="/#pricing">月額保守プラン</a>でこういった定期アップデートを代行しています。「自分では管理しきれない」という方は、プロに任せるのも一つの選択肢です。</p>
+
+                <h3>2. 強固なパスワードを設定する</h3>
+
+                <p>管理者のユーザー名を「admin」のままにしている人は今すぐ変更してください。パスワードも、<strong>英数字記号を組み合わせた12文字以上の複雑なもの</strong>にしましょう。</p>
+
+                <h3>3. 不要なプラグインは削除する</h3>
+
+                <p>使っていないプラグインを有効化したまま放置するのは危険です。プラグインの数が多いほど攻撃される入口も増えます。<strong>本当に必要なものだけを残し、他は削除</strong>しましょう。</p>
+
+                <h3>4. セキュリティプラグインを導入する</h3>
+
+                <p>WordPressには優秀なセキュリティプラグインがあります。例えば「Wordfence Security」や「iThemes Security」などを導入することで、不正ログインの試行をブロックしたり、ファイルの改ざんを検知できます。</p>
+
+                <h3>5. 定期的なバックアップを取る</h3>
+
+                <p>もしもの時に備えて、<strong>週1回以上のバックアップ</strong>を取りましょう。自動バックアッププラグインを使えば、手間なく定期バックアップが可能です。</p>
+
+                <p>ミアキスの<a href="/#service">保守運用サービス</a>では、バックアップ取得も標準で含まれているので、安心してサイト運営に集中できます。</p>
+
+                <h2>Q&A：よくある質問</h2>
+
+                <h3>Q. ハッキングされたらGoogleの検索順位に影響しますか？</h3>
+
+                <p>A. はい、大きく影響します。Googleはハッキングされたサイトを検索結果から除外することがあります。また、「このサイトはハッキングされている可能性があります」という警告が表示されると、訪問者も激減します。</p>
+
+                <h3>Q. 自分で復旧できない場合、どこに相談すればいいですか？</h3>
+
+                <p>A. WordPressのセキュリティに詳しい制作会社や保守専門業者に依頼するのが確実です。ミアキスでも<a href="/#contact">緊急対応のご相談</a>を受け付けていますので、お気軽にご連絡ください。</p>
+
+                <h3>Q. 保守契約をしていればハッキングは100%防げますか？</h3>
+
+                <p>A. 残念ながら100%防げるとは言えません。ただし、<strong>リスクを大幅に減らし、万が一の際も迅速に復旧できる体制</strong>が整います。保険のような役割だと考えてください。</p>
+
+                <h3>Q. 小規模なサイトでも狙われますか？</h3>
+
+                <p>A. はい、狙われます。攻撃者は大手企業だけでなく、<strong>セキュリティが甘い小規模サイトも無差別に攻撃</strong>しています。「うちは小さいから大丈夫」という考えは危険です。</p>
+
+                <h2>まとめ：事前の備えが何より大切</h2>
+
+                <p>WordPressがハッキングされると、サイトの復旧だけでなく、信頼回復にも時間とコストがかかります。</p>
+
+                <p>実際に被害を受けたお客様からは、「もっと早く対策しておけばよかった」という声をよく聞きます。でも、<strong>今この記事を読んでいるあなたは、まだ間に合います</strong>。</p>
+
+                <p>埼玉県戸田市を拠点とする株式会社ミアキスでは、WordPressのセキュリティ対策から保守運用まで、トータルでサポートしています。「自社サイトのセキュリティが不安」「一度プロに診断してほしい」という方は、ぜひお気軽にご相談ください。</p>
+
+                <p>あなたの大切なWebサイトを守るお手伝いをさせていただきます。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>Web制作・保守運用のご相談はこちら</h3>
+                <p>埼玉県戸田市を拠点に、ホームページ制作から保守運用まで一貫対応。<br>まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                // 見出しがない場合は目次を非表示
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                // 見出しにIDを付与
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                // 目次項目を作成
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                // h3の場合はインデント
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 固定ヘッダーの高さ + 余白を考慮
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従（現在位置のハイライト） =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                // published_articles.jsonを読み込み
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                // 現在の記事を除外
+                const currentSlug = '2026-01-14-wordpress-hacking-countermeasures';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                // ランダムに3件選択
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                // 関連記事を表示
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                // エラー時は関連記事セクションを非表示
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        // 日付フォーマット
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        // スクロールイベント
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 初期状態チェック
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>

@@ -395,7 +395,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "コーポレートサイト 制作",
       "keywordId": 9,
       "description": "信頼されるコーポレートサイトを作るための5つの要素と、よくある失敗パターンを解説。埼玉県戸田市のWeb制作会社が、実際の制作事例をもとに成功のポイントをお伝えします。"
+    },
+    {
+      "slug": "2026-01-14-wordpress-hacking-countermeasures",
+      "title": "WordPressがハッキングされた時の対処法と予防策",
+      "date": "2026-01-14",
+      "category": "C",
+      "keyword": "WordPress ハッキング 対策",
+      "keywordId": 73,
+      "description": "WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。"
     }
   ],
-  "lastUpdated": "2026-01-13T00:00:00+09:00"
+  "lastUpdated": "2026-01-14T00:00:00+09:00"
 };
