@@ -20,6 +20,7 @@
     36,
     37,
     39,
+    40,
     42,
     43,
     45,
@@ -80,7 +81,8 @@
     "埼玉 ECサイト構築",
     "SSL証明書 更新 代行",
     "コーポレートサイト 制作",
-    "WordPress ハッキング 対策"
+    "WordPress ハッキング 対策",
+    "ドメイン管理 代行"
   ],
   "keyword_usage_history": [
     {
@@ -335,9 +337,15 @@
       "keyword": "WordPress ハッキング 対策",
       "date": "2026-01-14",
       "slug": "2026-01-14-wordpress-hacking-countermeasures"
+    },
+    {
+      "keywordId": 40,
+      "keyword": "ドメイン管理 代行",
+      "date": "2026-01-15",
+      "slug": "2026-01-15-domain-management-agency"
     }
   ],
-  "last_updated": "2026-01-14T00:00:00+09:00",
+  "last_updated": "2026-01-15T00:00:00+09:00",
   "notes": "このファイルは使用済みキーワードを管理します。新しい記事を作成する際に重複を防止します。"
 }
 

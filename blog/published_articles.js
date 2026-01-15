@@ -404,7 +404,16 @@ window.BLOG_ARTICLES_DATA = {
       "keyword": "WordPress ハッキング 対策",
       "keywordId": 73,
       "description": "WordPressがハッキングされた時の症状、緊急対処法、そして予防策まで実際の事例をもとに解説。埼玉県戸田市のミアキスが経験から学んだセキュリティ対策をお伝えします。"
+    },
+    {
+      "slug": "2026-01-15-domain-management-agency",
+      "title": "ドメイン管理を任せるべき理由とリスク回避",
+      "date": "2026-01-15",
+      "category": "B",
+      "keyword": "ドメイン管理 代行",
+      "keywordId": 40,
+      "description": "ドメイン管理を誰かに任せていますか？更新忘れや設定ミスでサイトが消える前に。埼玉県戸田市のWeb制作会社が、ドメイン管理代行の重要性と選び方を実例とともに本音で解説します。"
     }
   ],
-  "lastUpdated": "2026-01-14T00:00:00+09:00"
+  "lastUpdated": "2026-01-15T00:00:00+09:00"
 };
