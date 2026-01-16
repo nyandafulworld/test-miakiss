@@ -855,7 +855,31 @@
       "article_slug": "2026-01-15-domain-management-agency",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed5127",
+      "filename": "41",
+      "used_date": "2026-01-16",
+      "article_slug": "41",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed7293",
+      "filename": "2026-01-16-analytics-report-agency_header.jpg",
+      "used_date": "2026-01-16",
+      "article_slug": "2026-01-16-analytics-report-agency",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed3168",
+      "filename": "2026-01-16-analytics-report-agency_thumbnail.jpg",
+      "used_date": "2026-01-16",
+      "article_slug": "2026-01-16-analytics-report-agency",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-15T11:19:48.511175"
+  "last_updated": "2026-01-16T12:16:15.242971"
 }
