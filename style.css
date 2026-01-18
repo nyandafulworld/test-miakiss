@@ -2374,6 +2374,61 @@ html.dark .partner-description {
     box-shadow: var(--shadow-md);
 }
 
+/* CEO Profile Section */
+.ceo-profile {
+    margin-top: 12px;
+    text-align: left;
+}
+
+.ceo-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.02em;
+}
+
+.ceo-qualification {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.ceo-career {
+    margin-top: 16px;
+}
+
+.career-item {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--color-primary);
+}
+
+.career-item:last-child {
+    margin-bottom: 0;
+}
+
+.career-period {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: 4px;
+}
+
+.career-item p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* Company Greeting Section - Responsive */
 @media (max-width: 992px) { /* タブレットなど */
     .company-greeting-layout {
@@ -2401,6 +2456,28 @@ html.dark .partner-description {
         order: 1; /* 画像を先に */
         max-width: 300px; /* スマホでの画像最大幅 */
         margin: 0 auto;
+    }
+    
+    /* CEO Profile - Responsive */
+    .ceo-profile {
+        margin-top: 10px;
+    }
+    
+    .ceo-name {
+        font-size: 1rem;
+    }
+    
+    .ceo-qualification {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    .career-period {
+        font-size: 0.8rem;
+    }
+    
+    .career-item p {
+        font-size: 0.75rem;
     }
 }
 
