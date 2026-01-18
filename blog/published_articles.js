@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-18-plugin-update-troubles",
+      "title": "プラグイン更新で起きるトラブルと予防策",
+      "date": "2026-01-18",
+      "category": "B",
+      "keyword": "プラグイン 更新 トラブル",
+      "description": "WordPressプラグイン更新で発生しやすいトラブルと、その予防策を徹底解説。バックアップから復旧手順まで、埼玉県戸田市のWeb制作会社ミアキスが実例をもとに説明します。",
+      "keywordId": 46
+    },
+    {
       "slug": "2026-01-17-content-update-seo-impact",
       "title": "コンテンツ更新がSEOに与える影響とは｜株式会社ミアキス",
       "date": "2026-01-17",
@@ -433,5 +442,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-17T12:05:13+09:00"
+  "lastUpdated": "2026-01-18T12:15:54+09:00"
 };

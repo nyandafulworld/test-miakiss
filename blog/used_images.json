@@ -895,7 +895,23 @@
       "article_slug": "2026-01-17-content-update-seo-impact",
       "source": "picsum",
       "image_type": "thumbnail"
+    },
+    {
+      "url_hash": "seed9679",
+      "filename": "2026-01-18-plugin-update-troubles_header.jpg",
+      "used_date": "2026-01-18",
+      "article_slug": "2026-01-18-plugin-update-troubles",
+      "source": "picsum",
+      "image_type": "header"
+    },
+    {
+      "url_hash": "seed8207",
+      "filename": "2026-01-18-plugin-update-troubles_thumbnail.jpg",
+      "used_date": "2026-01-18",
+      "article_slug": "2026-01-18-plugin-update-troubles",
+      "source": "picsum",
+      "image_type": "thumbnail"
     }
   ],
-  "last_updated": "2026-01-17T12:03:51.292137"
+  "last_updated": "2026-01-18T12:13:31.452774"
 }
