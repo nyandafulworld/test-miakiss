@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-19-recruitment-site-creation",
+      "title": "採用に効くホームページの作り方【中小企業向け】",
+      "date": "2026-01-19",
+      "category": "A",
+      "keyword": "採用サイト 制作",
+      "description": "中小企業の採用難を解決するためのホームページ制作のポイントを解説。求職者が本当に知りたい情報、信頼されるデザイン、スマホ対応の重要性など、採用活動を成功させる秘訣をご紹介します。",
+      "keywordId": 15
+    },
+    {
       "slug": "2026-01-18-plugin-update-troubles",
       "title": "プラグイン更新で起きるトラブルと予防策",
       "date": "2026-01-18",
@@ -442,5 +451,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-18T12:15:54+09:00"
+  "lastUpdated": "2026-01-19T12:47:06+09:00"
 };
