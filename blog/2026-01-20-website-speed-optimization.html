@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由 | 株式会社ミアキス</title>
+    <meta name="description" content="ホームページの表示速度が遅いと、ユーザー離脱や検索順位の低下を招きます。埼玉県戸田市のWeb制作会社ミアキスが、表示速度の改善方法を具体的に解説。画像圧縮、キャッシュ設定、コード最適化まで実践的な対策をご紹介します。">
+    <meta property="og:title" content="ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由">
+    <meta property="og:description" content="ホームページの表示速度が遅いと、ユーザー離脱や検索順位の低下を招きます。埼玉県戸田市のWeb制作会社ミアキスが、表示速度の改善方法を具体的に解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.miakiss.co.jp/blog/2026-01-20-website-speed-optimization.html">
+    <meta property="og:image" content="https://www.miakiss.co.jp/blog/images/2026-01-20-website-speed-optimization_thumbnail.jpg">
+    <meta property="og:site_name" content="株式会社ミアキス">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由">
+    <meta name="twitter:description" content="ホームページの表示速度が遅いと、ユーザー離脱や検索順位の低下を招きます。埼玉県戸田市のWeb制作会社ミアキスが、表示速度の改善方法を具体的に解説。">
+    <meta name="twitter:image" content="https://www.miakiss.co.jp/blog/images/2026-01-20-website-speed-optimization_thumbnail.jpg">
+    <link rel="canonical" href="https://www.miakiss.co.jp/blog/2026-01-20-website-speed-optimization.html">
+    <link rel="icon" href="../image/icon.avif" type="image/avif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由",
+        "description": "ホームページの表示速度が遅いと、ユーザー離脱や検索順位の低下を招きます。埼玉県戸田市のWeb制作会社ミアキスが、表示速度の改善方法を具体的に解説。",
+        "url": "https://www.miakiss.co.jp/blog/2026-01-20-website-speed-optimization.html",
+        "image": "https://www.miakiss.co.jp/blog/images/2026-01-20-website-speed-optimization_thumbnail.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社ミアキス",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.miakiss.co.jp/image/logo_v4.png"
+            }
+        },
+        "datePublished": "2026-01-20",
+        "dateModified": "2026-01-20"
+    }
+    </script>
+</head>
+<body class="white-header">
+    <style>
+        /* 記事本体のスタイル */
+        .blog-article { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 115px 20px 40px 20px;
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-article {
+                padding-top: 90px;
+            }
+        }
+        
+        /* ヘッダー画像 */
+        .article-header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* 記事ヘッダー（タイトル・日付） */
+        .article-header { 
+            margin-bottom: 40px; 
+        }
+        
+        .article-date { 
+            display: block; 
+            font-size: 0.9em; 
+            color: #999; 
+            margin-bottom: 15px; 
+        }
+        
+        .article-title { 
+            font-size: 2em; 
+            color: #2c3e50;
+            line-height: 1.3; 
+            margin-bottom: 20px; 
+            text-align: left;
+            font-weight: 700;
+        }
+        
+        /* 目次スタイル */
+        .article-toc {
+            background: #f8f9fa;
+            border-left: 4px solid #0D9488;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .article-toc h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .article-toc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .article-toc li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        .article-toc a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-toc a:hover {
+            color: #0D9488;
+        }
+        
+        .article-toc li.active a {
+            color: #0D9488;
+            font-weight: bold;
+        }
+        
+        /* 記事本文 */
+        .article-content { 
+            line-height: 1.8;
+            color: #333; 
+        }
+        
+        /* h2見出しのリデザイン */
+        .article-content h2 { 
+            font-size: 1.5em; 
+            color: #2c3e50;
+            margin-top: 50px; 
+            margin-bottom: 20px; 
+            padding: 15px 20px;
+            border-left: 5px solid #0D9488;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .article-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            margin-top: 30px; 
+            margin-bottom: 15px; 
+            padding-left: 12px;
+            border-left: 3px solid #ccc;
+        }
+        
+        .article-content p { 
+            margin-bottom: 2em;
+            font-size: 1em; 
+        }
+        
+        .article-content ul, .article-content ol { 
+            margin: 20px 0; 
+            padding-left: 30px; 
+        }
+        
+        .article-content li { 
+            margin-bottom: 12px; 
+            line-height: 1.8; 
+        }
+        
+        .article-content blockquote { 
+            background-color: #f8f9fa; 
+            border-left: 4px solid #0D9488; 
+            padding: 20px; 
+            margin: 30px 0; 
+            border-radius: 4px;
+        }
+        
+        /* 強調色の変更（蛍光ペン風） */
+        .article-content strong { 
+            color: #2c3e50;
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, #fff3cd 60%);
+            padding: 0 2px;
+        }
+        
+        .article-content a {
+            color: #0D9488;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .article-content a:hover {
+            color: #0F766E;
+        }
+
+        /* 図解画像スタイル */
+        .article-content .diagram-image {
+            display: block;
+            max-width: 100%;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* CTAセクション */
+        .article-cta { 
+            background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #14B8A6 100%); 
+            color: #fff; 
+            padding: 30px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin: 50px 0; 
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+        
+        .article-cta h3 { 
+            font-size: 1.5em; 
+            margin-bottom: 15px; 
+            color: #fff; 
+        }
+        
+        .article-cta p { 
+            margin-bottom: 25px; 
+            font-size: 1.1em; 
+            color: #fff; 
+        }
+        
+        .article-cta .btn { 
+            display: inline-block; 
+            background-color: #fff; 
+            color: #0D9488; 
+            padding: 12px 35px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .article-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            color: #0F766E;
+        }
+        
+        /* 関連記事セクション */
+        .related-articles {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #eee;
+        }
+        
+        .related-articles h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .related-article-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .related-article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .related-article-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .related-article-thumbnail {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .related-article-content {
+            padding: 15px;
+        }
+        
+        .related-article-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .related-article-date {
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* フッター */
+        .article-footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #eee; 
+            text-align: center; 
+        }
+        
+        .back-to-blog { 
+            color: #0D9488; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            color: #0F766E;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-title { 
+                font-size: 1.5em; 
+            }
+            
+            .article-content h2 { 
+                font-size: 1.3em; 
+                padding: 12px 15px;
+            }
+            
+            .article-toc {
+                padding: 15px 20px;
+            }
+            
+            .related-articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="white-header">
+    <header id="header">
+        <div class="container">
+            <button class="hamburger-menu" aria-label="メニューを開く" aria-expanded="false">
+                <div class="hamburger-icon"><span></span><span></span><span></span></div>
+            </button>
+            <div class="logo">
+                <a href="/"><img src="../image/logo_v4.png" alt="株式会社ミアキス｜埼玉県戸田市のホームページ制作会社"></a>
+            </div>
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="/#service">サービス</a></li>
+                    <li><a href="/#works">実績</a></li>
+                    <li><a href="/#pricing">料金プラン</a></li>
+                    <li><a href="/subsidy.html">補助金情報</a></li>
+                    <li><a href="/#testimonials">お客様の声</a></li>
+                    <li><a href="/#flow">制作の流れ</a></li>
+                    <li><a href="../blog.html">ブログ</a></li>
+                    <li><a href="/#company">会社概要</a></li>
+                    <li><a href="/#message">代表挨拶</a></li>
+                    <li><a href="/#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="/#contact" class="header-contact-button">
+                    <img src="../image/mail.avif" alt="無料相談メールアイコン" class="mail-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-article section">
+            <!-- ヘッダー画像 -->
+            <img src="../blog/images/2026-01-20-website-speed-optimization_header.jpg" 
+                 alt="ホームページの表示速度を改善する方法" 
+                 class="article-header-image"
+                 onerror="this.style.display='none'">
+            
+            <div class="article-header">
+                <time class="article-date" datetime="2026-01-20">2026.01.20</time>
+                <h1 class="article-title">ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由</h1>
+            </div>
+
+            <!-- 目次（JavaScriptで自動生成） -->
+            <nav class="article-toc" id="article-toc">
+                <h3>📑 目次</h3>
+                <ul id="toc-list">
+                    <!-- JSで自動生成 -->
+                </ul>
+            </nav>
+
+            <div class="article-content" id="article-content">
+                <p>「最近、ホームページからの問い合わせが減った気がする…」そう感じていませんか？実は、その原因は<strong>サイトの表示速度</strong>かもしれません。</p>
+
+                <p>埼玉県戸田市でWeb制作・保守を手がける私たちミアキスにも、「サイトが重くて困っている」というご相談が増えています。特に中小企業のホームページでは、作成から数年経つと画像やプラグインが増え、知らないうちに表示速度が遅くなっているケースが少なくありません。</p>
+
+                <p>今回は、<strong>なぜ表示速度が重要なのか</strong>、そして<strong>具体的にどう改善すればいいのか</strong>を、専門用語をなるべく使わずにお伝えします。</p>
+
+                <h2>表示速度が遅いと何が起こるのか？</h2>
+
+                <p>「たかが数秒の違いでしょ？」と思われるかもしれませんが、実はこの数秒が大きな差を生みます。</p>
+
+                <h3>ユーザーが離脱してしまう</h3>
+
+                <p>Googleの調査によると、<strong>ページの読み込みに3秒以上かかると、約53%のユーザーがサイトを離れてしまう</strong>と言われています。せっかく広告やSNSからアクセスしてくれても、表示される前に「戻る」ボタンを押されてしまうのです。</p>
+
+                <p>私自身、スマートフォンで飲食店を探しているとき、なかなか開かないサイトがあると「もういいや」と別のお店を探してしまいます。お客様も同じ気持ちなんですよね。</p>
+
+                <h3>検索順位が下がる可能性</h3>
+
+                <p>Googleは2021年から「Core Web Vitals（コアウェブバイタル）」という指標を検索順位の評価基準に加えました。これには表示速度も含まれています。</p>
+
+                <p>つまり、<strong>表示が遅いサイトは検索結果で上位に表示されにくくなる</strong>のです。SEO対策をいくら頑張っても、表示速度が足を引っ張っていたら効果が半減してしまいます。</p>
+
+                <h3>コンバージョン率（成約率）が下がる</h3>
+
+                <p>表示速度とコンバージョン率には明確な相関関係があります。<strong>1秒の遅延でコンバージョン率が7%低下する</strong>というデータもあります。月に10件の問い合わせがあるサイトなら、1秒速くするだけで11件に増える可能性があるということです。</p>
+
+                <h2>まずは現状をチェック！無料で使える診断ツール</h2>
+
+                <p>改善の前に、まず自社サイトの現状を把握しましょう。Googleが無料で提供している「PageSpeed Insights」を使えば、誰でも簡単にチェックできます。</p>
+
+                <p><a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights（Google公式）</a></p>
+
+                <p>URLを入力するだけで、0〜100点のスコアと具体的な改善ポイントが表示されます。<strong>モバイルで50点以下、PCで70点以下であれば、早急な改善をおすすめします。</strong></p>
+
+                <h2>表示速度を改善する5つの方法</h2>
+
+                <p>それでは、具体的な改善方法をご紹介します。難易度順に並べていますので、できるところから取り組んでみてください。</p>
+
+                <img src="../blog/images/2026-01-20-website-speed-optimization_diagram01.jpg" 
+                     alt="ホームページ表示速度改善の5つのステップ" 
+                     class="diagram-image">
+
+                <h3>1. 画像を最適化する（難易度：低）</h3>
+
+                <p>表示速度が遅い原因の<strong>第1位は画像</strong>です。スマートフォンで撮影した写真をそのままアップロードすると、1枚で数MBになることもあります。</p>
+
+                <p><strong>具体的な対策：</strong></p>
+                <ul>
+                    <li>画像サイズを適切に縮小する（幅1200px程度で十分）</li>
+                    <li>JPEG・PNG形式をWebP形式に変換する</li>
+                    <li>TinyPNGなどの圧縮ツールを使用する</li>
+                    <li>遅延読み込み（Lazy Load）を導入する</li>
+                </ul>
+
+                <p>これだけで、サイト全体の容量が半分以下になることも珍しくありません。</p>
+
+                <h3>2. ブラウザキャッシュを活用する（難易度：中）</h3>
+
+                <p>キャッシュとは、一度読み込んだデータを一時的に保存しておく仕組みです。2回目以降のアクセスでは保存されたデータを使うため、表示が速くなります。</p>
+
+                <p>WordPressを使っているなら、「WP Super Cache」や「W3 Total Cache」といった無料プラグインで簡単に設定できます。ただし、<strong>設定を間違えるとサイトが正しく表示されなくなる</strong>こともあるので、慎重に行いましょう。</p>
+
+                <h3>3. 不要なプラグイン・スクリプトを削除する（難易度：中）</h3>
+
+                <p>「便利そうだから」と入れたプラグインが、知らないうちに表示速度を遅くしていることがあります。</p>
+
+                <p><strong>見直しのポイント：</strong></p>
+                <ul>
+                    <li>使っていないプラグインは削除する</li>
+                    <li>似た機能のプラグインが複数ないか確認する</li>
+                    <li>ソーシャルボタンは必要なSNSだけに絞る</li>
+                    <li>アクセス解析ツールを複数入れていないか確認する</li>
+                </ul>
+
+                <h3>4. サーバーを見直す（難易度：高）</h3>
+
+                <p>どれだけサイト側を最適化しても、<strong>サーバーの性能が低ければ限界があります</strong>。特に格安レンタルサーバーを使っている場合、アクセスが増えると表示が遅くなることがあります。</p>
+
+                <p>埼玉県内の中小企業様からも「月額数百円のサーバーを使っているけど大丈夫？」というご相談をいただきます。ビジネス用途であれば、月額1,000〜3,000円程度のプランへの移行を検討されることをおすすめします。</p>
+
+                <h3>5. コードを最適化する（難易度：高）</h3>
+
+                <p>HTML・CSS・JavaScriptのコードを最適化することで、読み込み時間を短縮できます。</p>
+
+                <p><strong>主な手法：</strong></p>
+                <ul>
+                    <li>ファイルの圧縮（Minify）</li>
+                    <li>不要なコードの削除</li>
+                    <li>CSSの読み込み順序の最適化</li>
+                    <li>JavaScriptの非同期読み込み</li>
+                </ul>
+
+                <p>これらは専門知識が必要な作業です。<strong>自信がない場合は、専門家に依頼することをおすすめします。</strong></p>
+
+                <h2>戸田市の企業様からいただいたご相談事例</h2>
+
+                <p>先日、戸田市内の製造業のお客様から「最近サイトが重くなった」というご相談をいただきました。調査してみると、以下の問題が見つかりました。</p>
+
+                <ul>
+                    <li>製品写真が未圧縮のまま掲載されていた（1枚3MB以上）</li>
+                    <li>使っていないプラグインが12個も有効化されていた</li>
+                    <li>4年前に設定したまま、一度も見直していなかった</li>
+                </ul>
+
+                <p>画像の最適化とプラグインの整理を行った結果、<strong>PageSpeed Insightsのスコアが32点から78点に改善</strong>。お客様からは「スマホでもサクサク見られるようになった」とお喜びの声をいただきました。</p>
+
+                <h2>自分でやるか、専門家に頼むか</h2>
+
+                <p>表示速度の改善は、ある程度まで自分でできます。特に画像の最適化や不要なプラグインの削除は、今日からでも始められます。</p>
+
+                <p>ただし、以下のような場合は<strong>専門家への依頼をおすすめします</strong>。</p>
+
+                <ul>
+                    <li>何から手をつけていいかわからない</li>
+                    <li>改善しようとしたらサイトが表示されなくなった</li>
+                    <li>技術的な作業に時間を割く余裕がない</li>
+                    <li>一度しっかり診断してほしい</li>
+                </ul>
+
+                <p>私たちミアキスでは、<strong>サイト診断から改善作業まで一貫してサポート</strong>しています。「うちのサイト、大丈夫かな？」と少しでも気になったら、お気軽にご相談ください。</p>
+
+                <h2>まとめ：表示速度は「ユーザーへのおもてなし」</h2>
+
+                <p>表示速度の改善は、単なる技術的な作業ではありません。<strong>「お客様を待たせない」という、おもてなしの姿勢</strong>そのものです。</p>
+
+                <p>実店舗で来店したお客様を何分も放置することはありませんよね。ホームページも同じです。訪問してくれた方をすぐにお迎えできるよう、サイトの「お手入れ」を心がけましょう。</p>
+
+                <p>表示速度の改善は、やればやるほど効果が見えやすい施策です。まずはPageSpeed Insightsで現状をチェックするところから始めてみてください。</p>
+            </div>
+
+            <div class="article-cta">
+                <h3>サイト表示速度の診断・改善はミアキスにお任せください</h3>
+                <p>埼玉県戸田市を拠点に、ホームページの診断から改善まで一貫対応。<br>「うちのサイト、遅いかも？」と思ったら、まずはお気軽にご相談ください。</p>
+                <a href="/#contact" class="btn">無料相談はこちら</a>
+            </div>
+
+            <!-- 関連記事セクション（JavaScriptで自動生成） -->
+            <div class="related-articles" id="related-articles">
+                <h3>📚 関連記事</h3>
+                <div class="related-articles-grid" id="related-articles-grid">
+                    <!-- JSで自動生成 -->
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="../blog.html" class="back-to-blog">← ブログ一覧に戻る</a>
+            </div>
+        </article>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p class="footer-links">
+                <a href="../subsidy.html" class="footer-link">補助金情報</a> | <a href="../tokusho.html" class="footer-link">特定商取引法に基づく表記</a> | <a href="../privacy.html" class="footer-link">プライバシーポリシー</a>
+            </p>
+            <p class="footer-copyright">&copy; 2025 Miakiss Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="トップに戻る">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // ===== ハンバーガーメニュー =====
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const globalNavUl = document.querySelector('#header .global-nav ul');
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function () {
+                globalNavUl.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+        }
+
+        // ===== 目次の自動生成 =====
+        function generateTableOfContents() {
+            const content = document.getElementById('article-content');
+            const tocList = document.getElementById('toc-list');
+            const headings = content.querySelectorAll('h2, h3');
+            
+            if (headings.length === 0) {
+                document.getElementById('article-toc').style.display = 'none';
+                return;
+            }
+            
+            headings.forEach((heading, index) => {
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${id}`;
+                a.textContent = heading.textContent;
+                
+                if (heading.tagName === 'H3') {
+                    li.style.paddingLeft = '40px';
+                    li.style.fontSize = '0.9em';
+                }
+                
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const headerHeight = 100;
+                    const targetPosition = heading.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
+        
+        // ===== スクロール追従 =====
+        function highlightCurrentSection() {
+            const headings = document.querySelectorAll('#article-content h2, #article-content h3');
+            const tocLinks = document.querySelectorAll('#toc-list a');
+            
+            let currentIndex = -1;
+            
+            headings.forEach((heading, index) => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentIndex = index;
+                }
+            });
+            
+            tocLinks.forEach((link, index) => {
+                const li = link.parentElement;
+                if (index === currentIndex) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+        }
+        
+        // ===== 関連記事の取得・表示 =====
+        async function loadRelatedArticles() {
+            try {
+                const response = await fetch('../blog/published_articles.json');
+                const data = await response.json();
+                
+                const currentSlug = '2026-01-20-website-speed-optimization';
+                const otherArticles = data.articles.filter(article => article.slug !== currentSlug);
+                
+                const shuffled = otherArticles.sort(() => 0.5 - Math.random());
+                const selectedArticles = shuffled.slice(0, 3);
+                
+                const grid = document.getElementById('related-articles-grid');
+                grid.innerHTML = '';
+                
+                selectedArticles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'related-article-item';
+                    
+                    const thumbnailUrl = `../blog/images/${article.slug}_thumbnail.jpg`;
+                    const fallbackUrl = '../image/ogp.png';
+                    
+                    item.innerHTML = `
+                        <a href="${article.slug}.html">
+                            <img src="${thumbnailUrl}" 
+                                 alt="${article.title}" 
+                                 class="related-article-thumbnail"
+                                 onerror="this.src='${fallbackUrl}'">
+                            <div class="related-article-content">
+                                <div class="related-article-title">${article.title}</div>
+                                <div class="related-article-date">${formatDate(article.date)}</div>
+                            </div>
+                        </a>
+                    `;
+                    
+                    grid.appendChild(item);
+                });
+                
+            } catch (error) {
+                console.error('関連記事の読み込みに失敗:', error);
+                document.getElementById('related-articles').style.display = 'none';
+            }
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}.${month}.${day}`;
+        }
+        
+        // ===== 初期化 =====
+        generateTableOfContents();
+        loadRelatedArticles();
+        
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    highlightCurrentSection();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // --- Back to Top Button ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        let backToTopTicking = false;
+
+        function updateBackToTopButton() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            
+            backToTopTicking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(updateBackToTopButton);
+                backToTopTicking = true;
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        updateBackToTopButton();
+    });
+    </script>
+</body>
+</html>
