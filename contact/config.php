@@ -1,5 +1,8 @@
 <?php
 // お問い合わせフォーム設定ファイル
+// 
+// セキュリティ注意: 機密情報は環境変数で管理してください
+// エックスサーバーの場合: .htaccess に SetEnv で設定
 
 // メール設定
 define('ADMIN_EMAIL', 'info@miakiss.com'); // 管理者メールアドレス
@@ -18,9 +21,10 @@ define('SMTP_SECURE', 'tls'); // tls または ssl
 define('CSRF_TOKEN_NAME', 'csrf_token');
 define('SESSION_TIMEOUT', 3600); // 1時間
 
-// reCAPTCHA v3 設定
-define('RECAPTCHA_SITE_KEY', '6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV');
-define('RECAPTCHA_SECRET_KEY', '6LcwtgksAAAAANJygCgq4KYXbDsbvwPWHV_I-Bma');
+// reCAPTCHA v3 設定（環境変数から取得、なければデフォルト値を使用）
+// 本番環境では .htaccess で SetEnv を使用して設定することを推奨
+define('RECAPTCHA_SITE_KEY', getenv('RECAPTCHA_SITE_KEY') ?: '6LfRFFAsAAAAALVIl9P5l4o55mrpJcwrlNB5l7HH');
+define('RECAPTCHA_SECRET_KEY', getenv('RECAPTCHA_SECRET_KEY') ?: '6LfRFFAsAAAAALfvUUaAMP5TZ3BM0o9hlXRwk0_4');
 define('RECAPTCHA_SCORE_THRESHOLD', 0.5); // スコア閾値（0.0-1.0、低いほどボットの可能性が高い）
 define('RECAPTCHA_VERIFY_URL', 'https://www.google.com/recaptcha/api/siteverify');
 

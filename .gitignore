@@ -1,5 +1,6 @@
 # Environment variables (contains API keys)
 .env
+*.env
 
 # Python cache
 __pycache__/
@@ -10,10 +11,36 @@ __pycache__/
 
 # macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Development/Test files
+test_server.py
+contact/debug.php
+contact/test.php
+contact/simple_test.php
+
+# Backup directories
+image_backup/
+assets/
+backups/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.cache
+
+# Documentation (keep only README.md)
+# Uncomment the following if you want to exclude all .md except README
+# *.md
+# !README.md
 
 # Optional: Blog images (can be large, fetched automatically)
 # Uncomment if you want to exclude images from git
@@ -21,34 +48,12 @@ __pycache__/
 # blog/images/*.png
 # !blog/images/.gitkeep
 
+# Cursor/Editor specific
+*.plan.md
+.cursor/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Security: Never commit these
+*.pem
+*.key
+id_rsa*
+*.p12
