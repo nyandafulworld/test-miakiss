@@ -8,7 +8,7 @@
 define('ADMIN_EMAIL', 'info@miakiss.com'); // 管理者メールアドレス
 define('FROM_EMAIL', 'info@miakiss.com'); // 送信元メールアドレス
 define('COMPANY_NAME', '株式会社ミアキス');
-define('SITE_URL', 'https://miakiss.com'); // サイトURL
+define('SITE_URL', 'https://www.miakiss.co.jp'); // サイトURL
 
 // SMTP設定（エックスサーバー用設定）
 define('SMTP_HOST', 'localhost');

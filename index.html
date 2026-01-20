@@ -51,7 +51,7 @@
     </script>
 
     <!-- Google reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfRFFAsAAAAALVIl9P5l4o55mrpJcwrlNB5l7HH"></script>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -1266,7 +1266,7 @@
                 // reCAPTCHA v3トークンを取得（確実に完了するまで待機）
                 const recaptchaToken = await new Promise((resolve) => {
                     grecaptcha.ready(async function() {
-                        const token = await grecaptcha.execute('6LcwtgksAAAAALt0vfaB_85rig3j_x850TjJf8DV', {action: 'submit'});
+                        const token = await grecaptcha.execute('6LfRFFAsAAAAALVIl9P5l4o55mrpJcwrlNB5l7HH', {action: 'submit'});
                         resolve(token);
                     });
                 });
