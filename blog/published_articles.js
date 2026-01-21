@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-21-store-website-necessity",
+      "title": "店舗ビジネスにホームページは本当に必要か？【2026年版・埼玉の実例で解説】",
+      "date": "2026-01-21",
+      "category": "A",
+      "keyword": "店舗 ホームページ 必要",
+      "description": "飲食店・美容室・小売店など店舗ビジネスにホームページは必要？SNSだけでいい？埼玉県戸田市のWeb制作会社が、地域密着店舗の実例をもとに本音で解説します。",
+      "keywordId": 16
+    },
+    {
       "slug": "2026-01-20-website-speed-optimization",
       "title": "ホームページの表示速度を改善する方法｜遅いサイトが売上を逃す理由",
       "date": "2026-01-20",
@@ -460,5 +469,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-20T13:46:31+09:00"
+  "lastUpdated": "2026-01-21T12:51:33+09:00"
 };
