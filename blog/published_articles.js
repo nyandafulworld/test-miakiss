@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-22-professional-services-website",
+      "title": "士業事務所のホームページで集客するポイント【弁護士・税理士・司法書士向け】",
+      "date": "2026-01-22",
+      "category": "A",
+      "keyword": "士業 ホームページ制作",
+      "description": "弁護士・税理士・司法書士・行政書士などの士業事務所がホームページで集客するためのポイントを解説。埼玉県戸田市のWeb制作会社が、士業特有の課題と成功事例をもとに本音でお伝えします。",
+      "keywordId": 17
+    },
+    {
       "slug": "2026-01-21-store-website-necessity",
       "title": "店舗ビジネスにホームページは本当に必要か？【2026年版・埼玉の実例で解説】",
       "date": "2026-01-21",
@@ -469,5 +478,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-21T12:51:33+09:00"
+  "lastUpdated": "2026-01-22T12:34:03+09:00"
 };
