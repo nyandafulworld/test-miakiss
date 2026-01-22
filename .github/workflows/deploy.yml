@@ -168,6 +168,7 @@ jobs:
           server-dir: /miakiss.com/public_html/
           state-name: ${{ github.event.inputs.force_full_sync == 'true' && '.ftp-deploy-sync-state-reset.json' || '.ftp-deploy-sync-state-v4.json' }}
           log-level: verbose
+          timeout: 300000
           exclude: |
             **/.git*
             **/.git*/**
