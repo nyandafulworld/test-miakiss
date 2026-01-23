@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-23-manufacturing-web-production",
+      "title": "製造業のホームページに載せるべき情報とは？集客と信頼につながるコンテンツを解説",
+      "date": "2026-01-23",
+      "category": "A",
+      "keyword": "製造業 Web制作",
+      "description": "製造業のホームページにおいて、集客や信頼獲得のために必要なコンテンツを徹底解説。製品情報、技術力、設備紹介など、BtoB取引を成功させるためのポイントを紹介します。",
+      "keywordId": 18
+    },
+    {
       "slug": "2026-01-22-professional-services-website",
       "title": "士業事務所のホームページで集客するポイント【弁護士・税理士・司法書士向け】",
       "date": "2026-01-22",
@@ -478,5 +487,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-22T12:34:03+09:00"
+  "lastUpdated": "2026-01-23T12:00:00+09:00"
 };
