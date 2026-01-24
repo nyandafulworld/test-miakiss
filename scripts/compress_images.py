@@ -20,9 +20,10 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 BLOG_IMAGES_DIR = PROJECT_ROOT / "blog" / "images"
 
 # 圧縮設定
+# サムネイルは16:9比率（600x340px推奨）でブログ一覧カードに最適化
 COMPRESSION_SETTINGS = {
     "header": {"max_width": 1200, "quality": 82, "max_size_kb": 100},
-    "thumbnail": {"max_width": 400, "quality": 80, "max_size_kb": 40},
+    "thumbnail": {"max_width": 600, "quality": 80, "max_size_kb": 50},
     "diagram": {"max_width": 800, "quality": 85, "max_size_kb": 80},
 }
 
