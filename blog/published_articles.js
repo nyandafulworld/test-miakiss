@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-25-search-console-basics",
+      "title": "サーチコンソールでサイトの健康状態をチェック｜初心者でもわかる使い方",
+      "date": "2026-01-25",
+      "category": "B",
+      "keyword": "サーチコンソール 使い方",
+      "description": "Googleサーチコンソールを使ってサイトの健康状態をチェックする方法を解説。埼玉県戸田市のWeb制作会社が、初心者でも今日から実践できる基本的な使い方と、実際の改善事例をもとに本音で語ります。",
+      "keywordId": 57
+    },
+    {
       "slug": "2026-01-24-website-periodic-inspection",
       "title": "ホームページ定期点検のチェックリスト｜自分でもできる5つのポイント",
       "date": "2026-01-24",
@@ -496,5 +505,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-24T11:41:06+09:00"
+  "lastUpdated": "2026-01-25T12:50:06+09:00"
 };
