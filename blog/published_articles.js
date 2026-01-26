@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-26-affordable-web-production-pitfalls",
+      "title": "格安Web制作の落とし穴と適正価格の見極め方【埼玉・戸田市のWeb制作会社が本音で解説】",
+      "date": "2026-01-26",
+      "category": "A",
+      "keyword": "Web制作 埼玉 格安",
+      "description": "格安Web制作には隠れたリスクが潜んでいます。埼玉県戸田市のWeb制作会社が、10年以上の経験から見えてきた格安サイトの問題点と、適正価格の見極め方を本音で解説。後悔しないWeb制作会社の選び方とは？",
+      "keywordId": 12
+    },
+    {
       "slug": "2026-01-25-search-console-basics",
       "title": "サーチコンソールでサイトの健康状態をチェック｜初心者でもわかる使い方",
       "date": "2026-01-25",
@@ -505,5 +514,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-25T12:50:06+09:00"
+  "lastUpdated": "2026-01-26T16:14:30+09:00"
 };
