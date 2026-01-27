@@ -5,6 +5,15 @@
 window.BLOG_ARTICLES_DATA = {
   "articles": [
     {
+      "slug": "2026-01-27-website-renewal-timing",
+      "title": "ホームページリニューアルのベストタイミングとは？見極めのサインを解説",
+      "date": "2026-01-27",
+      "category": "C",
+      "keyword": "ホームページ リニューアル タイミング",
+      "description": "ホームページのリニューアル時期に迷っていませんか？一般的に言われる3〜5年の目安だけでなく、デザインの陳腐化、スマホ非対応、セキュリティなどの観点から、リニューアルすべき具体的な「サイン」を解説します。埼玉県戸田市でWeb制作を行うミアキスの視点で、失敗しないリニューアルのタイミングをお伝えします。",
+      "keywordId": 77
+    },
+    {
       "slug": "2026-01-26-affordable-web-production-pitfalls",
       "title": "格安Web制作の落とし穴と適正価格の見極め方【埼玉・戸田市のWeb制作会社が本音で解説】",
       "date": "2026-01-26",
@@ -514,5 +523,5 @@ window.BLOG_ARTICLES_DATA = {
       "description": "旅好きの代表が世界一周の経験から開発したCalches海外変換プラグ。SEプラグ同梱で韓国やEUでも安定。"
     }
   ],
-  "lastUpdated": "2026-01-26T16:14:30+09:00"
+  "lastUpdated": "2026-01-27T12:51:14+09:00"
 };
